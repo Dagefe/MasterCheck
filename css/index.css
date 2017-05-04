@@ -1,0 +1,18 @@
+
+.recuadroBlanco
+{
+  width: auto;
+  height: 110px;
+
+
+}
+
+.jumbotron {
+    background-image: url("../imagenes/cabecera.jpg");
+}
+
+.row-index
+{
+  width: 75%;
+
+}
