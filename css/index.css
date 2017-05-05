@@ -11,6 +11,7 @@
     background-color: white;
 }
 
+/* Apartado de login */
 #login {
   background-color: #f5f5f5;
   padding: 8px;
@@ -21,6 +22,7 @@
   width: 75%;
 }
 
+/* Ajuste padding cabecera */
 .noPaddingLogin {
   padding-left: 0px;
 
@@ -29,3 +31,5 @@
 .noPaddingDirectorio {
   padding-right: 0px;
 }
+
+/* Fin padding cabecera */
