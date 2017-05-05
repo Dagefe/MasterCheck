@@ -16,4 +16,32 @@ $(document).ready(function () {
 
 
   });
+
+  $('#santos').on("", function() {
+    $(this).css({'width': '300px', 'height':'300px'});
+  });
+
+//Mostrar u ocultar el menu de busqueda avanzada
+  $('#btnBusquedaAvanzada').on("click", function() {
+    if($(this).hasClass('glyphicon-chevron-down'))
+    {
+      $('#busquedaAvanzada').css({'display': 'block'});
+      $('#busquedaAvanzada').slideDown();
+      $(this).removeClass('glyphicon-chevron-down');
+      $(this).addClass('glyphicon-chevron-up');
+    }
+    else {
+      {
+        $('#busquedaAvanzada').css({'display': 'none'});
+        $('#busquedaAvanzada').slideUp();
+        $(this).removeClass('glyphicon-chevron-up');
+        $(this).addClass('glyphicon-chevron-down');
+      }
+    }
+  });
+
+  function aumentarImg()
+  {
+    alert("Agrandar");
+  }
 });
