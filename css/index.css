@@ -8,11 +8,24 @@
 }
 
 .jumbotron {
-    background-image: url("../imagenes/cabecera.jpg");
+    background-color: white;
+}
+
+#login {
+  background-color: #f5f5f5;
+  padding: 8px;
 }
 
 .row-index
 {
   width: 75%;
+}
 
+.noPaddingLogin {
+  padding-left: 0px;
+
+}
+
+.noPaddingDirectorio {
+  padding-right: 0px;
 }

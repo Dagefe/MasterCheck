@@ -11,27 +11,35 @@
     <link rel="stylesheet" href="css/index.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
   <body>
 
+
     <header>
-      <ol class="breadcrumb">
-        <li class="glyphicon glyphicon-home"><a href="index.html">  Inicio</a></li>
-        <!-- <li><a href="#">Nuevo usuario</a></li>-->
-        <!-- <li class="active">Data</li>-->
-      </ol>
+      <!-- Cabecera de la pagina -->
+      <div class="row">
+        <div class="col-xs-9 col-lg-9 noPaddingDirectorio">
+          <ol class="breadcrumb">
+            <li class="glyphicon glyphicon-home"><a href="index.html">  Inicio</a></li>
+            <!-- <li><a href="#">Nuevo usuario</a></li>-->
+            <!-- <li class="active">Data</li>-->
+          </ol>
+        </div>
+        <div class="col-xs-3 col-lg-3 noPaddingLogin">
+          <div id="login" class="panel text-center">
+              <a href="#">¿Eres cliente?<span class="glyphicon glyphicon-minus"></span></a>
+              <a href="html/formularioEmpresa.html">¿Eres empresa?</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fin cabecera de la pagina -->
 
       <div class="jumbotron">
-
-        <!-- <img src="imagenes/cabecera.jpg" width="25%" height="5%" class="img-rounded">-->
         <p class="text-info text-center">Busca tu oferta mas cercana</p>
-        <p class="text-primary">lkdfklgskfhgdsbldskhg�dshgjfsgdhs</p>
+
+
       </div>
     </header>
     <br><br>
@@ -82,10 +90,41 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Imagenes de bares -->
             <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="panel panel-default text-center">
-                    <a href="#">Inicio de sesion<span class="glyphicon glyphicon-minus"></span></a>
-                    <a href="html/formularioEmpresa.html">Registro</a>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <h3 class="panel-title text-left">Empresas destacadas</h3>
+
+                      <span class="input-group-btn">
+                          <a class="btn btn-primary" href="#" role="button">
+                              <span class="glyphicon glyphicon-chevron-left"></span>
+                          </a>
+
+                          <a class="btn btn-primary" href="#" role="button">
+                              <span class="glyphicon glyphicon-chevron-right"></span>
+                          </a>
+                      </span>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 col-lg-8">
+                            <a href="#" class="thumbnail">
+                                <img src="imagenes/barSantos.jpg" alt="Bar Santos" >
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 col-lg-8">
+                            <a href="#" class="thumbnail">
+                                <img src="imagenes/pataNegra.jpg" alt="Bar Pata Negra">
+                            </a>
+                        </div>
+                    </div>
+
+                  </div>
+
                 </div>
             </div>
         </div>
@@ -95,34 +134,12 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-lg-8">
-                Empresas de retauracion destacadas
-            </div>
             <div class="col-xs-12 col-lg-4">
-                <span class="input-group-btn">
-                    <a class="btn btn-primary" href="#" role="button">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
 
-                    <a class="btn btn-primary" href="#" role="button">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </span>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <a href="#" class="thumbnail">
-                    <img src="imagenes/barSantos.jpg" alt="Bar Santos" >
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <a href="#" class="thumbnail">
-                    <img src="imagenes/pataNegra.jpg" alt="Bar Pata Negra">
-                </a>
-            </div>
-        </div>
+
 
 
     </div>
@@ -136,7 +153,7 @@
     <div class="container">
       <div class="panel-footer">
         Panel para pie de pagina
-         
+
       </div>
     </div>
   </footer>
