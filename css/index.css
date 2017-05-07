@@ -1,21 +1,24 @@
 
+/* No se usa */
 .recuadroBlanco
 {
   width: auto;
   height: 110px;
-
-
 }
+/**************************/
+
 
 /* No va */
 .redondeadoButton {
   border-radius: 4px;
 }
 
-/*   */
+/*********/
+
+/** CSS general **/
 
 .jumbotron {
-    background-color: white;
+    background-color: ;
 }
 
 /* Apartado de login */
@@ -32,11 +35,14 @@
 /* Ajuste padding cabecera */
 .noPaddingLogin {
   padding-left: 0px;
-
 }
 
 .noPaddingDirectorio {
   padding-right: 0px;
+}
+
+.panelLogin {
+  border-radius: 0px;
 }
 
 /* Fin padding cabecera */

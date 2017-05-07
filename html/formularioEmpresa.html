@@ -11,12 +11,12 @@
 
 </head>
 <body>
-
+    <!-- Arbol de navegacion -->
     <header>
         <ol class="breadcrumb">
             <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
             <!-- <li><a href="#">Library</a></li>-->
-            <li class="active">Nuevo usuario</li>
+            <li class="active">Empresa</li>
         </ol>
 
 
@@ -25,6 +25,15 @@
     <section>
 
         <div class="container">
+
+          <!-- Logotipo -->
+          <div class="jumbotron">
+            <p class="text-info text-center">Busca tu oferta mas cercana</p>
+
+
+          </div>
+          <!-- Fin logotipo -->
+
             <div class="recuadroBlanco">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -33,27 +42,18 @@
                 <div class="input-group">
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="nombre" type="text" class="form-control inputForm" placeholder="Nombre contacto" />
+                            <div class="col-xs-5 col-lg-5">
+                                <input id="nombre" type="text" class="form-control inputForm" placeholder="Usuario" />
                             </div>
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="direccion" type="text" class="form-control inputForm" placeholder="Direccion" />
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="email" type="email" class="form-control inputForm" placeholder="Email" />    
-                            </div>
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="telefono" type="tel" class="form-control inputForm" placeholder="Telefono" />
+                            <div class="col-xs-5 col-lg-5">
+                                <input id="contrasena" type="password" class="form-control inputForm" placeholder="Contraseña" />
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="col-xs-12 col-lg-7">
-                                <button id="btnEnviar" class="btn btn-primary inputForm">Enviar</button>
-                                <button id="btnBorrar" class="btn btn-danger inputForm">Borrar</button>
+                            <div class="col-xs-12 col-lg-12">
+                                <a id="btnEnviar" class="btn btn-primary inputForm" role="button">Enviar</a>
+                                <a id="btnBorrar" class="btn btn-danger inputForm" role="button">Borrar</a>
+                                <a id="btnAlta" href="altaEmpresa.html" class="btn btn-info inputForm" role="button">Alta</a>
                             </div>
                         </div>
                     </div>
