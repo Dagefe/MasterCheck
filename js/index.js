@@ -23,19 +23,19 @@ $(document).ready(function () {
 
 //Mostrar u ocultar el menu de busqueda avanzada
   $('#btnBusquedaAvanzada').on("click", function() {
-    if($(this).hasClass('glyphicon-chevron-down'))
+    if($(this).find('span').hasClass('glyphicon-chevron-down'))
     {
       $('#busquedaAvanzada').css({'display': 'block'});
       $('#busquedaAvanzada').slideDown();
-      $(this).removeClass('glyphicon-chevron-down');
-      $(this).addClass('glyphicon-chevron-up');
+      $(this).find('span').removeClass('glyphicon-chevron-down');
+      $(this).find('span').addClass('glyphicon-chevron-up');
     }
     else {
       {
         $('#busquedaAvanzada').css({'display': 'none'});
         $('#busquedaAvanzada').slideUp();
-        $(this).removeClass('glyphicon-chevron-up');
-        $(this).addClass('glyphicon-chevron-down');
+        $(this).find('span').removeClass('glyphicon-chevron-up');
+        $(this).find('span').addClass('glyphicon-chevron-down');
       }
     }
   });

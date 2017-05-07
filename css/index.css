@@ -12,6 +12,8 @@
   border-radius: 4px;
 }
 
+/*   */
+
 .jumbotron {
     background-color: white;
 }
@@ -38,3 +40,40 @@
 }
 
 /* Fin padding cabecera */
+
+/* Padding busqueda avanzada */
+
+.paddingBusquedaAvanzada {
+  padding-top: 15px;
+}
+
+/************** FIN ESTILOS ************/
+
+/** Medias queries **/
+
+@media screen and (min-width: 768px) {
+
+  .paddingBusquedaAvanzada {
+    padding-top: 0px;;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .row {
+    margin-left: 0px;;
+  }
+
+/** Medias queries con valores especificos **/
+
+@media only screen and (max-width: 360px) {
+
+  .col-xs-offset-2 {
+    margin-left: 10.667%;
+}
+
+@media only screen and (max-width: 320px) {
+
+  .col-xs-offset-2 {
+    margin-left: 5.667%;
+}
