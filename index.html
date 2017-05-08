@@ -19,14 +19,14 @@
     <header>
       <!-- Cabecera de la pagina -->
       <div class="row">
-        <div class="col-xs-8 col-md-6 col-lg-9 noPaddingDirectorio">
+        <div class="col-xs-3 col-md-6 col-lg-9 noPaddingDirectorio">
           <ol class="breadcrumb panelLogin">
             <li class="glyphicon glyphicon-home"><a href="index.html">  Inicio</a></li>
             <!-- <li><a href="#">Nuevo usuario</a></li>-->
             <!-- <li class="active">Data</li>-->
           </ol>
         </div>
-        <div class="col-xs-4 col-md-6 col-lg-3 noPaddingLogin">
+        <div class="col-xs-9 col-md-6 col-lg-3 noPaddingLogin">
           <div id="login" class="text-right">
               <a href="html/formularioCliente.html">¿Eres cliente?<span class="glyphicon glyphicon-minus"></span></a>
               <a href="html/formularioEmpresa.html">¿Eres empresa?</a>
@@ -61,6 +61,7 @@
                           <!-- Fila de busqueda siempre visible -->
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8 col-lg-8">
+                                  <form method="post" id="formBusqueda">
                                     <div class="input-group">
                                         <div class="input-group-btn">
                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -73,17 +74,20 @@
                                                 <li><a href="#">Ciudad  <span class="glyphicon glyphicon-search"></span></a></li>
                                             </ul>
                                           </div>
-                                        <input type="search" class="form-control" placeholder="Introduce tu busqueda">
 
-                                        <div class="input-group-btn">
-                                            <a id="btnBuscar" class="btn btn-primary" href="#" role="button">
+                                          <input id="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
+
+                                          <div class="input-group-btn">
+                                            <a id="btnBuscar" type="submit" class="btn btn-primary" href="" role="button">
                                                 <span class="glyphicon glyphicon-search"></span>
                                             </a>
                                             <!-- <button id="btnBuscar" type="button" class="btn btn-primary">
                                               <span class="glyphicon glyphicon-search"></span>
                                             </button>-->
-                                        </div>
+                                          </div>
+
                                     </div>
+                                      </form>
                                 </div>
                                 <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2 paddingBusquedaAvanzada">
                                     <div class="input-group">

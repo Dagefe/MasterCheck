@@ -74,12 +74,20 @@
 
 @media only screen and (max-width: 360px) {
 
-  .col-xs-offset-2 {
-    margin-left: 10.667%;
+.col-xs-offset-2 {
+  margin-left: 10.667%;
+}
+
+#login {
+  padding: 14px;
 }
 
 @media only screen and (max-width: 320px) {
 
-  .col-xs-offset-2 {
+.col-xs-offset-2 {
     margin-left: 5.667%;
+}
+
+#login {
+  margin-bottom: 20px;
 }
