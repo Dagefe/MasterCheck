@@ -17,8 +17,22 @@
 
 /** CSS general **/
 
+hr {
+  width: : 4px;
+}
+
+.colorTitulo {
+  color: #b94000;
+  padding-left: 20px;
+  font-family: lao mn;
+  font-weight: bolder;
+  font-size: 10px;
+}
 .jumbotron {
-    background-color: ;
+    background-color: white;
+    padding-top: 15px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 /* Apartado de login */

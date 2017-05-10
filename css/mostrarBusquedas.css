@@ -1,0 +1,45 @@
+.lnr {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.05em;
+}
+
+.lnr-linearicons {
+  color: #0F52BA;
+  font-size: 40px;
+}
+
+
+
+
+.container {
+  background-color: red;
+}
+
+.containerCabecera {
+  padding: 15px;
+}
+
+.containerFilter {
+  background-color: lightblue;
+  width: ;
+  height: ;
+  padding: 5px;
+  margin: 5px;
+}
+
+.containerSearch {
+  background-color: lightgreen;
+  width: ;
+  height: ;
+  padding: 5px;
+  margin: 5px;
+}
+
+.listaProductos {
+  padding: 5px 5px 10px 20px;
+  border-bottom: 1px solid #cacaca;
+
+}

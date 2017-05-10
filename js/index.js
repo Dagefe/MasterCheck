@@ -6,17 +6,7 @@ $(document).ready(function () {
   $('#btnBuscar').on("click", function() {
 
 
-    $.post("../html/mostrarBusquedas.php",$("#campoBusqueda").val(),function(res){
-
-      if(res == 1)
-      {
-        alert("exito");
-      }
-      else
-      {
-        alert("fracaso");
-      }
-      });
+  
   });
 
 

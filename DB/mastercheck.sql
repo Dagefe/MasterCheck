@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-05-2017 a las 18:52:43
+-- Tiempo de generación: 10-05-2017 a las 19:51:48
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -28,18 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Clientes` (
   `ID` int(11) NOT NULL,
-  `Nombre` varchar(500) NOT NULL,
-  `Direccion` varchar(500) NOT NULL,
-  `CP` int(11) NOT NULL,
-  `Ciudad` varchar(500) NOT NULL
+  `Nombre` varchar(100) NOT NULL,
+  `Apellidos` varchar(500) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Contraseña` varchar(100) NOT NULL,
+  `Movil` int(8) NOT NULL,
+  `Provincia` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Clientes`
 --
 
-INSERT INTO `Clientes` (`ID`, `Nombre`, `Direccion`, `CP`, `Ciudad`) VALUES
-(1, 'Daniel', 'mi casa', 14014, 'cordoba');
+INSERT INTO `Clientes` (`ID`, `Nombre`, `Apellidos`, `Email`, `Contraseña`, `Movil`, `Provincia`) VALUES
+(1, 'Daniel', 'mi casa', '14014', 'cordoba', 0, '');
 
 --
 -- Índices para tablas volcadas
