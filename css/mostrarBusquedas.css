@@ -18,28 +18,84 @@
   background-color: red;
 }
 
+/* Estilos para contenedor cabecera */
 .containerCabecera {
   padding: 15px;
 }
 
+/*****************************************/
+
+/* EStilos para contenedor de filtros */
 .containerFilter {
-  background-color: lightblue;
+  background-color: white;
   width: ;
   height: ;
   padding: 5px;
   margin: 5px;
 }
 
+.unstyled, .listing {
+	margin-top: 0;
+	margin-left: 0;
+	padding: 0;
+	list-style: none;
+	list-style-image: none;
+
+}
+
+.controlList {
+    line-height: 1.2;
+}
+
+/*
+.control-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+*/
+
+.controlList-label {
+  line-height: 2.1;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.separador {
+  border-bottom: 1px solid #777;
+  border-bottom-width: medium;
+
+}
+
+.lineaFiltro {
+  padding-left: 15px;
+}
+
+/******************************************/
+
+/* Estilos para contenedor de busqueda */
+
 .containerSearch {
-  background-color: lightgreen;
+  background-color: white;
   width: ;
   height: ;
   padding: 5px;
   margin: 5px;
+  padding-left: 40px;
+  padding-right: 20px;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+
+/********************************************/
+
+/* Estilos para los productos listados */
 
 .listaProductos {
   padding: 5px 5px 10px 20px;
   border-bottom: 1px solid #cacaca;
-
+  margin-left: -10px;
 }
+
+/********************************************/
