@@ -43,13 +43,13 @@
       <div class="row">
 
 
-            <div class="col-xs-3">
+            <div class="col-xs-3 col col-lg-p">
               <div class="containerFilter">
 
                 <ul class="unstyled">
                   <li class="separador" data-sort-index="0">
                     <label class="controlList-label">
-                      <input class="control-input" name="cuisine" value="all" checked="" type="checkbox">
+                      <input class="control-input checkboxTick" name="cuisine" value="all" checked="" type="checkbox">
                       <span class="lineaFiltro" data-test-cuisine="Todos"></span>
                       Todos (<span data-cuisine-total="">4</span>)
                     </label>
@@ -57,17 +57,26 @@
 
                   <li class="" data-test="cuisineFilterItem" data-seo-name="americana" data-cuisine-filter-item="" data-sort-index="1">
                     <label class="controlList-label">
-
-                      <input class="control-input" name="cuisine" value="americana" type="checkbox">
-
+                      <input class="control-input checkboxTick" name="cuisine" value="americana" type="checkbox">
                         <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
-                        Comida Americana (<span data-cuisine-total="">1</span>)
+                        Bar (<span data-cuisine-total="">1</span>)
                       </label>
                           <!--
                           <a class="is-hidden is-shown--noJS" href="/area/28240-hoyo-de-manzanares/americana/" data-test="cuisineFilterTitle">
                               Comida Americana (1)
                           </a>
                           -->
+                      <label class="controlList-label">
+                        <input class="control-input checkboxTick" name="cuisine" value="americana" type="checkbox">
+                          <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
+                          Restaurante (<span data-cuisine-total="">1</span>)
+                        </label>
+                            <!--
+                            <a class="is-hidden is-shown--noJS" href="/area/28240-hoyo-de-manzanares/americana/" data-test="cuisineFilterTitle">
+                                Comida Americana (1)
+                            </a>
+                            -->
+
                     </li>
 
 

@@ -15,7 +15,7 @@
 
 
 .container {
-  background-color: red;
+  background-color: chocolate;
 }
 
 /* Estilos para contenedor cabecera */
@@ -66,6 +66,12 @@
   border-bottom-width: medium;
 
 }
+
+.checkboxTick {
+  background-color: #b94000;
+  border: 3px solid #b94000;
+}
+
 
 .lineaFiltro {
   padding-left: 15px;
