@@ -1,10 +1,29 @@
 <?php
 
+$mysqli = new mysqli("localhost", "dagefe", "justicia", "mastercheck");
+
+if ($mysqli->connect_errno) {
+    printf("Falló la conexión: %s\n", $mysqli->connect_error);
+    exit();
+}
 
   $busqueda = $_POST['campoBusqueda'];
 
+
+
+
+
+  /* Consultas de selección que devuelven un conjunto de resultados */
+  if ($resultado = $mysqli->query("SELECT * FROM Ofertas  /*WHERE nombre = $busqueda*/ LIMIT 10")) {
+
+      printf("La selección devolvió %d filas.\n", $resultado->nombre);
+
+      /* liberar el conjunto de resultados */
+      $resultado->close();
+  }
   //echo ("La busqueda es: " . $busqueda . "mia");
 
+  $mysqli->close();
  ?>
 
 
@@ -89,7 +108,7 @@
               <div class="containerSearch">
                 <div class="row">
                   <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
+                    <?php echo ("La busqueda es: " . $resultado->nombre . "mia"); ?>
                   </div>
                 </div>
                 <div class="row">
@@ -132,6 +151,8 @@
     <!-- <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script> -->
     <script src="../fonts/glyphicons-halflings-regular.eot"></script>
     <script src="../fontello/css/iconset.css"></script>
+
+    <?php echo "var_dump($resultado->id_oferta)"; ?>
 
   </body>
 </html>
