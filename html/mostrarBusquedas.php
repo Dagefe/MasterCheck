@@ -33,7 +33,8 @@
       <div class="row">
         <div class="containerCabecera">
 
-          Container de la cabecera
+
+
         </div>
 
 
@@ -45,9 +46,32 @@
             <div class="col-xs-3">
               <div class="containerFilter">
 
+                <ul class="unstyled">
+                  <li class="separador" data-sort-index="0">
+                    <label class="controlList-label">
+                      <input class="control-input" name="cuisine" value="all" checked="" type="checkbox">
+                      <span class="lineaFiltro" data-test-cuisine="Todos"></span>
+                      Todos (<span data-cuisine-total="">4</span>)
+                    </label>
+                  </li>
 
-                <span></span>Aqui van los filtros de busqueda
-                <i class="icon-glass"></i>
+                  <li class="" data-test="cuisineFilterItem" data-seo-name="americana" data-cuisine-filter-item="" data-sort-index="1">
+                    <label class="controlList-label">
+
+                      <input class="control-input" name="cuisine" value="americana" type="checkbox">
+
+                        <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
+                        Comida Americana (<span data-cuisine-total="">1</span>)
+                      </label>
+                          <!--
+                          <a class="is-hidden is-shown--noJS" href="/area/28240-hoyo-de-manzanares/americana/" data-test="cuisineFilterTitle">
+                              Comida Americana (1)
+                          </a>
+                          -->
+                    </li>
+
+
+                </ul>
 
               </div>
             </div>
@@ -55,6 +79,19 @@
             <div class="col-xs-8">
               <div class="containerSearch">
                 <div class="row">
+                  <div class="col-xs-12 listaProductos">
+                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 listaProductos">
+                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 listaProductos">
+                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
+                  </div>
                   <div class="col-xs-12 listaProductos">
                     <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
                   </div>
