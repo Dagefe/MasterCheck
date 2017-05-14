@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "dagefe", "justicia", "mastercheck");
+$mysqli = new mysqli("127.0.0.1", "dagefe", "justicia", "mastercheck");
 
 if ($mysqli->connect_errno) {
     printf("Falló la conexión: %s\n", $mysqli->connect_error);
@@ -10,20 +10,17 @@ if ($mysqli->connect_errno) {
   $busqueda = $_POST['campoBusqueda'];
 
 
-
-
-
   /* Consultas de selección que devuelven un conjunto de resultados */
-  if ($resultado = $mysqli->query("SELECT * FROM Ofertas  /*WHERE nombre = $busqueda*/ LIMIT 10")) {
+  if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = $busqueda")) {
 
 
-      printf("La selección devolvió %d filas.\n", $resultado->nombre);
-
+      printf("La selección devolvió %d filas.\n", $resultado->num_rows);
+      $actor = $resultado->fetch_assoc();
       /* liberar el conjunto de resultados */
       $resultado->close();
   }
   //echo ("La busqueda es: " . $busqueda . "mia");
-  $actor = $resultado->fetch_assoc();
+
   var_dump($actor);
   $mysqli->close();
  ?>
@@ -110,7 +107,7 @@ if ($mysqli->connect_errno) {
               <div class="containerSearch">
                 <div class="row">
                   <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $resultado->nombre . "mia"); ?>
+                    <?php echo ("La busqueda es: " . $actor['nombre'] . "mia"); ?>
                   </div>
                 </div>
                 <div class="row">
