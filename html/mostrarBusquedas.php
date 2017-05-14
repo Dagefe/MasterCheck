@@ -16,13 +16,15 @@ if ($mysqli->connect_errno) {
   /* Consultas de selección que devuelven un conjunto de resultados */
   if ($resultado = $mysqli->query("SELECT * FROM Ofertas  /*WHERE nombre = $busqueda*/ LIMIT 10")) {
 
+
       printf("La selección devolvió %d filas.\n", $resultado->nombre);
 
       /* liberar el conjunto de resultados */
       $resultado->close();
   }
   //echo ("La busqueda es: " . $busqueda . "mia");
-
+  $actor = $resultado->fetch_assoc();
+  var_dump($actor);
   $mysqli->close();
  ?>
 
@@ -152,7 +154,7 @@ if ($mysqli->connect_errno) {
     <script src="../fonts/glyphicons-halflings-regular.eot"></script>
     <script src="../fontello/css/iconset.css"></script>
 
-    <?php echo "var_dump($resultado->id_oferta)"; ?>
+    <?php echo "var_dump($resultado->fetch_assoc())"; ?>
 
   </body>
 </html>
