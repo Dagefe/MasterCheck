@@ -1,27 +1,33 @@
 <?php
 
-$mysqli = new mysqli("127.0.0.1", "dagefe", "justicia", "mastercheck");
-
-if ($mysqli->connect_errno) {
-    printf("Falló la conexión: %s\n", $mysqli->connect_error);
-    exit();
-}
-
   $busqueda = $_POST['campoBusqueda'];
+
+  $tipo = $_POST['tipo'];
+
+
+
+
+  printf ($tipo);
+
+  $mysqli = new mysqli("127.0.0.1", "dagefe", "justicia", "mastercheck");
+
+  if ($mysqli->connect_errno) {
+      printf("Falló la conexión: %s\n", $mysqli->connect_error);
+      exit();
+  }
+
+
 
 
   /* Consultas de selección que devuelven un conjunto de resultados */
-  if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = $busqueda")) {
+  if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = '$busqueda'")) {
 
 
       printf("La selección devolvió %d filas.\n", $resultado->num_rows);
-      $actor = $resultado->fetch_assoc();
+      $oferta = $resultado->fetch_assoc();
       /* liberar el conjunto de resultados */
       $resultado->close();
   }
-  //echo ("La busqueda es: " . $busqueda . "mia");
-
-  var_dump($actor);
   $mysqli->close();
  ?>
 
@@ -107,7 +113,23 @@ if ($mysqli->connect_errno) {
               <div class="containerSearch">
                 <div class="row">
                   <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $actor['nombre'] . "mia"); ?>
+
+                    <div class="col-xs-2 paddingImagen">
+                      <img class="img-thumbnail" src="../imagenes/naru-torrelodones-escalado.jpg">
+                    </div>
+
+                    <div class="col-xs-7 separadorLateral">
+                      <h3 class="tituloOferta"><?php echo ($oferta['nombre']); ?></h3>
+                      <p class="infoText"><strong>Descripcion:</strong> <?php echo ($oferta['descripcion']); ?></p>
+                      <p class="infoText"><strong>Precio:</strong> <?php echo ($oferta['precio']); ?> euros</p>
+                    </div>
+
+                    <div class="col-xs-3">
+                      <div class="paddingFecha">
+                        <span>Inicio: <?php echo ($oferta['fecha_inicio']); ?> </span>
+                      </div>
+                      <span>Fin:</span> <?php echo ($oferta['fecha_fin']); ?>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -147,11 +169,12 @@ if ($mysqli->connect_errno) {
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/mostrarBusquedas.js"></script>
+    <script src="../js/index.js"></script>
     <!-- <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script> -->
     <script src="../fonts/glyphicons-halflings-regular.eot"></script>
     <script src="../fontello/css/iconset.css"></script>
 
-    <?php echo "var_dump($resultado->fetch_assoc())"; ?>
+
 
   </body>
 </html>

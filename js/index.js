@@ -6,7 +6,7 @@ $(document).ready(function () {
   $('#btnBuscar').on("click", function() {
 
 
-  
+
   });
 
 
@@ -31,6 +31,7 @@ $(document).ready(function () {
       $('#busquedaAvanzada').slideDown();
       $(this).find('span').removeClass('glyphicon-chevron-down');
       $(this).find('span').addClass('glyphicon-chevron-up');
+
     }
     else {
       {
@@ -39,6 +40,17 @@ $(document).ready(function () {
         $(this).find('span').removeClass('glyphicon-chevron-up');
         $(this).find('span').addClass('glyphicon-chevron-down');
       }
+    }
+  });
+
+  $('#bar').on("click", function() {
+    if($('#bar').prop('checked') == true)
+    {
+      alert("Marcado bar");
+      //var data = "bar";
+      $.post("../html/mostrarBusquedas.php", { tipo: "bar" }, function() {
+        alert("Datos enviados");
+      });
     }
   });
 

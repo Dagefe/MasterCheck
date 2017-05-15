@@ -50,6 +50,11 @@ hr {
   padding-left: 0px;
 }
 
+#login {
+  padding-bottom: 15px;
+  background-color: #f5f5f5;
+}
+
 .noPaddingDirectorio {
   padding-right: 0px;
 }
