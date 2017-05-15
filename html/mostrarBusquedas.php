@@ -2,12 +2,15 @@
 
   $busqueda = $_POST['campoBusqueda'];
 
-  $tipo = $_POST['tipo'];
+  if (isset($_POST['tipo']) && $_POST['tipo'] == "bar")
+  {
+    $tipo = "bar";
+  }
+  else if (isset($_POST['tipo']) && $_POST['tipo'] == "rest")
+  {
+    $tipo = "restaurante";
+  }
 
-
-
-
-  printf ($tipo);
 
   $mysqli = new mysqli("127.0.0.1", "dagefe", "justicia", "mastercheck");
 
@@ -20,7 +23,7 @@
 
 
   /* Consultas de selección que devuelven un conjunto de resultados */
-  if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = '$busqueda'")) {
+  if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = '$busqueda' and tipo = '$tipo'")) {
 
 
       printf("La selección devolvió %d filas.\n", $resultado->num_rows);
@@ -65,8 +68,6 @@
       </div>
 
       <div class="row">
-
-
             <div class="col-xs-3 col col-lg-p">
               <div class="containerFilter">
 
