@@ -1,5 +1,7 @@
 <?php
 
+  include_once ("conexion.php");
+
   $busqueda = $_POST['campoBusqueda'];
 
   if (isset($_POST['tipo']) && $_POST['tipo'] == "bar")
@@ -12,7 +14,7 @@
   }
 
 
-  $mysqli = new mysqli("127.0.0.1", "dagefe", "justicia", "mastercheck");
+  $mysqli = new mysqli("127.0.0.1", $user, $pass, $base_datos);
 
   if ($mysqli->connect_errno) {
       printf("Falló la conexión: %s\n", $mysqli->connect_error);
