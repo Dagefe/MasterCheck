@@ -21,7 +21,14 @@ hr {
   width: : 4px;
 }
 
+.panel-primary > .panel-heading {
+  background-color: chocolate !important;
+  border-color: chocolate !important;
+}
 
+.panel-primary {
+  border-color: chocolate !important;
+}
 
 .colorTitulo {
   color: #b94000;
