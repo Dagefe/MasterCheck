@@ -35,13 +35,13 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12 col-lg-10">
-                                <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" />
+                                <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
                             </div>
                             <div class="col-xs-12 col-lg-10">
-                                <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" />
+                                <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" required />
                             </div>
                             <div class="col-xs-12 col-lg-10">
-                                <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar Contraseña*" />
+                                <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar Contraseña*" required />
                             </div>
                         </div>
                     </div>
@@ -55,10 +55,10 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12 col-lg-10">
-                                <input id="nombre" type="text" name="name" class="form-control inputForm" placeholder="Nombre*" />
+                                <input id="nombre" type="text" name="name" class="form-control inputForm" placeholder="Nombre*" required />
                             </div>
                             <div class="col-xs-12 col-lg-10">
-                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" />
+                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />
                             </div>
                             <div class="col-xs-12 col-lg-10">
                                 <input id="secapel" type="text" name="secondname" class="form-control inputForm" placeholder="2º Apellido" />
@@ -107,18 +107,26 @@
 
 <?php
     if(@$_POST['enviar']){
+        //Comprobamos que los input requeridos son correctos
         if ($_POST['email'] != "" && isset($_POST['email']) && $_POST['pass'] != "" && isset($_POST['pass']) && $_POST['repass'] != "" && isset($_POST['repass']) && $_POST['name'] != "" && isset($_POST['name']) && $_POST['surname'] != "" && isset($_POST['surname'])){
-            if ($_POST['pass'] === $_POST['repass']){
+            //Comprobamos que las contraseñas coinciden
+            if ($_POST['pass'] == $_POST['repass']){
                 // Encriptamos la contraseña como sha1 y como doble encriptacion elegiremos MasteRChecK que estara alojado en un archivo externo para aumentar la seguridad
-                $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
                 $handle = fopen('/clavex.txt', "r");
                 $clavex = fread($handle, filesize($handle));
                 fclose($handle);
                 $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
+                // Juntamos los apellidos
+                $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
+                //Nos conectamos a la base de datos y a la tabla elegida
                 $mysqli = new mysqli('localhost', 'root', '', 'mastercheck');
-                $res = $mysqli->query("INSERT INTO clientes(nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email']) . "', '" . $clave_has . "', '" . $_POST['tel']) . "', '" . $_POST['fecnac']) ."', '" . $_POST['town']) . "')";
+                //Query para insertar los valores
+                $res = $mysqli->query("INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')");
+                // Cerramos la conexion
                 mysqli_close($mysqli);
             }
+            else echo "Las contraseñas no coinciden";
         }
+        else echo "Tienes que introducir todos los datos marcados con un asterisco, gracias.";
     }
 ?>
