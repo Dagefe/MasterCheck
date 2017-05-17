@@ -30,6 +30,16 @@ hr {
   border-color: chocolate !important;
 }
 
+.containerImage {
+  background-color: white;
+  width: ;
+  height: ;
+  padding: 5px;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .colorTitulo {
   color: #b94000;
   padding-left: 20px;
@@ -80,6 +90,19 @@ hr {
 }
 
 /************** FIN ESTILOS ************/
+
+/* Estilos para el display oculto */
+.paddingOculto {
+  padding-top: 15px;
+}
+
+.paddingOcultoFondo {
+  background-color: white;
+}
+
+/************** fin estilos ************/
+
+
 
 /** Medias queries **/
 

@@ -31,11 +31,13 @@ $(document).ready(function () {
       $('#busquedaAvanzada').slideDown();
       $(this).find('span').removeClass('glyphicon-chevron-down');
       $(this).find('span').addClass('glyphicon-chevron-up');
-      
+
 
     }
     else {
       {
+        $('#bar').prop('checked','');
+        $('#restaurante').prop('checked','');
         $('#busquedaAvanzada').css({'display': 'none'});
         $('#busquedaAvanzada').slideUp();
         $(this).find('span').removeClass('glyphicon-chevron-up');

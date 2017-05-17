@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/index.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
   <!-- To insert the icon: -->
-  <link type="text/css" rel="stylesheet" href="css/iconset.css" />
+  <link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.css" />
 
 </head>
 
@@ -110,18 +110,14 @@
 
                 <!-- Fila de busqueda avanzada visible al activar -->
                 <div id="busquedaAvanzada" class="row" style="display:none">
-                  <div class="col-xs-12 col-lg-2 col-lg-offset-1">
-                    <div class="input-group-btn">
-                      <span class="input-group-addon">
-                                    <span class="icon-restaurant" aria-hidden="true"></span>
+                  <div class="col-xs-12 col-lg-2">
+                    <div class="input-group-btn paddingOculto">
+                      <span class="input-group-addon paddingOcultoFondo">
+                                    <span class="fa fa-cutlery" aria-hidden="true"></span>
                       <input id="restaurante" name="tipo" type="checkbox" value="rest">
                       </span>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-lg-2 col-lg-offset-1">
-                    <div class="input-group-btn">
-                      <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                      <span class="input-group-addon paddingOcultoFondo">
+                                    <span class="fa fa-glass" aria-hidden="true"></span>
                       <input id="bar" name="tipo" type="checkbox" value="bar">
                       </span>
                     </div>
@@ -140,31 +136,40 @@
               <h3 class="panel-title text-left">Empresas destacadas</h3>
 
               <span class="input-group-btn">
-                          <a class="btn btn-primary" href="#" role="button">
-                              <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-
-              <a class="btn btn-primary" href="#" role="button">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
+                <!--
+                <a class="btn btn-primary" href="#" role="button">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              -->
               </span>
             </div>
             <div class="panel-body">
-              <div class="row">
-                <div class="col-xs-6 col-md-6 col-lg-8">
-                  <a href="#" class="thumbnail">
-                    <img id="santos" src="imagenes/barSantos.jpg" onclick="aumentarImg()" alt="Bar Santos">
-                  </a>
+              <div class="containerImage">
+                <div class="row">
+                  <div class="col-xs-6 col-md-6 col-lg-8">
+                    <a href="#" class="thumbnail">
+                      <img id="santos" src="imagenes/barSantos.jpg" onclick="aumentarImg()" alt="Bar Santos">
+                    </a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-md-6 col-lg-8">
+                    <a href="#" class="thumbnail">
+                      <img src="imagenes/pataNegra.jpg" alt="Bar Pata Negra">
+                    </a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-md-6 col-lg-8">
+                    <a href="#" class="thumbnail">
+                      <img src="imagenes/naru.jpg" alt="Bar Naru">
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xs-6 col-md-6 col-lg-8">
-                  <a href="#" class="thumbnail">
-                    <img src="imagenes/pataNegra.jpg" alt="Bar Pata Negra">
-                  </a>
-                </div>
-              </div>
-
             </div>
 
           </div>
