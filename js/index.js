@@ -31,6 +31,7 @@ $(document).ready(function () {
       $('#busquedaAvanzada').slideDown();
       $(this).find('span').removeClass('glyphicon-chevron-down');
       $(this).find('span').addClass('glyphicon-chevron-up');
+      
 
     }
     else {
@@ -42,7 +43,7 @@ $(document).ready(function () {
       }
     }
   });
-
+/*
   $('#bar').on("click", function() {
     if($('#bar').prop('checked') == true)
     {
@@ -53,7 +54,7 @@ $(document).ready(function () {
       });
     }
   });
-
+*/
   function aumentarImg()
   {
     alert("Agrandar");

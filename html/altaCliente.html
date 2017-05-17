@@ -26,40 +26,63 @@
 
         <div class="container">
             <div class="recuadroBlanco">
+            <form method="post" action="altaCliente.html">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class=" panel-title text-center">Introducion de datos</h3>
+                    <h3 class=" panel-title text-center">Datos de acceso</h3>
                 </div>
                 <div class="input-group">
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="nombre" type="text" class="form-control inputForm" placeholder="Usuario" />
-                            </div>
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="contrasena" type="password" class="form-control inputForm" placeholder="Contraseña" />
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="email" type="email" class="form-control inputForm" placeholder="Email" />
-                            </div>
-                            <div class="col-xs-12 col-lg-5">
-                                <input id="telefono" type="tel" class="form-control inputForm" placeholder="Telefono" />
-                            </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-xs-12 col-lg-10">
-                                <button id="btnEnviar" class="btn btn-primary inputForm">Enviar</button>
-                                <button id="btnBorrar" class="btn btn-danger inputForm">Borrar</button>
-                                <button id="btnAlta" class="btn btn-info inputForm">Alta</button>
+                                <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" required />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar Contraseña*" required />
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class=" panel-title text-center">Datos de contacto</h3>
+                </div>
+                <div class="input-group">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="nombre" type="text" name="name" class="form-control inputForm" placeholder="Nombre*" required />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="secapel" type="text" name="secondname" class="form-control inputForm" placeholder="2º Apellido" />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="town" type="text" name="town" class="form-control inputForm" placeholder="Poblacion" />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="movil" type="text" name="tel" class="form-control inputForm" placeholder="Movil" />
+                            </div>
+                            <div class="col-xs-12 col-lg-10">
+                                <input id="fechnac" type="text" name="fecnac" class="form-control inputForm" placeholder="Fecha de nacimiento: Ej: 22/12/2000" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-xs-12 col-lg-10">
+                                <input id="btnEnviar" type="submit" name="enviar" class="btn btn-primary inputForm" value="Dar de alta" />
+                                <input id="btnBorrar" type="reset" class="btn btn-danger inputForm" value="Borrar" />
+                        </div>
+                 </div>
             </div>
+            </form>
         </div>
         </div>
 
@@ -81,3 +104,29 @@
     <script src="fonts/glyphicons-halflings-regular.eot"></script>
 </body>
 </html>
+
+<?php
+    if(@$_POST['enviar']){
+        //Comprobamos que los input requeridos son correctos
+        if ($_POST['email'] != "" && isset($_POST['email']) && $_POST['pass'] != "" && isset($_POST['pass']) && $_POST['repass'] != "" && isset($_POST['repass']) && $_POST['name'] != "" && isset($_POST['name']) && $_POST['surname'] != "" && isset($_POST['surname'])){
+            //Comprobamos que las contraseñas coinciden
+            if ($_POST['pass'] == $_POST['repass']){
+                // Encriptamos la contraseña como sha1 y como doble encriptacion elegiremos MasteRChecK que estara alojado en un archivo externo para aumentar la seguridad
+                $handle = fopen('/clavex.txt', "r");
+                $clavex = fread($handle, filesize($handle));
+                fclose($handle);
+                $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
+                // Juntamos los apellidos
+                $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
+                //Nos conectamos a la base de datos y a la tabla elegida
+                $mysqli = new mysqli('localhost', 'root', '', 'mastercheck');
+                //Query para insertar los valores
+                $res = $mysqli->query("INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')");
+                // Cerramos la conexion
+                mysqli_close($mysqli);
+            }
+            else echo "Las contraseñas no coinciden";
+        }
+        else echo "Tienes que introducir todos los datos marcados con un asterisco, gracias.";
+    }
+?>
