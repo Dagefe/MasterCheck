@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-  	<title>Login cliente</title>
-  	
-  	<link rel="stylesheet" href="../css/bootstrap.min.css">
 
+  	<title>Login cliente</title>
+
+  	<link rel="stylesheet" href="../css/bootstrap.min.css">
   	<link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/index.css">
 
 
   	<!--[if lt IE 9]>
@@ -19,14 +19,26 @@
   </head>
 
   <header>
-        
+
   </header>
 
 
   <body>
 
     <section>
-      
+
+      <div class="row">
+        <div class="col-xs-3 col-md-6 col-lg-9 noPaddingDirectorio">
+          <ol class="breadcrumb panelLogin">
+            <li class="glyphicon glyphicon-home"><a href="../index.html">  Inicio</a></li>
+            <li class="active"><a href="#">Login cliente</a></li>
+            <!-- <li class="active">Data</li>-->
+          </ol>
+        </div>
+      </div>
+
+
+
       <!-- Logotipo -->
       <div class="jumbotron">
         <p class="colorTitulo text-left"><a class="atras" href="../index.html">MASTER CHEQUE</a></p>
@@ -35,7 +47,7 @@
     </section>
 
         <div class="container">
-          
+
           <div class="row titulo_box">
 
             <div class="col-xs-12 col-lg-6">
@@ -56,18 +68,18 @@
                   <h5>Iniciar sesion</h5>
 
                   <input type="email" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" id="email" name="email" />
-                    
+
                   <input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="contra" id="contra" name="contra" />
-                    
+
 
                   <a href="ficha_cliente.html"><div class="btn">Acceder</div></a> <!-- End Btn -->
 
-                  <a href="registro_cliente.html"><div id="btn2">Alta nueva</div></a><br> <!-- End Btn2 -->
+                  <a href="alta_cliente.php"><div id="btn2">Alta nueva</div></a><br> <!-- End Btn2 -->
 
-                  <a class="olvido" href="olvido.html">¿Has olvidado tu contraseña?</a>  
+                  <a class="olvido" href="olvido.html">¿Has olvidado tu contraseña?</a>
 
                 </div> <!-- End Box -->
-              
+
               </form>
 
             </div>
@@ -76,9 +88,9 @@
 
         </div>
 
-      
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
-      
+
     <script src="js/login_cliente.js"></script>
 
   </body>

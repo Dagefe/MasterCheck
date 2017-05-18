@@ -7,7 +7,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/formEmpresa.css"/>
+    <link rel="stylesheet" href="../css/alta_cliente.css"/>
 
 </head>
 <body>
@@ -106,6 +106,8 @@
 </html>
 
 <?php
+  include_once('conexion.php')
+
     if(@$_POST['enviar']){
         //Comprobamos que los input requeridos son correctos
         if ($_POST['email'] != "" && isset($_POST['email']) && $_POST['pass'] != "" && isset($_POST['pass']) && $_POST['repass'] != "" && isset($_POST['repass']) && $_POST['name'] != "" && isset($_POST['name']) && $_POST['surname'] != "" && isset($_POST['surname'])){
@@ -119,7 +121,7 @@
                 // Juntamos los apellidos
                 $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
                 //Nos conectamos a la base de datos y a la tabla elegida
-                $mysqli = new mysqli('localhost', 'root', '', 'mastercheck');
+                $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
                 //Query para insertar los valores
                 $res = $mysqli->query("INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')");
                 // Cerramos la conexion

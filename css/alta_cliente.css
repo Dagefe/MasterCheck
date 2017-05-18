@@ -1,0 +1,6 @@
+/** Estilos panel **/
+.panel-primary > .panel-heading {
+
+    background-color: chocolate !important;
+    border-color: chocolate !important;
+}
