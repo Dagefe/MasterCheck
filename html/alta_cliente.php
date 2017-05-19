@@ -30,6 +30,7 @@
         <div class="container">
             <div class="recuadroBlanco">
             <form method="post" action="altaCliente.html">
+            <h1>Alta Particular</h1>
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class=" panel-title text-center">Datos de acceso</h3>
@@ -87,7 +88,7 @@
                                 <input id="btnBorrar" type="reset" class="btn btn-danger inputForm" value="Borrar" />
                         </div>
                  </div>
-            
+                <a href="forgotten_passwd.php">¿Has olvidado tu contraseña?</a>
             </form>
         </div>
         </div>
@@ -129,7 +130,8 @@
                 //Nos conectamos a la base de datos y a la tabla elegida
                 $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
                 //Query para insertar los valores
-                if(!$mysqli->query("INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')")){
+                $query = "INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')";
+                if(!$mysqli->query($query)){
                     //En caso de error lo mostramos
                     echo "Error en: " . $mysqli->error;
                 }
