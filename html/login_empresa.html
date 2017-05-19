@@ -1,85 +1,103 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-  	<title>Login empresa</title>
-  	
-  	<link rel="stylesheet" href="../css/bootstrap.min.css">
 
-  	<link rel="stylesheet" href="../css/login.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Login empresa</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/login_empresa.css">
+  <link rel="stylesheet" href="../css/index.css">
 
 
-  	<!--[if lt IE 9]>
+  <!--[if lt IE 9]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   	<![endif]-->
 
-  </head>
+</head>
 
+<body>
   <header>
-        
+    <!-- Cabecera de la pagina -->
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-lg-12 noPaddingDirectorio">
+        <ol class="breadcrumb panelLogin">
+          <li class="glyphicon glyphicon-home"><a href="../index.html">  Inicio</a></li>
+          <li class="active"><a href="#">Login empresa</a></li>
+          <!-- <li class="active">Data</li>-->
+        </ol>
+      </div>
+    </div>
   </header>
 
 
-  <body>
 
-    <section>
-      
-      <!-- Logotipo -->
-      <div class="jumbotron">
-        <p class="colorTitulo text-left"><a class="atras" href="../index.html">MASTER CHEQUE</a></E</p>
+
+  <section>
+
+    <!-- Logotipo -->
+    <div class="jumbotron">
+      <p class="colorTitulo text-left"><a class="atras" href="../index.html">MASTER CHEQUE</a></p>
         <hr>
-      </div>
-    </section>
+    </div>
+  </section>
 
-        <div class="container">
-          
-          <div class="row titulo_box">
+  <div class="container">
 
-            <div class="col-xs-12 col-lg-6">
+    <div class="row">
 
-              <h4><strong> Bienvenido al área de empresa</strong></h4>
+      <div class="col-xs-12 col-lg-6">
 
-            </div>
-
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Bienvenido al área de cliente</h3>
           </div>
 
-          <div class="row caja">
+          <div class="panel-body">
+            <h5 class="text-center">Iniciar sesion</h5>
+            <form method="post" action="ficha_empresa.html" name="form">
 
-            <div class="col-xs-12 col-lg-6">
+              <div class="input-group ajusteLateral">
+                <input id="email" name="email" type="email" placeholder="email" class="email"
+                      onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
 
-              <form method="post" name="form">
+                <input id="password" name="contra" type="password" placeholder="Contraseña" class="contra"
+                       onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+              </div>
 
-                <div class="box">
-                  <h5>Iniciar sesion</h5>
+              <div class="input-group-btn ajusteLateral separacionTop">
+                <button id="btnAcceder" type="submit" class="btn btn-primary">Acceder</button>
+                <a id="btnAlta" class="btn btn-primary" role="button" href="alta_empresa.php">Alta nueva</a>
+                <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
+              </div>
+              <!--
+                    <a href="ficha_cliente.html">
+                        <div class="btn btn-primary">Acceder</div>
+                    </a>
 
-                  <input type="email" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" id="email" name="email" />
-                    
-                  <input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="contra" id="contra" name="contra" />
-                    
 
-                  <a href="ficha_empresa.html"><div class="btn">Acceder</div></a> <!-- End Btn -->
+                    <a href="alta_cliente.php">
+                        <div id="btn2 btn-primary">Alta nueva</div>
+                    </a><br>
 
-                  <a href="registro_empresa.html"><div id="btn2">Alta nueva</div></a><br> <!-- End Btn2 -->
+                    -->
 
-                  <a class="olvido" href="olvido.html">¿Has olvidado tu contraseña?</a>  
-
-                </div> <!-- End Box -->
-              
-              </form>
-
-            </div>
-
+            </form>
           </div>
-
         </div>
+      </div>
+    </div>
 
-      
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
-      
-    <script src="js/login_cliente.js"></script>
+  </div>
 
-  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+
+  <script src="js/login_empresa.js"></script>
+
+</body>
+
 </html>

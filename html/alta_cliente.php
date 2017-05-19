@@ -29,7 +29,7 @@
 
         <div class="container">
             <div class="recuadroBlanco">
-            <form method="post" action="altaCliente.html">
+            <form method="post" action="alta_cliente.php">
             <h1>Alta Particular</h1>
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -38,57 +38,43 @@
                 <div class="input-group">
                     <div class="panel-body">
                         <div class="row">
-
                             <div class="col-xs-12 col-lg-10">
                                 <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email*" required />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
                                 <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" required />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
                                 <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar Contraseña*" required />
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
+
                 <div class="panel panel-primary">
-                <div class="panel-heading">
+                  <div class="panel-heading">
                     <h3 class=" panel-title text-center">Datos de contacto</h3>
-                </div>
+                  </div>
                 <div class="input-group">
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12 col-lg-10">
                                 <input id="nombre" type="text" name="name" class="form-control inputForm" placeholder="Nombre*" required />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
+                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />                      
                                 <input id="secapel" type="text" name="secondname" class="form-control inputForm" placeholder="2º Apellido" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
                                 <input id="town" type="text" name="town" class="form-control inputForm" placeholder="Poblacion" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
                                 <input id="movil" type="text" name="tel" class="form-control inputForm" placeholder="Movil" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
                                 <input id="fechnac" type="text" name="fecnac" class="form-control inputForm" placeholder="Fecha de nacimiento: Ej: 22/12/2000" />
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
-                <h5><b>*Campos obligatorios</b></h5>
+                <h5><b>Campos obligatorios</b></h5>
                 <div class="row">
-                        <div class="col-xs-12 col-lg-10">
-                                <input id="btnEnviar" type="submit" name="enviar" class="btn btn-primary inputForm" value="Dar de alta" />
-                                <input id="btnBorrar" type="reset" class="btn btn-danger inputForm" value="Borrar" />
-                        </div>
+                  <div class="col-xs-12 col-lg-10">
+                    <button id="btnEnviar" name="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
+                    <a id="btnBorrar" type="reset" class="btn btn-danger" role="button">Borrar</a>
+                    <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
+                  </div>
                  </div>
-                <a href="forgotten_passwd.php">¿Has olvidado tu contraseña?</a>
             </form>
         </div>
         </div>
@@ -143,7 +129,7 @@
                     $_SESION['user'] = $_POST['email'];
                     header('Location: http://localhost/index.php');
                 }
-                
+
             }
             else echo "Las contraseñas no coinciden";
         }

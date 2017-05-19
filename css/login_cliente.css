@@ -1,3 +1,11 @@
+/*** ESTILO CONTENEDOR ***/
+
+.container{
+    margin-left: 27%;
+  }
+
+/*** FIN ***/
+
 /*** ESTILOS PARA LOS BOTONES DE LOGIN ***/
 
 #btnAcceder, #btnAlta, #btnOlvido {
