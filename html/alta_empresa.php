@@ -21,8 +21,6 @@
             <li><a href="login_empresa.html">Empresa</a></li>
             <li class="active">Alta empresa</li>
         </ol>
-
-
     </header>
 
     <section>

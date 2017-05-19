@@ -27,8 +27,7 @@
   /* Consultas de selección que devuelven un conjunto de resultados */
   if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = '$busqueda' and tipo = '$tipo'")) {
 
-
-      printf("La selección devolvió %d filas.\n", $resultado->num_rows);
+      //printf("La selección devolvió %d filas.\n", $resultado->num_rows);
       $oferta = $resultado->fetch_assoc();
       /* liberar el conjunto de resultados */
       $resultado->close();
@@ -49,6 +48,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/mostrarBusquedas.css">
+    <link rel="stylesheet" href="../css/index.css">
 
     <!-- To insert the icon: -->
     <link type="text/css" rel="stylesheet" href="../fontello/css/iconset.css" />
@@ -57,6 +57,19 @@
 
   </head>
   <body>
+    <header>
+    <!-- Arbol de navegacion -->
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12 noPaddingDirectorio">
+          <ol class="breadcrumb panelLogin">
+            <li class="glyphicon glyphicon-home"><a href="../index.html">  Inicio</a></li>
+            <li class="active"><a href="#">Ofertas</a></li>
+            <!-- <li class="active">Data</li>-->
+          </ol>
+        </div>
+      </div>
+    </header>
+    <section>
     <div class="container">
 
       <div class="row">
@@ -166,6 +179,7 @@
 
       </div>
     </div>
+  </section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
