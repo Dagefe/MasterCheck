@@ -1,6 +1,6 @@
 <?php
     session_start();
-?> 
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,7 +18,7 @@
     <header>
         <ol class="breadcrumb">
             <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
-            <li><a href="formularioEmpresa.html">Empresa</a></li>
+            <li><a href="login_empresa.html">Empresa</a></li>
             <li class="active">Alta empresa</li>
         </ol>
 
@@ -168,7 +168,7 @@
                     header('Location: http://localhost/index.php');
                 }
 
-            }  
+            }
             //En el caso de que no coindican las contraseñas
             else echo "Las contraseñas no coindicen";
         }

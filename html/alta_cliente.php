@@ -18,7 +18,7 @@
     <header>
         <ol class="breadcrumb">
             <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
-            <li><a href="formularioCliente.html">Cliente</a></li>
+            <li><a href="login_cliente.html">Cliente</a></li>
             <li class="active">Alta cliente</li>
         </ol>
 
@@ -57,7 +57,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-lg-10">
                                 <input id="nombre" type="text" name="name" class="form-control inputForm" placeholder="Nombre*" required />
-                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />                      
+                                <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />
                                 <input id="secapel" type="text" name="secondname" class="form-control inputForm" placeholder="2º Apellido" />
                                 <input id="town" type="text" name="town" class="form-control inputForm" placeholder="Poblacion" />
                                 <input id="movil" type="text" name="tel" class="form-control inputForm" placeholder="Movil" />
