@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,8 +37,9 @@
                 <div class="input-group">
                     <div class="panel-body">
                         <div class="row">
+
                             <div class="col-xs-12 col-lg-10">
-                                <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+                                <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email*" required />
                             </div>
                             <div class="col-xs-12 col-lg-10">
                                 <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" required />
@@ -75,13 +79,15 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <h5><b>*Campos obligatorios</b></h5>
                 <div class="row">
                         <div class="col-xs-12 col-lg-10">
                                 <input id="btnEnviar" type="submit" name="enviar" class="btn btn-primary inputForm" value="Dar de alta" />
                                 <input id="btnBorrar" type="reset" class="btn btn-danger inputForm" value="Borrar" />
                         </div>
                  </div>
-            </div>
+            
             </form>
         </div>
         </div>
@@ -106,15 +112,15 @@
 </html>
 
 <?php
-  include_once('conexion.php')
+  include_once('conexion.php');
 
     if(@$_POST['enviar']){
         //Comprobamos que los input requeridos son correctos
         if ($_POST['email'] != "" && isset($_POST['email']) && $_POST['pass'] != "" && isset($_POST['pass']) && $_POST['repass'] != "" && isset($_POST['repass']) && $_POST['name'] != "" && isset($_POST['name']) && $_POST['surname'] != "" && isset($_POST['surname'])){
             //Comprobamos que las contraseñas coinciden
             if ($_POST['pass'] == $_POST['repass']){
-                // Encriptamos la contraseña como sha1 y como doble encriptacion elegiremos MasteRChecK que estara alojado en un archivo externo para aumentar la seguridad
-                $handle = fopen('/clavex.txt', "r");
+                // Encriptamos la contraseña como sha1 y como doble encriptacion elegiremos mastercheckk que estara alojado en un archivo externo para aumentar la seguridad
+                $handle = fopen('clavex.txt', "r");
                 $clavex = fread($handle, filesize($handle));
                 fclose($handle);
                 $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
@@ -123,12 +129,22 @@
                 //Nos conectamos a la base de datos y a la tabla elegida
                 $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
                 //Query para insertar los valores
-                $res = $mysqli->query("INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')");
-                // Cerramos la conexion
-                mysqli_close($mysqli);
+                if(!$mysqli->query("INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')")){
+                    //En caso de error lo mostramos
+                    echo "Error en: " . $mysqli->error;
+                }
+                else{
+                    // Cerramos la conexion
+                    mysqli_close($mysqli);
+                    //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
+                    //con su usuario ya logeado
+                    $_SESION['user'] = $_POST['email'];
+                    header('Location: http://localhost/index.php');
+                }
+                
             }
             else echo "Las contraseñas no coinciden";
         }
-        else echo "Tienes que introducir todos los datos marcados con un asterisco, gracias.";
+        else echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
     }
 ?>
