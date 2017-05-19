@@ -21,8 +21,7 @@
             <li><a href="formularioCliente.html">Cliente</a></li>
             <li class="active">Alta cliente</li>
         </ol>
-
-
+        
     </header>
 
     <section>
