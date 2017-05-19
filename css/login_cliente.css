@@ -1,0 +1,35 @@
+/*** ESTILOS PARA LOS BOTONES DE LOGIN ***/
+
+#btnAcceder, #btnAlta, #btnOlvido {
+  border-radius: 4px;
+  background-color: darkcyan;
+
+}
+
+#btnAcceder {
+  margin-right: 5px;
+}
+
+#btnAlta {
+  margin-right: 5px;
+}
+
+.separacionTop {
+  padding-top: 13px;
+}
+
+/*** FIN ***/
+
+/*** ESTILOS INPUT ***/
+
+#email, #password {
+  width: 195px;
+}
+
+/*** FIN ***/
+
+/*** ESTILOS GRUPOS DE INPUT Y BOTONES ***/
+
+.ajusteLateral {
+  padding-left: 63px;
+}
