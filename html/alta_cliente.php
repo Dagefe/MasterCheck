@@ -27,8 +27,8 @@
 
     <section>
 
-        <div class="container">
-            <div class="recuadroBlanco">
+        <div class="container-fluid">
+
             <form method="post" action="alta_cliente.php">
               <div class="row">
                 <div class="col-xs-12 col-lg-4">
@@ -82,13 +82,34 @@
                   <div class="col-xs-12 col-lg-10">
                     <div class="botonera">
                       <button id="btnEnviar" name="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
-                      <a id="btnBorrar" type="reset" class="btn btn-danger" role="button">Borrar</a>
+                      <a id="btnBorrar" type="reset" class="btn btn-danger" role="button"
+                         data-toggle="modal" data-target="#miModal">Borrar</a>
                       <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
                     </div>
                   </div>
                  </div>
             </form>
+
         </div>
+
+
+
+        <!-- Dialogo modal para borrar -->
+        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	       <div class="modal-dialog" role="document">
+  		         <div class="modal-content">
+  			            <div class="modal-header">
+  				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  					                     <span aria-hidden="true">&times;</span>
+  				                </button>
+  				                <h4 class="modal-title" id="myModalLabel">Vaciar formulario</h4>
+  			            </div>
+  			            <div class="modal-body">
+  				                ¿Esta seguro?
+                          <button id="confirmDelete" type="button" class="close" data-dismiss= "modal">Confirmar</button>
+  			            </div>
+  		         </div>
+  	      </div>
         </div>
     </section>
 

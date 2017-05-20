@@ -25,10 +25,16 @@
 
     <section>
 
-      <div class="container">
-        <div class="recuadroBlanco">
+      <div class="container-fluid">
           <form method="post" action="alta_empresa.php">
-            <h3>Alta nueva empresa</h3>
+            <div class="row">
+              <div class="col-xs-12 col-lg-4">
+                <p class="text-info">Alta Empresa</p>
+              </div>
+              <div class="col-xs-12 col-lg-4">
+                <p class="text-info"><b>* Campos obligatorios</b></p>
+              </div>
+            </div>
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h3 class=" panel-title text-center">Datos de acceso</h3>
@@ -80,15 +86,36 @@
                   </div>
                 </div>
             </div>
-            <h5><b>*Campos obligatorios</b></h5>
             <div class="row">
               <div class="col-xs-12 col-lg-10">
-                <button id="btnEnviar" name="Crear" type="submit" class="btn btn-primary">Crear cuenta</button>
-                <button id="btnBorrar" name="Borrar" type="reset" class="btn btn-danger">Borrar</button>
+                <div class="botonera">
+                  <button id="btnEnviar" name="Crear" type="submit" class="btn btn-primary">Crear cuenta</button>
+                  <button id="btnBorrar" name="Borrar" type="button" class="btn btn-danger"
+                          data-toggle="modal" data-target="#miModal">Borrar</button>
+                </div>
               </div>
             </div>
           </form>
-        </div>
+      </div>
+
+
+
+      <!-- Dialogo modal para borrar -->
+      <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	       <div class="modal-dialog" role="document">
+		         <div class="modal-content">
+			            <div class="modal-header">
+				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                     <span aria-hidden="true">&times;</span>
+				                </button>
+				                <h4 class="modal-title" id="myModalLabel">Vaciar formulario</h4>
+			            </div>
+			            <div class="modal-body">
+				                ¿Esta seguro?
+                        <button id="confirmDelete" type="button" class="close" data-dismiss= "modal">Confirmar</button>
+			            </div>
+		         </div>
+	      </div>
       </div>
     </section>
     <footer>

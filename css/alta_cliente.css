@@ -1,8 +1,9 @@
 /** ESTILO CONTENEDOR **/
-.container{
-    margin-left: 27%;
+.container-fluid {
+    margin-left: 360px;
 }
 /** FIN **/
+
 
 /** Estilos panel **/
 .panel-heading {
@@ -32,6 +33,10 @@
 
 #btnEnviar, #btnBorrar {
   margin-right: 10px;
+}
+
+.botonera {
+  margin-bottom: 20px;
 }
 
 /** FIN **/

@@ -1,10 +1,12 @@
 /*** ESTILO CONTENEDOR ***/
 
-.container{
-    margin-left: 27%;
+.container-fluid {
+    margin-left: 325px;
   }
 
 /*** FIN *
+
+
 
 
 /*** ESTILOS PARA LOS BOTONES DE LOGIN ***/
@@ -28,6 +30,20 @@
 
 /*** FIN ***/
 
+
+/*** ESTILOS INPUT ***/
+
+#email, #password {
+  width: 195px;
+}
+
+/*** FIN ***/
+
+/*** ESTILOS GRUPOS DE INPUT Y BOTONES ***/
+
+.ajusteLateral {
+  padding-left: 63px;
+}
 
 
 /*** ESTILOS NO DANI

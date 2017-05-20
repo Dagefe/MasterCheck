@@ -17,6 +17,10 @@
 
 /** CSS general **/
 
+.row {
+  margin-right: 0px !important
+}
+
 hr {
   width: : 4px;
 }
@@ -68,14 +72,10 @@ hr {
 /* Apartado de login */
 
 
-.row-index
-{
-  width: 75%;
-}
-
 /* Ajuste padding cabecera */
 .noPaddingLogin {
   padding-left: 0px;
+  padding-right: 0px;
 }
 
 #login {

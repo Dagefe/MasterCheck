@@ -9,15 +9,14 @@
 
     });
 
-    $('#btnBorrar').on("click", function () {
+    $('#confirmDelete').on("click", function () {
 
         $('#nombre').val("");
         $('#direccion').val("");
         $('#email').val("");
         $('#telefono').val("");
-
     });
 
 
-    
+
 });

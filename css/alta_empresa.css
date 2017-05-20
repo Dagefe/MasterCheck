@@ -1,6 +1,6 @@
 /** ESTILO CONTENEDOR **/
-.container{
-    margin-left: 27%;
+.container-fluid{
+    margin-left: 360px;
 }
 /** FIN **/
 
@@ -34,4 +34,12 @@
   margin-right: 10px;
 }
 
+.botonera {
+  margin-bottom: 20px;
+}
+
 /** FIN **/
+
+.miModal {
+  display: none;
+}
