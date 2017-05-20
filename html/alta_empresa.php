@@ -10,7 +10,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/formEmpresa.css"/>
+    <link rel="stylesheet" href="../css/alta_empresa.css"/>
 
 </head>
 <body>
@@ -25,86 +25,71 @@
 
     <section>
 
-        <div class="container">
-            <div class="recuadroBlanco">
-            <form action="alta_empresa.php" method="post">
+      <div class="container">
+        <div class="recuadroBlanco">
+          <form method="post" action="alta_empresa.php">
             <h3>Alta nueva empresa</h3>
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class=" panel-title text-center">Datos de acceso</h3>
-                </div>
-                <div class="input-group">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="email" type="text" name="email" class="form-control inputForm" placeholder="Email*" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="recontrasena" type="repassword" name="repass" class="form-control inputForm" placeholder="Confirmar contraseña*" />
-                            </div>
-                        </div>
+              <div class="panel-heading">
+                <h3 class=" panel-title text-center">Datos de acceso</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-lg-8">
+                    <input id="email" type="text" name="email" class="form-control inputForm" placeholder="Email*" />
+                    <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" />
+                    <input id="recontrasena" type="repassword" name="repass" class="form-control inputForm" placeholder="Confirmar contraseña*" />
+                  </div>
+                  <div class="col-xs-12 col-lg-3">
+                    <div class="input-group">
+                      <label class="inputForm">Obligatorio</label>
+                      <label class="inputForm">Obligatorio</label>
+                      <label class="inputForm">Obligatorio</label>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title text-center">Datos de contacto</h3>
+              </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-8">
+                      <input id="name" type="text" name="name" class="form-control inputForm" placeholder="Nombre y apellidos*" />
+                      <input id="movil" type="text" name="movil" class="form-control inputForm" placeholder="Movil*" />
+                    </div>
+                  </div>
                 </div>
             </div>
 
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Datos de contacto</h3>
-                </div>
-                <div class="input-group">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="name" type="text" name="name" class="form-control inputForm" placeholder="Nombre y apellidos*" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="movil" type="text" name="movil" class="form-control inputForm" placeholder="Movil*" />
-                            </div>
-                        </div>
+              <div class="panel-heading">
+                <h3 class="panel-title text-center">Datos de la empresa</h3>
+              </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-10">
+                      <input id="nameempresa" type="text" name="empresa" class="form-control inputForm" placeholder="Nombre de la empresa*" />
+                      <input id="poblacion" type="text" name="town" class="form-control inputForm" placeholder="Poblacion*" />
+                      <input id="codpostal" type="text" name="cp'" class="form-control inputForm" placeholder="Codigo Postal*" />
+                      <input id="actividad" type="text" name="activ" class="form-control inputForm" placeholder="Actividad empresarial*" />
                     </div>
-                </div>
-            </div>
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Datos de la empresa</h3>
-                </div>
-                <div class="input-group">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="nameempresa" type="text" name="empresa" class="form-control inputForm" placeholder="Nombre de la empresa*" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="poblacion" type="text" name="town" class="form-control inputForm" placeholder="Poblacion*" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="codpostal" type="text" name="cp'" class="form-control inputForm" placeholder="Codigo Postal*" />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="actividad" type="text" name="activ" class="form-control inputForm" placeholder="Actividad empresarial*" />
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
             </div>
             <h5><b>*Campos obligatorios</b></h5>
-            <div class="input-group">
-                <div class="panel-body">
-                    <div class="row">
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="btnEnviar" name="Crear" value="Crear cuenta" class="btn btn-primary inputForm" />
-                                <input id="btnBorrar" name="Borrar" value="Borrar los campos" class="btn btn-danger inputForm" />
-                            </div>
-                    </div>
-                </div>
+            <div class="row">
+              <div class="col-xs-12 col-lg-10">
+                <button id="btnEnviar" name="Crear" type="submit" class="btn btn-primary">Crear cuenta</button>
+                <button id="btnBorrar" name="Borrar" type="reset" class="btn btn-danger">Borrar</button>
+              </div>
             </div>
-            </form>
-            </div>
+          </form>
         </div>
+      </div>
     </section>
     <footer>
 
@@ -117,7 +102,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/formEmpresa.js"></script>
+    <script src="../js/alta_empresa.js"></script>
     <script src="fonts/glyphicons-halflings-regular.eot"></script>
 </body>
 </html>

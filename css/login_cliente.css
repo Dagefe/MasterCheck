@@ -41,3 +41,30 @@
 .ajusteLateral {
   padding-left: 63px;
 }
+
+
+
+/** MEDIAS QUERIE **/
+
+@media (min-width: 320px) and (max-width: 360px) {
+
+  .container {
+    margin-left: 0px;;
+  }
+
+  .ajusteLateral {
+    padding-left: 18px;
+  }
+
+  .input-group-btn {
+  	display: flex;
+  	flex-direction: column;
+  	flex-wrap: wrap;
+  	padding-left: 5px;
+  }
+
+  #btnAcceder, #btnAlta {
+  	margin-right: 0px;
+  }
+
+}

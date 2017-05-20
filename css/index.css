@@ -55,6 +55,16 @@ hr {
     margin-bottom: auto;
 }
 
+#btnBuscar, #btnBusquedaAvanzada, #iconoLupa {
+  background-color: darkcyan;
+}
+
+.etiquetaLupa {
+  background-color: darkcyan;
+}
+
+
+
 /* Apartado de login */
 
 
