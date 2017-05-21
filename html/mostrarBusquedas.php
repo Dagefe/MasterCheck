@@ -14,7 +14,7 @@
   }
 
 
-  $mysqli = new mysqli("127.0.0.1", $user, $pass, $base_datos);
+  $mysqli = new mysqli(db_server, db_username, db_password, db_database);
 
   if ($mysqli->connect_errno) {
       printf("Falló la conexión: %s\n", $mysqli->connect_error);
@@ -100,7 +100,7 @@
                         <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
                         Bar (<span data-cuisine-total="">1</span>)
                       </label>
-                      
+
                       <label class="controlList-label">
                         <input class="control-input checkboxTick" name="cuisine" value="americana" type="checkbox">
                           <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
