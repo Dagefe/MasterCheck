@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $('#btnEnviar').on("click", function () {
 
-        alert('Ha pulsado enviar');
+        //alert('Ha pulsado enviar');
 
     });
 
