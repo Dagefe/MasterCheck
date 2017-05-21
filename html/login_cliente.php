@@ -57,12 +57,26 @@
                   <input id="email" name="email" type="email" placeholder="email" class="email"
                      onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
 
-                  <input id="password" name="contra" type="password" placeholder="Contraseña" class="contra"
+                  <input id="password" name="pass" type="password" placeholder="Contraseña" class="contra"
                      onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
                 </div>
 
               <div class="input-group-btn ajusteLateral separacionTop">
-                <button id="btnAcceder" type="submit" class="btn btn-primary">Acceder</button>
+                <button id="btnAcceder" name="acceder" type="submit" class="btn btn-primary">Acceder</button>
+                <?php 
+
+                  include_once('conexion.php');
+
+                  if(@$_POST['acceder']){
+                    //Comprobamos que el email y la contraseña son correctos
+                    if ($_POST['email'] != " " && isset($_POST['email']) && $_POST['pass'] != " " && isset($_POST['pass']))
+                      {
+                        
+
+                      }
+
+
+                ?>
                 <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
                 <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
               </div>

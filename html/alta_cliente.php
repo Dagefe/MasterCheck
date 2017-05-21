@@ -72,7 +72,7 @@
                                 <input id="secapel" type="text" name="secondname" class="form-control inputForm" placeholder="2º Apellido" />
                                 <input id="town" type="text" name="town" class="form-control inputForm" placeholder="Poblacion" />
                                 <input id="movil" type="text" name="tel" class="form-control inputForm" placeholder="Movil" />
-                                <input id="fechnac" type="text" name="fecnac" class="form-control inputForm" placeholder="Fecha de nacimiento: 22/12/2000" />
+                                <!-- <input id="fechnac" type="text" name="fecnac" class="form-control inputForm" placeholder="Fecha de nacimiento: 22/12/2000" /> -->
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-lg-10">
                     <div class="botonera">
-                      <button id="btnEnviar" name="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
+                      <button id="btnEnviar" inputname="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
                       <a id="btnBorrar" type="reset" class="btn btn-danger" role="button"
                          data-toggle="modal" data-target="#miModal">Borrar</a>
                       <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
@@ -133,8 +133,32 @@
   include_once('conexion.php');
 
     if(@$_POST['enviar']){
+
+        $nombre = $_POST['name'];
+        $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $movil = $_POST['tel'];
+        $provincia = $_POST['town'];
+
+        $mysqli = new mysqli("localhost",$user, $pass, $base_datos);
+
+        if (mysqli_connect_errno()) {
+            printf("Error de conexión: %s\n", mysqli_connect_error());
+            exit();
+        }
+
+        $query = "INSERT INTO clientes VALUES (NULL, '$nombre', '$apellidos','$email','$pass','$movil','$provincia')";
+        $mysqli->query($query);
+
+        printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
+
+
+        $mysqli->close();
+
+
         //Comprobamos que los input requeridos son correctos
-        if ($_POST['email'] != " " && isset($_POST['email']) && $_POST['pass'] != " " && isset($_POST['pass']) && $_POST['repass'] != " " && isset($_POST['repass']) && $_POST['name'] != " " && isset($_POST['name']) && $_POST['surname'] != " " && isset($_POST['surname']))
+        /*if ($_POST['email'] != " " && isset($_POST['email']) && $_POST['pass'] != " " && isset($_POST['pass']) && $_POST['repass'] != " " && isset($_POST['repass']) && $_POST['name'] != " " && isset($_POST['name']) && $_POST['surname'] != " " && isset($_POST['surname']))
         {
             //Comprobamos que las contraseñas coinciden
             if ($_POST['pass'] == $_POST['repass'])
@@ -145,7 +169,7 @@
                 fclose($handle);
                 $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
                 // Juntamos los apellidos
-                $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
+                
                 //Nos conectamos a la base de datos y a la tabla elegida
                 $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
                 //Query para insertar los valores
@@ -170,6 +194,8 @@
               echo "Las contraseñas no coinciden";
         }
         else
-          echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
+          echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";*/
+
+
     }
 ?>

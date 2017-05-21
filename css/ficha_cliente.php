@@ -2,8 +2,6 @@
     session_start();
 ?>
 
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,6 +20,9 @@
         <ol class="breadcrumb">
             <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
             <li><a href="login_cliente.html">Particular</a></li>
+            <li class="active">Alta particular</li>
+            
+            <li><a href="ficha_cliente.php">Perfil</a></li>
             <li class="active">Perfil cliente</li>
         </ol>
 
@@ -30,7 +31,7 @@
 
     <section>
 	<div class="container">
-	  <h3>Bienvenido </h3>
+	  <h3>Bienvenido</h3>
 	  <ul class="nav nav-tabs">
 	    <li class="active"><a href="#">Home</a></li>
 	    <li class="dropdown">
