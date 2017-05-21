@@ -11,28 +11,23 @@
         $movil = $_POST['tel'];
         $provincia = $_POST['town'];
 
-        ;
-
-        $mysqli = new mysqli("127.0.0.1",$user, $pass, $base_datos);
+        $mysqli = new mysqli(db_server, db_username, db_password, db_database);
 
         if ($mysqli->connect_errno) {
             printf("Falló la conexión: %s\n", $mysqli->connect_error);
             exit();
         }
 
-        $query = "INSERT INTO Clientes (id,nombre,apellidos,email,contrasena, movil,provincia) 
-                  VALUES (null, $nombre, $apellidos,$email,$pass,$movil,$provincia)";
+        $query = "INSERT INTO Clientes VALUES (null, '$nombre', '$apellidos','$email','$pass',$movil,'$provincia')";
 
 
-        if ($resultado = $mysqli->query($query))
+
+        if($mysqli->query($query))
         {
             printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
             //$oferta = $resultado->fetch_assoc();
             /* liberar el conjunto de resultados */
             $mysqli->close();
-        }
-        else {
-          printf("A tomar por culo");
         }
 
 

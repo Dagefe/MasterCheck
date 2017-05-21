@@ -29,7 +29,7 @@
 
         <div class="container-fluid">
 
-            <form method="post" action="alta_cliente.php">
+            <form method="post" action="inserccion_cliente.php">
               <div class="row">
                 <div class="col-xs-12 col-lg-4">
                   <p class="text-info">Alta Particular</p>
@@ -169,7 +169,7 @@
                 fclose($handle);
                 $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
                 // Juntamos los apellidos
-                
+
                 //Nos conectamos a la base de datos y a la tabla elegida
                 $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
                 //Query para insertar los valores
