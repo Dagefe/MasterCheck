@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,7 +26,7 @@
 
         <div class="container-fluid">
 
-            <form method="post" action="alta_cliente.php">
+            <form method="post" action="inserccion_cliente.php">
               <div class="row">
                 <div class="col-xs-12 col-lg-4">
                   <p class="text-info">Alta Particular</p>
@@ -128,66 +125,4 @@
     <script src="fonts/glyphicons-halflings-regular.eot"></script>
 </body>
 </html>
-
-<?php
-  include_once('conexion.php');
-  
-  
-        //Comprobamos que los input requeridos son correctos
-        if ($_POST['email'] != " " && isset($_POST['email']) && $_POST['pass'] != " " && isset($_POST['pass']) && $_POST['repass'] != " " && isset($_POST['repass']) && $_POST['name'] != " " && isset($_POST['name']) && $_POST['surname'] != " " && isset($_POST['surname']))
-        {
-            //Comprobamos que las contraseñas coinciden
-            if ($_POST['pass'] == $_POST['repass'])
-            {
-                // Encriptamos la contraseña como sha1 y como doble encriptacion elegiremos mastercheckk que estara alojado en un archivo externo para aumentar la seguridad
-                $handle = fopen('clavex.txt', "r");
-                $clavex = fread($handle, filesize($handle));
-                fclose($handle);
-                $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
-                // Juntamos los apellidos
-                
-                $nombre = $_POST['name'];
-                $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
-                $email = $_POST['email'];
-                $pass = $clave_has;
-                $movil = $_POST['tel'];
-                $provincia = $_POST['town'];
-                //Nos conectamos a la base de datos y a la tabla elegida
-                $mysqli = new mysqli(db_server,db_username, db_password, db_database);
-                //Query para insertar los valores
-                
-                if (mysqli_connect_errno()) {
-                    printf("Error de conexión: %s\n", mysqli_connect_error());
-                    exit();
-                }
-                
-                $query = "INSERT INTO clientes VALUES (NULL, '$nombre', '$apellidos','$email','$pass',$movil,'$provincia')";
-
-                if(!$mysqli->query($query))
-                {
-                    //En caso de error lo mostramos
-                    echo "Error en: " . $mysqli->error;
-                }
-                else
-                {
-                    // Cerramos la conexion
-                    mysqli_close($mysqli);
-                    //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
-                    //con su usuario ya logeado
-                    $_SESION['user'] = $_POST['email'];
-                    header('Location: http://localhost/index.php');
-                }
-                printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
-                
-                
-            }
-            else
-              echo "Las contraseñas no coinciden";
-        }
-        else
-          echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
-
-
-    
-?>
 
