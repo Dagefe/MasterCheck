@@ -85,7 +85,6 @@
       <div class="row">
             <div class="col-xs-3 col col-lg-p">
               <div class="containerFilter">
-
                 <ul class="unstyled">
                   <li class="separador" data-sort-index="0">
                     <label class="controlList-label">
@@ -101,27 +100,15 @@
                         <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
                         Bar (<span data-cuisine-total="">1</span>)
                       </label>
-                          <!--
-                          <a class="is-hidden is-shown--noJS" href="/area/28240-hoyo-de-manzanares/americana/" data-test="cuisineFilterTitle">
-                              Comida Americana (1)
-                          </a>
-                          -->
+                      
                       <label class="controlList-label">
                         <input class="control-input checkboxTick" name="cuisine" value="americana" type="checkbox">
                           <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
                           Restaurante (<span data-cuisine-total="">1</span>)
                         </label>
-                            <!--
-                            <a class="is-hidden is-shown--noJS" href="/area/28240-hoyo-de-manzanares/americana/" data-test="cuisineFilterTitle">
-                                Comida Americana (1)
-                            </a>
-                            -->
 
                     </li>
-
-
                 </ul>
-
               </div>
             </div>
 
@@ -130,7 +117,7 @@
                 <div class="row">
                   <div class="col-xs-12 listaProductos">
 
-                    <div class="col-xs-2 paddingImagen">
+                    <div id="imagenNegocio" class="col-xs-2 paddingImagen">
                       <img class="img-thumbnail" src="../imagenes/naru-torrelodones-escalado.jpg">
                     </div>
 
@@ -189,7 +176,7 @@
     <script src="../js/index.js"></script>
     <!-- <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script> -->
     <script src="../fonts/glyphicons-halflings-regular.eot"></script>
-    <script src="../fontello/css/iconset.css"></script>
+
 
 
 
