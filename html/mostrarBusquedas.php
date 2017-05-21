@@ -100,7 +100,7 @@
                         <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
                         Bar (<span data-cuisine-total="">1</span>)
                       </label>
-                      
+
                       <label class="controlList-label">
                         <input class="control-input checkboxTick" name="cuisine" value="americana" type="checkbox">
                           <span class="lineaFiltro" data-test-cuisine="Comida Americana"></span>
