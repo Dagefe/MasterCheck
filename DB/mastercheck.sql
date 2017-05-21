@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-05-2017 a las 14:24:55
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 21-05-2017 a las 19:53:42
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,27 +23,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
+-- Estructura de tabla para la tabla `Clientes`
 --
 
-CREATE TABLE `clientes` (
+CREATE TABLE `Clientes` (
   `id` int(8) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `contrasena` varchar(100) NOT NULL,
-  `movil` int(14) DEFAULT NULL,
-  `provincia` varchar(100) DEFAULT NULL,
-  `fecha_nacimiento` varchar(100) DEFAULT NULL
+  `movil` int(8) NOT NULL,
+  `provincia` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empresa`
+-- Estructura de tabla para la tabla `Empresa`
 --
 
-CREATE TABLE `empresa` (
+CREATE TABLE `Empresa` (
   `id` int(8) NOT NULL,
   `email` varchar(100) NOT NULL,
   `contrasena` varchar(100) NOT NULL,
@@ -60,46 +59,47 @@ CREATE TABLE `empresa` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ofertas`
+-- Estructura de tabla para la tabla `Ofertas`
 --
 
-CREATE TABLE `ofertas` (
+CREATE TABLE `Ofertas` (
   `id_oferta` int(8) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `imagen` blob NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `precio` int(8) NOT NULL,
   `fecha_inicio` date NOT NULL,
-  `fecha_fin` date NOT NULL
+  `fecha_fin` date NOT NULL,
+  `tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `ofertas`
+-- Volcado de datos para la tabla `Ofertas`
 --
 
-INSERT INTO `ofertas` (`id_oferta`, `nombre`, `imagen`, `descripcion`, `precio`, `fecha_inicio`, `fecha_fin`) VALUES
-(1, 'naru', '', 'oferta cerveza', 2, '2017-05-13', '2017-05-31');
+INSERT INTO `Ofertas` (`id_oferta`, `nombre`, `imagen`, `descripcion`, `precio`, `fecha_inicio`, `fecha_fin`, `tipo`) VALUES
+(1, 'Naru', '', 'Oferta 2x1 cerveza nacional', 2, '2017-05-13', '2017-05-31', 'bar');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `clientes`
+-- Indices de la tabla `Clientes`
 --
-ALTER TABLE `clientes`
+ALTER TABLE `Clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `empresa`
+-- Indices de la tabla `Empresa`
 --
-ALTER TABLE `empresa`
+ALTER TABLE `Empresa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `ofertas`
+-- Indices de la tabla `Ofertas`
 --
-ALTER TABLE `ofertas`
+ALTER TABLE `Ofertas`
   ADD PRIMARY KEY (`id_oferta`);
 
 --
@@ -107,19 +107,19 @@ ALTER TABLE `ofertas`
 --
 
 --
--- AUTO_INCREMENT de la tabla `clientes`
+-- AUTO_INCREMENT de la tabla `Clientes`
 --
-ALTER TABLE `clientes`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT de la tabla `empresa`
---
-ALTER TABLE `empresa`
+ALTER TABLE `Clientes`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `ofertas`
+-- AUTO_INCREMENT de la tabla `Empresa`
 --
-ALTER TABLE `ofertas`
+ALTER TABLE `Empresa`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `Ofertas`
+--
+ALTER TABLE `Ofertas`
   MODIFY `id_oferta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
