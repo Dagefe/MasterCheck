@@ -81,7 +81,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-lg-10">
                     <div class="botonera">
-                      <button id="btnEnviar" inputname="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
+                      <button id="btnEnviar" input name="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
                       <a id="btnBorrar" type="reset" class="btn btn-danger" role="button"
                          data-toggle="modal" data-target="#miModal">Borrar</a>
                       <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
@@ -131,34 +131,10 @@
 
 <?php
   include_once('conexion.php');
-
-    if(@$_POST['enviar']){
-
-        $nombre = $_POST['name'];
-        $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
-        $movil = $_POST['tel'];
-        $provincia = $_POST['town'];
-
-        $mysqli = new mysqli("localhost",$user, $pass, $base_datos);
-
-        if (mysqli_connect_errno()) {
-            printf("Error de conexión: %s\n", mysqli_connect_error());
-            exit();
-        }
-
-        $query = "INSERT INTO clientes VALUES (NULL, '$nombre', '$apellidos','$email','$pass','$movil','$provincia')";
-        $mysqli->query($query);
-
-        printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
-
-
-        $mysqli->close();
-
-
+  
+  
         //Comprobamos que los input requeridos son correctos
-        /*if ($_POST['email'] != " " && isset($_POST['email']) && $_POST['pass'] != " " && isset($_POST['pass']) && $_POST['repass'] != " " && isset($_POST['repass']) && $_POST['name'] != " " && isset($_POST['name']) && $_POST['surname'] != " " && isset($_POST['surname']))
+        if ($_POST['email'] != " " && isset($_POST['email']) && $_POST['pass'] != " " && isset($_POST['pass']) && $_POST['repass'] != " " && isset($_POST['repass']) && $_POST['name'] != " " && isset($_POST['name']) && $_POST['surname'] != " " && isset($_POST['surname']))
         {
             //Comprobamos que las contraseñas coinciden
             if ($_POST['pass'] == $_POST['repass'])
@@ -169,11 +145,27 @@
                 fclose($handle);
                 $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
                 // Juntamos los apellidos
+<<<<<<< HEAD
 
+=======
+                
+                $nombre = $_POST['name'];
+                $apellidos = $_POST['surname'] . " " . $_POST['secondname'];
+                $email = $_POST['email'];
+                $pass = $clave_has;
+                $movil = $_POST['tel'];
+                $provincia = $_POST['town'];
+>>>>>>> da907e241072ba4268eabd5a8840e698d3e8fb57
                 //Nos conectamos a la base de datos y a la tabla elegida
-                $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
+                $mysqli = new mysqli(db_server,db_username, db_password, db_database);
                 //Query para insertar los valores
-                $query = "INSERT INTO clientes (nombre, apellidos, email, contrasena, movil, provincia, fecha_nacimiento) VALUES ('". $_POST['name'] . "', '" . $apellidos . "', '" . $_POST['email'] . "', '" . $clave_has . "', '" . $_POST['tel'] . "', '" . $_POST['town'] ."', '" . $_POST['fecnac'] . "')";
+                
+                if (mysqli_connect_errno()) {
+                    printf("Error de conexión: %s\n", mysqli_connect_error());
+                    exit();
+                }
+                
+                $query = "INSERT INTO clientes VALUES (NULL, '$nombre', '$apellidos','$email','$pass',$movil,'$provincia')";
 
                 if(!$mysqli->query($query))
                 {
@@ -189,13 +181,17 @@
                     $_SESION['user'] = $_POST['email'];
                     header('Location: http://localhost/index.php');
                 }
+                printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
+                
+                
             }
             else
               echo "Las contraseñas no coinciden";
         }
         else
-          echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";*/
+          echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
 
 
-    }
+    
 ?>
+
