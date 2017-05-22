@@ -126,10 +126,9 @@
 </body>
 </html>
 
-<<<<<<< HEAD
-=======
+
 <?php
-  include_once('conexion.php');
+    /*include_once('conexion.php');
 
 
         //Comprobamos que los input requeridos son correctos
@@ -189,6 +188,5 @@
         }
         else
           echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
-
+ */       
 ?>
->>>>>>> 11d171292143f145dfd5e16b3a8a785f256f05cc
