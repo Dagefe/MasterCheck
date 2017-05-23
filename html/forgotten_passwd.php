@@ -72,17 +72,21 @@
 <?php
 	include_once ('conexion.php');
 	if(@$_POST['enviar']){
-		$mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
+		$mysqli = new mysqli(db_server,db_username, db_password, db_database);
+        if (mysqli_connect_errno()) { //Posible error al conectar a la base de datos
+            printf("Error de conexión: %s\n", mysqli_connect_error());
+            exit();
+        }
+
 		$query = "SELECT email FROM clientes WHERE email='" . $_POST['email']) . "'";
 		if(!$mysqli->query($query)){
 			echo "Error en la consulta: " . $mysqli->error;
 		}
+
 		else{
 			mysqli_close($mysqli);
 			echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
 			echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";
 		}
 	}
-
-
 ?>
