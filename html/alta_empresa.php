@@ -26,7 +26,7 @@
     <section>
 
       <div class="container-fluid">
-          <form method="post" action="alta_empresa.php">
+          <form method="post" action="inserccion_empresa.php">
             <div class="row">
               <div class="col-xs-12 col-lg-4">
                 <p class="text-info">Alta Empresa</p>
@@ -79,8 +79,10 @@
                   <div class="row">
                     <div class="col-xs-12 col-lg-10">
                       <input id="nameempresa" type="text" name="empresa" class="form-control inputForm" placeholder="Nombre de la empresa*" />
+                      <input id="direccion" type="text" name="direccion" class="form-control inputForm" placeholder="Direccion*" />
                       <input id="poblacion" type="text" name="town" class="form-control inputForm" placeholder="Poblacion*" />
-                      <input id="codpostal" type="text" name="cp'" class="form-control inputForm" placeholder="Codigo Postal*" />
+                      <input id="codpostal" type="text" name="cp" class="form-control inputForm" placeholder="Codigo Postal*" />
+                      <input id="pais" type="text" name="pais" class="form-control inputForm" placeholder="Pais*" />
                       <input id="actividad" type="text" name="activ" class="form-control inputForm" placeholder="Actividad empresarial*" />
                     </div>
                   </div>
@@ -135,6 +137,7 @@
 </html>
 
 <?php
+/*
     if(@$_POST['Crear']){
         //Incluimos nuestros credenciales de acceso a la base de datos
         include_once('conexion.php');
@@ -165,7 +168,7 @@
                 $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
                 //Nos conectamos a la base de datos y a la tabla elegida
                 $mysqli = new mysqli('127.0.0.1', $user, $pass, $base_datos);
-                if(!$mysqli->query('&&&CAMBIAR BASE DE DATOS&&&')){
+                if(!$mysqli->query(&&&&&&&&&&&&&&CAMBIAR BASE DE DATOS&&&&&&&&&&&&&&&&)){
                     //En caso de error lo mostramos
                     echo "Error en: " . $mysqli->error;
                 }
@@ -185,5 +188,5 @@
         //En el caso de que falte algun campo por completar
         else echo "Tienes que completar todos los campos para poder registrarte como empresa, disculpen las molestias";
     }
-
+*/
 ?>
