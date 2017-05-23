@@ -1,9 +1,7 @@
 <?php
-<<<<<<< HEAD
-    //session_start();
-=======
+
   session_start();
->>>>>>> eef3c7102aed5d43e14a8287ceceae141e20ccd9
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -195,5 +193,5 @@
         }
         else
           echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
- */       
+ */
 ?>

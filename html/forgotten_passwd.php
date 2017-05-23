@@ -11,6 +11,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/alta_cliente.css"/>
+		<link rel="stylesheet" href="../css/forgotten_passwd.css"/>
+
 
 </head>
 <body>
@@ -21,35 +23,36 @@
             <li><a href="formularioCliente.html">Cliente</a></li>
             <li class="active">Alta cliente</li>
         </ol>
-        
+
     </header>
 
     <section>
 
         <div class="container">
-            <div class="recuadroBlanco">
-            <form action="forgotten_passwd.php" method="post">
-            <h1>¿Has olvidado la contraseña?</h1>
-            <div class="panel-primary">
-            	<div class="panel-heading">
-            		<h3 class="panel-title text-center">Recuperación de contraseña</h3>
-            	</div>
-            	<div class="input-group">
-            		<div class="panel-body">
-            			<div class="row">
-            				<div class="col-xs-12 col-lg-10">
-                                <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-                            </div>
-                            <div class="col-xs-12 col-lg-10">
-                                <input id="email" type="submit" name="enviar" value="Restablecer contraseña" class="form-control inputForm" placeholder="Email*" />
-                            </div>
+					<form action="forgotten_passwd.php" method="post">
+						<div class="row">
+							<div class="col-xs-12 col-lg-8">
+            		<p>¿Has olvidado la contraseña?</p>
+            		<div class="panel panel-primary">
+            			<div class="panel-heading">
+            				<h3 class="panel-title text-center">Recuperación de contraseña</h3>
+            			</div>
+            			<div class="panel-body">
+										<div class="input-group">
+            					<div class="col-xs-12 col-lg-10">
+                      	<input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+                      </div>
+                      <div class="col-xs-12 col-lg-10">
+                        <button id="btnSendMail" name="enviar" type="submit" name="enviar" class="btn btn-primary">Restablecer contraseña</button>
+                      </div>
+            				</div>
             			</div>
             		</div>
             	</div>
-            </div>
-            </form>
-            </div>
+						</div>
+					</form>
         </div>
+
 
     </section>
 
@@ -71,19 +74,25 @@
 
 <?php
 	include_once ('conexion.php');
-	if(@$_POST['enviar']){
+	if(@$_POST['enviar'])
+	{
 		$mysqli = new mysqli(db_server,db_username, db_password, db_database);
-        if (mysqli_connect_errno()) { //Posible error al conectar a la base de datos
-            printf("Error de conexión: %s\n", mysqli_connect_error());
-            exit();
-        }
 
-		$query = "SELECT email FROM clientes WHERE email='" . $_POST['email']) . "'";
-		if(!$mysqli->query($query)){
+    if (mysqli_connect_errno())
+		{ //Posible error al conectar a la base de datos
+    	printf("Error de conexión: %s\n", mysqli_connect_error());
+      exit();
+    }
+
+		$query = "SELECT email FROM clientes WHERE email = '" . $_POST['email'] . "'";
+
+		if(!$mysqli->query($query))
+		{
 			echo "Error en la consulta: " . $mysqli->error;
 		}
 
-		else{
+		else
+		{
 			mysqli_close($mysqli);
 			echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
 			echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";

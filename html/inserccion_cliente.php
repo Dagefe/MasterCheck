@@ -18,18 +18,20 @@
                 $query = "SELECT email FROM empresa WHERE email='" . $_POST['email'] . "'";
                 $res = $mysqli->query($query);
                 $row_cnt = $res->num_rows;
+
                 if ($row_cnt > 0){ //Hay algun registro, con lo cual email duplicado
                     echo "Email duplicado, por favor, seleccione otro email para proceder al registro";
                     header('Location: http://localhost/dashboard/mastercheque/html/alta_empresa.php');
                 }
-                else{ //No hay email duplicados en nuestra base de datos
+                else
+                { //No hay email duplicados en nuestra base de datos
                     // Encriptamos la contraseña como sha1 y como doble encriptacion elegiremos mastercheckk que estara alojado en un archivo externo para aumentar la seguridad
                     $fichero = "clavex.txt";
                     $handle = fopen('clavex.txt', "r");
                     $clavex = fread($handle, filesize($fichero));
                     fclose($handle);
                     $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
-                    
+
                     // Declaramos las variables
                     $nombre = $_POST['name']; $email = $_POST['email'];
                     //Juntamos apellidos
