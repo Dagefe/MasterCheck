@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/alta_cliente.css"/>
 		<link rel="stylesheet" href="../css/forgotten_passwd.css"/>
+		<link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
 
 </head>
@@ -39,12 +40,16 @@
             			</div>
             			<div class="panel-body">
 										<div class="input-group">
-            					<div class="col-xs-12 col-lg-10">
-                      	<input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-                      </div>
+	            					<div class="col-xs-12 col-lg-10">
+	                      	<input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+	                      </div>
                       <div class="col-xs-12 col-lg-10">
-                        <button id="btnSendMail" name="enviar" type="submit" name="enviar" class="btn btn-primary">Restablecer contraseña</button>
-                      </div>
+													<div class="btn-group">
+														<button id="btnSendMail" name="enviar" type="button" class="btn btn-default">
+    													Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
+  													</button>
+													</div>
+											</div>
             				</div>
             			</div>
             		</div>
