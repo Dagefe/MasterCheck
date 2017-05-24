@@ -66,7 +66,7 @@
 
                     }
 
-                    header('Location: http://localhost/dashboard/mastercheque/index.html');
+                    header('Location: ../index.html');
                     }
             }
             else

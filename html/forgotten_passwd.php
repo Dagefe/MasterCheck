@@ -21,7 +21,7 @@
     <header>
         <ol class="breadcrumb">
             <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
-            <li><a href="formularioCliente.html">Cliente</a></li>
+            <li><a href="login_cliente.html">Cliente</a></li>
             <li class="active">Alta cliente</li>
         </ol>
 
@@ -30,32 +30,32 @@
     <section>
 
         <div class="container">
-					<form action="forgotten_passwd.php" method="post">
-						<div class="row">
-							<div class="col-xs-12 col-lg-8">
+            <form action="forgotten_passwd.php" method="post">
+		<div class="row">
+                    <div class="col-xs-12 col-lg-8">
             		<p>¿Has olvidado la contraseña?</p>
-            		<div class="panel panel-primary">
+                            <div class="panel panel-primary">
             			<div class="panel-heading">
-            				<h3 class="panel-title text-center">Recuperación de contraseña</h3>
+                                    <h3 class="panel-title text-center">Recuperación de contraseña</h3>
             			</div>
             			<div class="panel-body">
-										<div class="input-group">
-	            					<div class="col-xs-12 col-lg-10">
-	                      	<input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-	                      </div>
-                      <div class="col-xs-12 col-lg-10">
-													<div class="btn-group">
-														<button id="btnSendMail" name="enviar" type="button" class="btn btn-default">
-    													Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
-  													</button>
-													</div>
-											</div>
-            				</div>
+                                    <div class="input-group">
+	            			<div class="col-xs-12 col-lg-10">
+                                        <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+                                    </div>
+                                    <div class="col-xs-12 col-lg-10">
+                                            <div class="btn-group">
+                                                    <button id="btnSendMail" name="enviar" type="submit" class="btn btn-default">
+                                                            Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                                    </button>
+                                            </div>
+                                    </div>
             			</div>
+                            </div>
             		</div>
-            	</div>
-						</div>
-					</form>
+                    </div>
+		</div>
+            </form>
         </div>
 
 

@@ -44,7 +44,7 @@
                   <div class="col-xs-12 col-lg-8">
                     <input id="email" type="text" name="email" class="form-control inputForm" placeholder="Email*" />
                     <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" />
-                    <input id="recontrasena" type="repassword" name="repass" class="form-control inputForm" placeholder="Confirmar contraseña*" />
+                    <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar contraseña*" />
                   </div>
                   <div class="col-xs-12 col-lg-3">
                     <div class="input-group">

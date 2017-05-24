@@ -48,7 +48,7 @@
 
             if ($row_cnt > 0){ //Hay algun registro, con lo cual email duplicado
                 echo "Email duplicado, por favor, seleccione otro email para proceder al registro";
-                header('Location: http://localhost/dashboard/mastercheque/html/alta_empresa.php');
+                header('Location: ../html/alta_empresa.php');
             }
             else
             { //No hay email duplicados en nuestra base de datos
@@ -85,7 +85,7 @@
                   //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
                   //con su usuario ya logeado
                   $_SESSION['user'] = $_POST['email'];
-                  header('Location: http://localhost/dashboard/mastercheque/index.html');
+                  header('Location: ../index.html');
                 }
             }
         }
