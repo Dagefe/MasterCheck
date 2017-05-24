@@ -1,3 +1,26 @@
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+  </head>
+  <body>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/insercion_cliente.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
+  </body>
+</html>
+
+
+
 <?php
     session_start();
     include_once('conexion.php');
@@ -65,13 +88,36 @@
                         $_SESSION['user'] = $_POST['email'];
 
                     }
-
-                    header('Location: ../index.html');
+                    echo '<script>swal({
+                            title: "Bien",
+                            text: "Datos introducidos",
+                            confirmButtonText: "Aceptar",
+                            type: "success"
+                        }, function() {
+                            window.location = "../index.html";
+                        })</script>';
+                    //header('Location: ../index.html');
                     }
             }
             else
-              echo "Las contraseñas no coinciden";
+              //echo "Las contraseñas no coinciden";
+              echo '<script>swal({
+                      title: "Error",
+                      text: "Datos mal introducidos",
+                      cancelButtonText: "Volver a intentarlo",
+                      type: "warning"
+                  }, function() {
+                      window.location = "alta_cliente.php";
+                  })</script>';
         }
         else
-          echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
+        echo '<script>swal({
+                title: "Error",
+                text: "Debe rellenar los campos requeridos",
+                cancelButtonText: "Volver a intentarlo",
+                type: "warning"
+            }, function() {
+                window.location = "alta_cliente.php";
+            })</script>
+          //echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
 ?>
