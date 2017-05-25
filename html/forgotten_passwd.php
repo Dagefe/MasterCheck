@@ -98,6 +98,6 @@
                 //header(Location: "Donde sea");
             }
 			mysqli_close($mysqli);
-			
+			 
 	}
 ?>

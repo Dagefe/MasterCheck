@@ -1,5 +1,30 @@
 <?php
-    session_start();
+  session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+  </head>
+  <body>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/insercion_cliente.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
+  </body>
+</html>
+
+
+
+<?php
     //Incluimos nuestros credenciales de acceso a la base de datos
     include_once('conexion.php');
 
