@@ -1,0 +1,20 @@
+/** Estilo boton **/
+
+#btnSendMail {
+  background-color: darkcyan;
+  font-size: 20px;
+}
+
+.btn-group {
+  padding-left: 70px;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 25px !important;
+  text-rendering: auto;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

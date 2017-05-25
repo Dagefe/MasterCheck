@@ -94,12 +94,11 @@
                         }, function() {
                             window.location = "../index.html";
                         })</script>';
-                    }   
+                    }
                     //header('Location: ../index.html');
                  }
             }
             else
-              //echo "Las contraseñas no coinciden";
               echo '<script>swal({
                       title: "Error",
                       text: "Datos mal introducidos",
@@ -118,5 +117,4 @@
             }, function() {
                 window.location = "alta_cliente.php";
             })</script>'
-          //echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
 ?>
