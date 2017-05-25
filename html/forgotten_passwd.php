@@ -21,8 +21,8 @@
     <header>
         <ol class="breadcrumb">
             <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
-            <li><a href="login_cliente.html">Cliente</a></li>
-            <li class="active">Alta cliente</li>
+            <li><a href="login_cliente.html">Particular</a></li>
+            <li class="active">Alta particular</li>
         </ol>
 
     </header>
@@ -30,32 +30,32 @@
     <section>
 
         <div class="container">
-            <form action="forgotten_passwd.php" method="post">
-		<div class="row">
-                    <div class="col-xs-12 col-lg-8">
+        	<form action="forgotten_passwd.php" method="post">
+						<div class="row">
+            	<div class="col-xs-12 col-lg-8">
             		<p>¿Has olvidado la contraseña?</p>
-                            <div class="panel panel-primary">
-            			<div class="panel-heading">
-                                    <h3 class="panel-title text-center">Recuperación de contraseña</h3>
-            			</div>
-            			<div class="panel-body">
-                                    <div class="input-group">
-	            			<div class="col-xs-12 col-lg-10">
-                                        <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-                                    </div>
-                                    <div class="col-xs-12 col-lg-10">
-                                            <div class="btn-group">
-                                                    <button id="btnSendMail" name="enviar" type="submit" class="btn btn-default">
-                                                            Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                                    </button>
-                                            </div>
-                                    </div>
-            			</div>
-                            </div>
+                <div class="panel panel-primary">
+            		<div class="panel-heading">
+                	<h3 class="panel-title text-center">Recuperación de contraseña</h3>
             		</div>
+            		<div class="panel-body">
+                  <div class="input-group">
+	            			<div class="col-xs-12 col-lg-10">
+                      <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
                     </div>
-		</div>
-            </form>
+                    <div class="col-xs-12 col-lg-10">
+                      <div class="btn-group">
+                        <button id="btnSendMail" name="enviar" type="submit" class="btn btn-default">
+                          Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                    </div>
+            			</div>
+                </div>
+            		</div>
+              </div>
+						</div>
+          </form>
         </div>
 
 
@@ -89,15 +89,15 @@
     }
 
 		$query = "SELECT email FROM clientes WHERE email = '" . $_POST['email'] . "'";
-        $res = $mysqli->query($query);
-	    $row_cnt = $res->num_rows;
+    $res = $mysqli->query($query);
+	  $row_cnt = $res->num_rows;
 
-            if ($row_cnt > 0){ //Hay algun registro, con lo cual le enviaremos su nueva contraseña
-                echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
-                echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";    
-                //header(Location: "Donde sea");
-            }
-			mysqli_close($mysqli);
-			 
+    	if ($row_cnt > 0){ //Hay algun registro, con lo cual le enviaremos su nueva contraseña
+        	echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
+        	echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";
+        	//header(Location: "Donde sea");
+    	}
+		mysqli_close($mysqli);
+
 	}
 ?>
