@@ -1,6 +1,4 @@
-<?php
-	session_start();
-?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -41,18 +39,21 @@
             			<div class="panel-body">
                                     <div class="input-group">
 	            			<div class="col-xs-12 col-lg-10">
-                                        <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-                                    </div>
-                                    <div class="col-xs-12 col-lg-10">
+                                            <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+                                        </div>
+                                    
+                                        <div class="col-xs-12 col-lg-10">
                                             <div class="btn-group">
-                                                    <button id="btnSendMail" name="enviar" type="submit" class="btn btn-default">
-                                                            Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                                    </button>
+                                                
+                                                <input type="submit" name="enviar" name="enviar"> 
+                                                    <!--<button id="btnSendMail" input type="submit" name="enviar" class="btn btn-default">  
+                                                        Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                                    </button> No funciona con las propiedades del boton --> 
                                             </div>
+                                        </div>
                                     </div>
-            			</div>
+                                </div>
                             </div>
-            		</div>
                     </div>
 		</div>
             </form>
@@ -73,33 +74,41 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="fonts/glyphicons-halflings-regular.eot"></script>
+
 </body>
 </html>
 
+    
 <?php
 	include_once ('conexion.php');
-	if(@$_POST['enviar'])
-	{
-		$mysqli = new mysqli(db_server,db_username, db_password, db_database);
+	if (@$_REQUEST['enviar'])
+	{   
+            
+            
+            $mysqli = new mysqli(db_server, db_username, db_password, db_database);
 
-    if (mysqli_connect_errno())
-		{ //Posible error al conectar a la base de datos
-    	printf("Error de conexión: %s\n", mysqli_connect_error());
-      exit();
-    }
+            if ($mysqli->connect_errno())
+                        { //Posible error al conectar a la base de datos
+                printf("Error de conexión: %s\n", $mysqli_connect_error());
+              exit();
+            }
+ 
+            $email_recogido = $_POST['email'];
+            
 
-		$query = "SELECT email FROM clientes WHERE email = '" . $_POST['email'] . "'";
-
-		if(!$mysqli->query($query))
-		{
-			echo "Error en la consulta: " . $mysqli->error;
-		}
-
-		else
-		{
-			mysqli_close($mysqli);
-			echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
-			echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";
-		}
-	}
+            $result = $db->real_query("SELECT * FROM clientes WHERE email = '$email_recogido'");
+                
+                if($email_recogido == $result->email){
+                    echo "<p>Hemos recibido tu peticion de contraseña.<br>";
+                    echo "En un perido de 24/48 horas recibiras una contraseña temporal que podras cambiar en tu perfil. Gracias por usar nuestro servicio </p>";
+                }
+                
+                echo "Lo siento no hemos encontrado su cuenta de correo. Intentelo de nuevo";
+                
+            
+            
+            
+            
+            
+        }
 ?>
