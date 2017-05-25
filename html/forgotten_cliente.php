@@ -28,7 +28,7 @@
     <section>
 
         <div class="container">
-            <form action="forgotten_passwd.php" method="post">
+            <form action="forgotten_cliente.php" method="post">
 		<div class="row">
                     <div class="col-xs-12 col-lg-8">
             		<p>¿Has olvidado la contraseña?</p>
@@ -81,31 +81,6 @@
     
 <?php
 	include_once ('conexion.php');
-
-	/*if (@$_REQUEST['enviar'])
-	{   
-            
-            
-            $mysqli = new mysqli(db_server, db_username, db_password, db_database);
-
-            if ($mysqli->connect_errno())
-                        { //Posible error al conectar a la base de datos
-                printf("Error de conexión: %s\n", $mysqli_connect_error());
-              exit();
-            }
- 
-            $email_recogido = $_POST['email'];
-            
-
-            $result = $db->real_query("SELECT * FROM clientes WHERE email = '$email_recogido'");
-                
-                if($email_recogido == $result->email){
-                    echo "<p>Hemos recibido tu peticion de contraseña.<br>";
-                    echo "En un perido de 24/48 horas recibiras una contraseña temporal que podras cambiar en tu perfil. Gracias por usar nuestro servicio </p>";
-                }
-                
-                echo "Lo siento no hemos encontrado su cuenta de correo. Intentelo de nuevo";}*/
-       
 	if(@$_POST['enviar'])
 	{
 		$mysqli = new mysqli(db_server,db_username, db_password, db_database);
