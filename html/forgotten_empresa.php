@@ -116,7 +116,7 @@
       exit();
     }
 
-		$query = "SELECT email FROM clientes WHERE email = '" . $_POST['email'] . "'";
+		$query = "SELECT email FROM empresa WHERE email = '" . $_POST['email'] . "'";
         $res = $mysqli->query($query);
 	    $row_cnt = $res->num_rows;
 
@@ -135,3 +135,4 @@
 			 
 	}
 ?>
+
