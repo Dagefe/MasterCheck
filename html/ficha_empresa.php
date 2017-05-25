@@ -45,7 +45,7 @@
                             <ol class="breadcrumb">
                                 <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
                                 <li><a href="login_cliente.html">Particular</a></li>
-                                <li class="active">Perfil cliente</li>
+                                <li class="active">Perfil empresa</li>
                             </ol>
 
 
@@ -85,6 +85,3 @@
     
     
 ?>
-
-
-
