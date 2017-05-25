@@ -89,17 +89,15 @@
     }
 
 		$query = "SELECT email FROM clientes WHERE email = '" . $_POST['email'] . "'";
+        $res = $mysqli->query($query);
+	    $row_cnt = $res->num_rows;
 
-		if(!$mysqli->query($query))
-		{
-			echo "Error en la consulta: " . $mysqli->error;
-		}
-
-		else
-		{
+            if ($row_cnt > 0){ //Hay algun registro, con lo cual le enviaremos su nueva contraseña
+                echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
+                echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";    
+                //header(Location: "Donde sea");
+            }
 			mysqli_close($mysqli);
-			echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
-			echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";
-		}
+			
 	}
 ?>

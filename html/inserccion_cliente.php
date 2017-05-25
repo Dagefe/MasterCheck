@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -86,9 +86,7 @@
                         //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
                         //con su usuario ya logeado
                         $_SESSION['user'] = $_POST['email'];
-
-                    }
-                    echo '<script>swal({
+                        echo '<script>swal({
                             title: "Bien",
                             text: "Datos introducidos",
                             confirmButtonText: "Aceptar",
@@ -96,8 +94,9 @@
                         }, function() {
                             window.location = "../index.html";
                         })</script>';
+                    }   
                     //header('Location: ../index.html');
-                    }
+                 }
             }
             else
               //echo "Las contraseñas no coinciden";
@@ -118,6 +117,6 @@
                 type: "warning"
             }, function() {
                 window.location = "alta_cliente.php";
-            })</script>
+            })</script>'
           //echo "Tienes que introducir todos los datos marcados con un asterisco para poder registrarte correctamente, gracias.";
 ?>

@@ -85,14 +85,41 @@
                   //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
                   //con su usuario ya logeado
                   $_SESSION['user'] = $_POST['email'];
-                  header('Location: ../index.html');
+                  echo '<script>swal({
+                            title: "Bien",
+                            text: "Datos introducidos",
+                            confirmButtonText: "Aceptar",
+                            type: "success"
+                        }, function() {
+                            window.location = "../index.html";
+                        })</script>';
+                  //header('Location: ../index.html');
                 }
             }
         }
         //En el caso de que no coindican las contraseñas
-        else echo "Las contraseñas no coindicen";
+        else {
+          echo '<script>swal({
+                      title: "Error",
+                      text: "Datos mal introducidos",
+                      cancelButtonText: "Volver a intentarlo",
+                      type: "warning"
+                  }, function() {
+                      window.location = "alta_cliente.php";
+                  })</script>';
+          //echo "Las contraseñas no coindicen";
+        }
     }
     //En el caso de que falte algun campo por completar
-    else echo "Tienes que completar todos los campos para poder registrarte como empresa, disculpen las molestias";
-
+    else {
+      '<script>swal({
+                title: "Error",
+                text: "Debe rellenar los campos requeridos",
+                cancelButtonText: "Volver a intentarlo",
+                type: "warning"
+            }, function() {
+                window.location = "alta_cliente.php";
+            })</script>'
+      //echo "Tienes que completar todos los campos para poder registrarte como empresa, disculpen las molestias";
+    }
 ?>
