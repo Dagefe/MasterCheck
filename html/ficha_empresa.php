@@ -17,13 +17,22 @@
     	printf("Error de conexión: %s\n", mysqli_connect_error());
       exit();
     }
-                //descodificar contraseña//
-		$query = "SELECT contrasena FROM clientes WHERE contrasena = '" . $_POST['contra'] . "'";
-                
-            $res = $mysqli->query($query);
-	    $row_cnt = $res->num_rows;
-
-            if ($row_cnt > 0){ //Hay algun registro, con lo cual le enviaremos su nueva contraseña*/
+        //Recogemos nuestra clave maestra
+        $fichero = "clavex.txt";
+        $handle = fopen('clavex.txt', "r");
+        $clavex = fread($handle, filesize($fichero));
+        fclose($handle);
+        //Encriptamos la clave introducida
+        $clave_has = hash_hmac("sha1", $contrasena, $clavex);
+        //Seleccionamos de la BD la contraseña por el email introducido
+        $query = "SELECT contrasena FROM empresa WHERE email = '" . $email . "'";
+        //Ejecutamos query
+        $res = $mysqli->query($query);
+        $row = $res->fetch_array(MYSQLI_NUM);
+        //Comparamos la clave introducida encriptada por la clave en la BD
+        if($row[0] === $clave_has){
+            //Contrasena coincide en la BD
+        */
                 
              ?>   
                 
@@ -75,7 +84,7 @@
 <?php   
            /* }
             else{
-                echo "<p>Lo sentimos pero su correo no pertenece a ningun usuario<p><br>";
+                echo "<p>Lo sentimos pero la contraseña introducida no es correcta, por favor, vuelve a intentarlo<p><br>";
                 //ventana
                 
             }
