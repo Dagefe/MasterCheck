@@ -25,13 +25,61 @@ hr {
   width: : 4px;
 }
 
-.panel-primary > .panel-heading {
-  background-color: chocolate !important;
-  border-color: chocolate !important;
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
 }
 
-.panel-primary {
-  border-color: chocolate !important;
+#myCarousel {
+  position: absolute;
+  z-index: 0;
+
+}
+
+.carousel-inner {
+  max-height: 672px;
+  max-width: 1366px;
+
+
+}
+
+.index-busc {
+	top: 150px;
+	text-align: center;
+	position: relative;
+}
+
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	*display: inline;
+	zoom: 1;
+}
+
+
+.index-busc .index-busc-cab {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 790px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+
+.input-group {
+  padding-left: 22px;
+}
+
+#ofertasDestacadas {
+  margin-top: 145px;
+  text-align: left;
+  padding-left: 15px;
 }
 
 .containerImage {
@@ -52,11 +100,14 @@ hr {
   font-size: 10px;
 }
 .jumbotron {
-    background-color: white;
+    background-color: transparent;;
     padding-top: 15px !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
+    padding-bottom: 0px !important;
     margin-bottom: auto;
+    position: relative;
+    z-index: 100px;
 }
 
 #btnBuscar, #btnBusquedaAvanzada, #iconoLupa {
@@ -76,6 +127,8 @@ hr {
 .noPaddingLogin {
   padding-left: 0px;
   padding-right: 0px;
+  position: relative;
+  z-index: 100px;
 }
 
 #login {
@@ -85,10 +138,13 @@ hr {
 
 .noPaddingDirectorio {
   padding-right: 0px;
+  position: relative;
+  z-index: 100px;
 }
 
 .panelLogin {
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 
 /* Fin padding cabecera */
@@ -104,6 +160,7 @@ hr {
 /* Estilos para el display oculto */
 .paddingOculto {
   padding-top: 15px;
+  padding-left: 22px;
 }
 
 .paddingOcultoFondo {

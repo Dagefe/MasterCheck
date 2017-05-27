@@ -1,0 +1,15 @@
+.panel-primary > .panel-heading {
+  background-color: chocolate !important;
+  border-color: chocolate !important;
+}
+
+.panel-primary {
+  border-color: chocolate !important;
+  margin-top: 20%;
+  position: relative;
+  z-index: 10;
+}
+
+.panel-body {
+  padding: 5px !important;
+}
