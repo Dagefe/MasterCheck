@@ -30,7 +30,7 @@
 
         <div class="container">
             <form action="forgotten_cliente.php" method="post">
-<<<<<<< HEAD
+
 		          <div class="row">
                 <div class="col-xs-12 col-lg-8">
             		  <p>¿Has olvidado la contraseña?</p>
@@ -42,7 +42,7 @@
                         <div class="input-group">
 	            			        <div class="col-xs-12 col-lg-10">
                               <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-=======
+
 		<div class="row">
                     <div class="col-xs-12 col-lg-8">
             		<p>¿Has olvidado la contraseña?</p>
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                 </div>
->>>>>>> e06c438248d0dc5cdd60c823257821f4bb433502
+
                             </div>
 
                             <div class="col-xs-12 col-lg-10">
@@ -111,10 +111,8 @@
 
 <?php
 	include_once ('conexion.php');
-<<<<<<< HEAD
 
-=======
->>>>>>> e06c438248d0dc5cdd60c823257821f4bb433502
+
 	if(@$_POST['enviar'])
 	{
 		$mysqli = new mysqli(db_server,db_username, db_password, db_database);
