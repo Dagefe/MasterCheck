@@ -11,6 +11,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/alta_empresa.css"/>
+    <link rel="stylesheet" href="../css/general.css"/>
 
 </head>
 <body>
