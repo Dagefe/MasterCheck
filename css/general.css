@@ -3,6 +3,9 @@
     margin-left: 325px;
   }
 
+.inputForm {
+  margin: 10px;
+}
 
 .panel-primary > .panel-heading {
   background-color: chocolate !important;

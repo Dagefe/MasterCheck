@@ -80,8 +80,8 @@
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
           </div><!-- /.nav-inverse -->
-        </div><!-- /.container-fluid -->
-      </div> <!-- /.navbar-wrapper -->
+        </div><!-- /.container -->
+      </div><!-- /.navbar-wrapper -->
     </div><!-- /.col -->
   </div><!-- /.row -->
 
@@ -128,62 +128,65 @@
               <form method="post" action="html/mostrarBusquedas.php">
 
                 <!-- Fila de busqueda siempre visible -->
-                <div class="row">
-                  <div class="col-xs-12 col-sm-8 col-lg-8">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-lg-8">
 
-                    <div class="input-group">
-                      <div class="input-group-btn">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <div class="input-group">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             Nombre <span class="caret"></span>
                         </button>
 
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Nombre  <span class="glyphicon glyphicon-search"></span></a></li>
-                          <li><a href="#">CP  <span class="glyphicon glyphicon-search"></span></a></li>
-                          <li><a href="#">Ciudad  <span class="glyphicon glyphicon-search"></span></a></li>
-                        </ul>
-                      </div>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Nombre  <span class="glyphicon glyphicon-search"></span></a></li>
+                            <li><a href="#">CP  <span class="glyphicon glyphicon-search"></span></a></li>
+                            <li><a href="#">Ciudad  <span class="glyphicon glyphicon-search"></span></a></li>
+                          </ul>
+                        </div>
 
-                      <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
+                        <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
-                      <div class="input-group-btn">
-                        <button id="btnBuscar" type="submit" class="btn btn-primary" href="">
+                        <div class="input-group-btn">
+                          <button id="btnBuscar" type="submit" class="btn btn-primary" href="">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2 paddingBusquedaAvanzada">
-                    <div class="input-group">
-                      <div class="input-group-btn">
-                        <button class="btn btn-primary etiquetaLupa" href="#" role="button">
+                    <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2 paddingBusquedaAvanzada">
+                      <div class="input-group">
+                        <div class="input-group-btn">
+                          <button class="btn btn-primary etiquetaLupa" href="#" role="button">
                           Busqueda azanzada
                         </button>
-                      </div>
-                      <div id="btnBusquedaAvanzada" class="input-group-btn">
-                        <a id="iconoLupa" class="btn btn-primary" href="#" role="button">
-                          <span class="glyphicon glyphicon-chevron-down"></span>
-                        </a>
+                        </div>
+                        <div id="btnBusquedaAvanzada" class="input-group-btn">
+                          <a id="iconoLupa" class="btn btn-primary" href="#" role="button">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Fila de busqueda avanzada visible al activar -->
-                <div id="busquedaAvanzada" class="row" style="display:none">
-                  <div class="col-xs-12 col-lg-2">
-                    <div class="input-group-btn paddingOculto">
-                      <span class="input-group-addon paddingOcultoFondo">
+
+                  <!-- Fila de busqueda avanzada visible al activar -->
+                  <div id="busquedaAvanzada" class="row" style="display:none">
+                    <div class="col-xs-12 col-lg-2">
+                      <div class="input-group-btn paddingOculto">
+                        <span class="input-group-addon paddingOcultoFondo">
                                     <span class="fa fa-cutlery" aria-hidden="true"></span>
-                      <input id="restaurante" name="tipo" type="checkbox" value="rest">
-                      </span>
-                      <span class="input-group-addon paddingOcultoFondo">
+                        <input id="restaurante" name="tipo" type="checkbox" value="rest">
+                        </span>
+                        <span class="input-group-addon paddingOcultoFondo">
                                     <span class="fa fa-glass" aria-hidden="true"></span>
-                      <input id="bar" name="tipo" type="checkbox" value="bar">
-                      </span>
+                        <input id="bar" name="tipo" type="checkbox" value="bar">
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </div><!-- Fin container-fluid -->
               </form>
             </div>
           </div>
@@ -234,12 +237,6 @@
     </div>
   </div>
 
-
-
-  <div class="container">
-
-
-  </div>
 
   <footer>
     <div class="container">

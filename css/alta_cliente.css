@@ -1,17 +1,6 @@
-/** ESTILO CONTENEDOR **/
-.container-fluid {
-    margin-left: 360px;
-}
-/** FIN **/
-
-
-
-
-/** ESTILO INPUT **/
-
-.inputForm {
-  margin-bottom: 10px !important;
-  border-radius: 4px !important;
+/** Correcion margen izquierdo navbar **/
+.container {
+  margin-left: 73px !important;
 }
 
 /** FIN **/
