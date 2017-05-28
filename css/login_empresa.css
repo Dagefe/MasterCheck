@@ -1,13 +1,10 @@
-/*** ESTILO CONTENEDOR ***/
 
-.container-fluid {
-    margin-left: 325px;
-  }
+/** Correcion margen izquierdo navbar **/
+.container {
+  margin-left: 73px !important;
+}
 
-/*** FIN *
-
-
-
+/** Fin **/
 
 /*** ESTILOS PARA LOS BOTONES DE LOGIN ***/
 
