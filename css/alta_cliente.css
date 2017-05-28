@@ -1,30 +1,6 @@
-/** ESTILO CONTENEDOR **/
-.container-fluid {
-    margin-left: 360px;
-}
-/** FIN **/
-
-
-/** Estilos panel **/
-.panel-heading {
-
-    background-color: chocolate !important;
-    border-color: chocolate !important;
-}
-
-.panel-primary {
-    border-color: chocolate;
-    width: 50%;
-}
-
-/** FIN **/
-
-
-/** ESTILO INPUT **/
-
-.inputForm {
-  margin-bottom: 10px !important;
-  border-radius: 4px !important;
+/** Correcion margen izquierdo navbar **/
+.container {
+  margin-left: 73px !important;
 }
 
 /** FIN **/

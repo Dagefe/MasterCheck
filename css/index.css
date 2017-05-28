@@ -21,18 +21,8 @@
   margin-right: 0px !important
 }
 
-hr {
-  width: : 4px;
-}
 
-.navbar-wrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 20;
-  margin-top: 20px;
-}
+
 
 #myCarousel {
   position: absolute;
@@ -47,18 +37,21 @@ hr {
 
 }
 
+h3.titulo-busqueda {
+  margin-top: 0px;
+}
+
+h4.titulo-empresas {
+  color: cornsilk;
+}
+
 .index-busc {
 	top: 150px;
 	text-align: center;
 	position: relative;
 }
 
-.index-busc .wrapper {
-	display: inline-block;
-	vertical-align: middle;
-	*display: inline;
-	zoom: 1;
-}
+
 
 
 .index-busc .index-busc-cab {
@@ -76,10 +69,20 @@ hr {
   padding-left: 22px;
 }
 
-#ofertasDestacadas {
-  margin-top: 145px;
-  text-align: left;
+.ofertasDestacadas {
+  margin-top: 220px;
   padding-left: 15px;
+
+}
+
+.ofertasDestacadas-ajustado {
+  margin-top: 170px;
+}
+
+.cuadro-ofertas {
+  height: 170px;
+  padding-top: 5px !important;
+  background-image: url("../imagenes/fondo-ofertas.jpg") !important;
 }
 
 .containerImage {
@@ -99,6 +102,8 @@ hr {
   font-weight: bolder;
   font-size: 10px;
 }
+
+
 .jumbotron {
     background-color: transparent;;
     padding-top: 15px !important;
@@ -159,7 +164,7 @@ hr {
 
 /* Estilos para el display oculto */
 .paddingOculto {
-  padding-top: 15px;
+  padding-top: 2px;
   padding-left: 22px;
 }
 
