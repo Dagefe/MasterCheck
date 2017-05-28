@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <!-- Styles -->
     <link rel="stylesheet" href="../css/general.css">
-    <!-- <link rel="stylesheet" href="../css/alta_cliente.css"/> -->
 		<link rel="stylesheet" href="../css/forgotten_cliente.css"/>
     <link rel="stylesheet" href="../css/sweetalert.css">
 		<link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
@@ -50,9 +49,6 @@
                           <div class="input-group">
                               <input id="btnSendMail" type="submit" name="enviar" value="Recuperar contraseña" class="btn btn-default">
                               <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                  <!--<button id="btnSendMail" input type="submit" name="enviar" class="btn btn-default">
-                                      Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                  </button> No funciona con las propiedades del boton -->
                           </div>
                         </div>
                       </div>

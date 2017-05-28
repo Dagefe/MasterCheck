@@ -8,7 +8,8 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/alta_cliente.css"/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/general.css"/>
     <link rel="stylesheet" href="../css/forgotten_empresa.css"/>
     <link rel="stylesheet" href="../css/sweetalert.css">
 		<link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
