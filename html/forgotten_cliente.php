@@ -8,7 +8,9 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/alta_cliente.css"/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/general.css">
+    <!-- <link rel="stylesheet" href="../css/alta_cliente.css"/> -->
 		<link rel="stylesheet" href="../css/forgotten_cliente.css"/>
     <link rel="stylesheet" href="../css/sweetalert.css">
 		<link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
@@ -42,49 +44,24 @@
                         <div class="input-group">
 	            			        <div class="col-xs-12 col-lg-10">
                               <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-
-		<div class="row">
-                    <div class="col-xs-12 col-lg-8">
-            		<p>¿Has olvidado la contraseña?</p>
-                            <div class="panel panel-primary">
-            			<div class="panel-heading">
-                                    <h3 class="panel-title text-center">Recuperación de contraseña</h3>
-            			</div>
-            			<div class="panel-body">
-                                    <div class="input-group">
-	            			<div class="col-xs-12 col-lg-10">
-                                            <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-                                        </div>
-                                    
-                                        <div class="col-xs-12 col-lg-10">
-                                            <div class="btn-group">
-                                                
-                                                <input type="submit" name="enviar" name="enviar"> 
-                                                    <!--<button id="btnSendMail" input type="submit" name="enviar" class="btn btn-default">  
-                                                        Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                                    </button> No funciona con las propiedades del boton --> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
-
-                            <div class="col-xs-12 col-lg-10">
-                              <div class="input-group">
-                                <input id="btnSendMail" type="submit" name="enviar" value="Recuperar contraseña" class="btn btn-default">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-xs-12 col-lg-10">
+                          <div class="input-group">
+                              <input id="btnSendMail" type="submit" name="enviar" value="Recuperar contraseña" class="btn btn-default">
+                              <span class="fa fa-envelope-o" aria-hidden="true"></span>
                                   <!--<button id="btnSendMail" input type="submit" name="enviar" class="btn btn-default">
                                       Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
                                   </button> No funciona con las propiedades del boton -->
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-		              </div>
-            </form>
+                  </div>
+                </div>
+              </div>
+		        </div>
+          </form>
         </div>
 
 
@@ -98,7 +75,7 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/forgotten_cliente.js"></script>
