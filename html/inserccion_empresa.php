@@ -95,7 +95,7 @@
               $actividad = $_POST['activ']; $direccion = $_POST['direccion']; $pais = $_POST['pais'];
 
               //Query para insertar los valores
-              $query = "INSERT INTO Empresa VALUES (NULL, '$email', '$pass', '$contacto', $movil, '$empresa', '$direccion', '$pob', '$cp', '$pais', '$activ')";
+              $query = "INSERT INTO Empresa VALUES (NULL, '$email', '$pass', '$contacto', $movil, '$empresa', '$direccion', '$pob', $cp, '$pais', '$activ')";
 
                 if(!$mysqli->query($query))
                 {

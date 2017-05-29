@@ -134,7 +134,7 @@ session_start();
       exit();
       }
      
-    $consulta = "UPDATE clientes SET email ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil ='" . $_SESSION['movil_usuario'] . "', provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+    $consulta = "UPDATE clientes SET email ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     
       echo $consulta;
