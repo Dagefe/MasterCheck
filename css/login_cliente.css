@@ -22,9 +22,7 @@
   margin-right: 5px;
 }
 
-.separacionTop {
-  padding-top: 13px;
-}
+
 
 /*** FIN ***/
 
@@ -37,6 +35,10 @@
 /*** FIN ***/
 
 /*** ESTILOS GRUPOS DE INPUT Y BOTONES ***/
+
+.separacionTop {
+  padding-top: 13px;
+}
 
 .ajusteLateral {
   padding-left: 63px;
