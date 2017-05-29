@@ -15,22 +15,20 @@ session_start();
           exit();
         }
         
-         $nom = "SELECT * FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+         $ema = "SELECT * FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
  
-        if ($nombre_completo = $mysqli->query($nom)){
+        if ($email_cliente = $mysqli->query($ema)){
 
-          while ($fila = $nombre_completo->fetch_row()){
-            $nombre = $fila[1];
-            $apellidos = $fila[2];
-            $movil = $fila[5];
-            $provincia = $fila[6];
+          while ($fila = $email_cliente->fetch_row()){
+            $email = $fila[3];
+            $password = $fila[4];
           }
         }
         
-        $_SESSION['nombre_usuario'] = $nombre;
-        $_SESSION['apellidos_usuario'] = $apellidos;
-        $_SESSION['movil_usuario'] = $movil;
-        $_SESSION['provincia_usuario'] = $provincia;
+        $_SESSION['email_usuario'] = $email;
+        
+        
+        
         
     mysqli_close($mysqli);
 ?>
@@ -64,44 +62,37 @@ session_start();
 
       <div class="container well">
         <div class="row">
-          <div class="col-xs-8"><h2>Perfil de usuario</h2></div>
+          <div class="col-xs-8"><h2>Ajustes de usuario</h2></div>
         </div>
         <br/><br/>
 
         <form class="form-horizontal" name="formulario_ficha" method="POST">
 
         <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
+            <label class="col-sm-2 control-label" for="formGroup">Email</label>
             <div class="col-sm-4">
-              <input class="form-control" name="nombre" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+              <input class="form-control" name="email" type="text" id="formGroup" value="<?php echo $email; ?>">
             </div>
           </div>
 
+            
+            
+        <!-- Recoger contraseña encriptada y mostrar en el campo -->
+            
+            
+            
+            
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
+            <label class="col-sm-2 control-label" for="formGroup">Contraseña</label>
             <div class="col-sm-4">
-              <input class="form-control" name="apellidos" type="text" id="formGroup" value="<?php echo $apellidos; ?>">
+              <input class="form-control" name="contra" type="password" id="formGroup" placeholder="*******">
           </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Movil</label>
-            <div class="col-sm-4">
-              <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $movil; ?>">
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
-            <div class="col-sm-4">
-              <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $provincia; ?>">
-          </div>
-
             <br/>
-
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup"></label>
             <div class="col-sm-4">
 
-              <input type="submit" name="guardar" class="btn btn-success btn-lg" value="Guardar">
+              <input type="submit" name="cambiar" class="btn btn-success btn-lg" value="Cambiar">
 
               <input type="submit" name="cancelar" class="btn btn-danger btn-lg" value="Cancelar">
 
@@ -110,14 +101,11 @@ session_start();
         </form>	
       </div>	
       
-      
-        <div class="btn-group-vertical">
-          <button type="submit" class="btn btn-default "href="ficha_cliente.php">Perfil de usuario</button> <!-- Si estas en esta pagina se muestra sin enlace -->
-          <button type="submit" class="btn btn-default "href="ajustes_cliente.php">Ajustes de cuenta</button> 
-          <button type="button" class="btn btn-default "href="favoritos.php">Favoritos</button>
-        </div>
-      
-      
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-default"href="ficha_cliente.php">Perfil de usuario</button>
+        <button type="button" class="btn btn-default" href="ajustes_cliente.php">Ajustes de cuenta</button><!-- Si estas en esta pagina se muestra sin enlace -->
+        <button type="button" class="btn btn-default"href="favoritos.php">Favoritos</button>
+      </div>
 
 
 
@@ -146,7 +134,7 @@ session_start();
       exit();
       }
      
-    $consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+    $consulta = "UPDATE clientes SET email ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     
       echo $consulta;
@@ -173,6 +161,4 @@ session_start();
     //mensaje de vuelta a la pagina de inicio del uusario logueado
     header('Location: prueba.php'); // no carga pagina --> header('Location: usuario.php');
   }
-  
-  
-  
+
