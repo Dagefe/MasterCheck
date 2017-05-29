@@ -112,8 +112,8 @@ session_start();
       
       
         <div class="btn-group-vertical">
-          <button type="submit" class="btn btn-default "href="ficha_cliente.php">Perfil de usuario</button> <!-- Si estas en esta pagina se muestra sin enlace -->
-          <button type="submit" class="btn btn-default "href="ajustes_cliente.php">Ajustes de cuenta</button> 
+          <input type="submit" class="btn btn-default "href="ficha_cliente.php">Perfil de usuario <!-- Si estas en esta pagina se muestra sin enlace -->
+          <input type="submit" class="btn btn-default "href="ajustes_cliente.php">Ajustes de cuenta
           <button type="button" class="btn btn-default "href="favoritos.php">Favoritos</button>
         </div>
       

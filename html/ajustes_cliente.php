@@ -85,7 +85,7 @@ session_start();
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Contraseña</label>
             <div class="col-sm-4">
-              <input class="form-control" name="contra" type="password" id="formGroup" placeholder="*******">
+              <input class="form-control" name="contra" type="password" id="formGroup" value="RELLENAR"> 
           </div>
             <br/>
           <div class="form-group">
@@ -95,6 +95,8 @@ session_start();
               <input type="submit" name="cambiar" class="btn btn-success btn-lg" value="Cambiar">
 
               <input type="submit" name="cancelar" class="btn btn-danger btn-lg" value="Cancelar">
+                  
+              <input type="submit" name="borrar" class="btn btn-danger btn-lg" value="Borrar cuenta">
 
             </div>
           </div>     
@@ -104,7 +106,7 @@ session_start();
       <div class="btn-group-vertical">
         <button type="button" class="btn btn-default"href="ficha_cliente.php">Perfil de usuario</button>
         <button type="button" class="btn btn-default" href="ajustes_cliente.php">Ajustes de cuenta</button><!-- Si estas en esta pagina se muestra sin enlace -->
-        <button type="button" class="btn btn-default"href="favoritos.php">Favoritos</button>
+        <button type="button" class="btn btn-default"href="favoritos.php">Favoritos</button> <!-- Mirar el jueves -->
       </div>
 
 
