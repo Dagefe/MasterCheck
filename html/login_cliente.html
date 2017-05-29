@@ -77,13 +77,20 @@
                     </ul>
                   </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-          </div><!-- /.nav-inverse -->
-        </div><!-- /.container-fluid -->
-      </div><!-- /.navbar-wrapper -->
-    </div><!-- /.col -->
-  </div><!-- /.row -->
+              </div>
+              <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+          </div>
+          <!-- /.nav-inverse -->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- /.navbar-wrapper -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
 
   <!-- Arbol de navegacion
     <div class="row">
@@ -111,27 +118,20 @@
             <h3 class="panel-title text-center">Bienvenido al área de cliente</h3>
           </div>
 
-            <div class="panel-body">
-              <h5 class="text-center">Iniciar sesion</h5>
-              <div class="col-xs-12 col-md-8 col-lg-12">
-              <form method="post" action="usuario.php" name="form">
           <div class="panel-body">
             <h5 class="text-center">Iniciar sesion</h5>
             <div class="col-xs-12 col-md-8 col-lg-12">
-              <form method="post" action="ficha_cliente.php" name="form">
+              <form method="post" action="usuario.php" name="form">
+                    <div class="input-group datosAcceso">
+                      <input id="email" name="email" type="email" placeholder="email" class="form-control inputForm" onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+                      <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm" onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+                    </div>
 
-                <div class="input-group">
-                  <input id="email" name="email" type="email" placeholder="email" class="form-control inputForm"
-                         onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
-                  <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm"
-                         onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
-                </div>
-
-                <div class="input-group-btn">
-                  <button id="btnAcceder" type="submit" class="btn btn-primary">Acceder</button>
-                  <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
-                  <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
-                </div>
+                    <div class="input-group-btn botoneraAcceso">
+                      <input id="btnAcceder" name="enviar" value="Acceder" type="submit" class="btn btn-primary"/>
+                      <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
+                      <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
+                    </div>
               </form>
             </div>
           </div>
@@ -139,6 +139,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/jquery-3.2.1.min.js"></script>
