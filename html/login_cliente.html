@@ -13,6 +13,8 @@
   <!-- Styles -->
   <link rel="stylesheet" href="../css/general.css">
   <link rel="stylesheet" href="../css/login_cliente.css">
+  <!-- To insert the icon: -->
+  <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
 
 
@@ -39,23 +41,7 @@
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Nose <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">Nose</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">One more separated link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <!--
+              <!--
                 <form class="navbar-form navbar-left">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
@@ -64,90 +50,70 @@
                 </form>
               -->
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login_cliente.html">Particular</a></li>
-                  <li><a href="login_empresa.html">Empresa</a></li>
+                  <!-- <li><a href="login_cliente.html">Particular</a></li>
+                  <li><a href="login_empresa.html">Empresa</a></li> -->
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user "></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
+                      <li><a href="login_cliente.html">Particular<span class="fa fa-sign-in"></span></a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
+                      <li><a href="login_empresa.html">Empresa<span class="fa fa-sign-in"></span></a></li>
+                      <!-- <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li> -->
                     </ul>
                   </li>
                 </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-          </div>
-          <!-- /.nav-inverse -->
-        </div>
-        <!-- /.container-fluid -->
-      </div>
-      <!-- /.navbar-wrapper -->
-    </div>
-    <!-- /.col -->
-  </div>
-  <!-- /.row -->
+              </div> <!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </div><!-- /.nav-inverse -->
+        </div><!-- /.container-fluid -->
+      </div><!-- /.navbar-wrapper -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
 
-  <!-- Arbol de navegacion
-    <div class="row">
-      <div class="col-xs-12 col-md-12 col-lg-12 noPaddingDirectorio">
-        <ol class="breadcrumb panelLogin">
-          <li class="glyphicon glyphicon-home"><a href="../index.html">  Inicio</a></li>
-          <li class="active"><a href="#">Particular</a></li>
-        </ol>
-      </div>
-    </div>
-    -->
-
-  <!-- Logotipo
-    <div class="jumbotron">
-      <p class="colorTitulo text-left">MASTER CHEQUE</p>
-      <hr>
-    </div>
-    -->
 
   <div class="container-welcome">
     <div class="row">
-      <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="col-xs-12 col-lg-8">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">Bienvenido al área de cliente</h3>
+            <h3 class="panel-title text-center">Bienvenido</h3>
           </div>
+
           <div class="panel-body">
             <h5 class="text-center">Iniciar sesion</h5>
-            <div class="col-xs-12 col-md-8 col-lg-12">
-              <form method="post" action="usuario.php" name="form">
-                    <div class="input-group datosAcceso">
-                      <input id="email" name="email" type="email" placeholder="email" class="form-control inputForm" onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
-                      <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm" onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
-                    </div>
+            <form method="post" action="usuario.php" name="form">
 
-                    <div class="input-group-btn botoneraAcceso">
-                      <input id="btnAcceder" name="enviar" value="Acceder" type="submit" class="btn btn-primary"/>
-                      <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
-                      <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
-                    </div>
-              </form>
-            </div>
+              <div class="input-group ajusteLateral">
+                <input id="email" name="email" type="email" placeholder="email" class="form-control inputForm"
+                      onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+
+                <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm"
+                       onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+              </div>
+
+              <div class="input-group-btn ajusteLateral separacionTop">
+                <input id="btnAcceder" type="submit" value="Acceder" class="btn btn-primary">
+                <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
+                <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
+              </div>
+            </form>
           </div>
         </div>
-       </div>
       </div>
     </div>
+  </div>
 
 
 
 
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/login_cliente.js"></script>
-  <script src="js/campos_vacios.js"></script>
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/login_cliente.js"></script>
+  <script src="../js/campos_vacios.js"></script>
 
 </body>
 

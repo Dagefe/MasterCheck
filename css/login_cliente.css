@@ -6,7 +6,13 @@
 
 /** Fin **/
 
-/*** ESTILOS PARA LOS BOTONES DE LOGIN ***/
+/*** ESTILOS LOGIN ***/
+
+.fa-sign-in, .fa-user  {
+  margin-left: 10px;
+  font-size: 17px;
+  vertical-align: text-top;
+}
 
 #btnAcceder, #btnAlta, #btnOlvido {
   border-radius: 4px;
@@ -22,6 +28,13 @@
   margin-right: 5px;
 }
 
+.ajusteLateral {
+  padding-left: 63px;
+}
+
+.separacionTop {
+  padding-top: 13px;
+}
 
 
 /*** FIN ***/

@@ -21,9 +21,6 @@
   margin-right: 0px !important
 }
 
-
-
-
 #myCarousel {
   position: absolute;
   z-index: 0;
@@ -50,8 +47,6 @@ h4.titulo-empresas {
 	text-align: center;
 	position: relative;
 }
-
-
 
 
 .index-busc .index-busc-cab {
@@ -126,6 +121,13 @@ h4.titulo-empresas {
 
 
 /* Apartado de login */
+
+.fa-sign-in, .fa-user  {
+  margin-left: 10px;
+  font-size: 17px;
+  vertical-align: text-top;
+}
+
 
 
 /* Ajuste padding cabecera */
