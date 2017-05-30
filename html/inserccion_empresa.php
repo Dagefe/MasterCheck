@@ -86,7 +86,7 @@
               fclose($handle);
 
               //Encriptamos las contreaseñas con el metodo sha1
-              $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
+              $clave_has = openssl_encrypt($_POST['pass'], "AES-128-ECB", $clavex);
 
               //Inicializamos las variables
               $email = $_POST['email']; $pass = $clave_has;

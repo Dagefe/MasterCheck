@@ -1,36 +1,31 @@
 <?php
 session_start();
 
-?> 
+include_once 'conexion.php';
 
-<?php
+$mysqli = new mysqli(db_server,db_username, db_password, db_database);
+
+if (mysqli_connect_errno()) { //Posible error al conectar a la base de datos
+    printf("Error de conexión: %s\n", mysqli_connect_error());
+    exit();
+}
+
+$ema = "SELECT email,contrasena FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
  
- include_once 'conexion.php';
-
-    $mysqli = new mysqli(db_server,db_username, db_password, db_database);
-
-      if (mysqli_connect_errno())
-        { //Posible error al conectar a la base de datos
-          printf("Error de conexión: %s\n", mysqli_connect_error());
-          exit();
-        }
+if ($email_cliente = $mysqli->query($ema)){
+    while ($fila = $email_cliente->fetch_row()){
+          $email = $fila[0];
+          $password = $fila[1];
+    }
+}
         
-         $ema = "SELECT * FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
- 
-        if ($email_cliente = $mysqli->query($ema)){
-
-          while ($fila = $email_cliente->fetch_row()){
-            $email = $fila[3];
-            $password = $fila[4];
-          }
-        }
-        
-        $_SESSION['email_usuario'] = $email;
-        
-        
-        
-        
-    mysqli_close($mysqli);
+  $_SESSION['email_usuario'] = $email;
+  $fichero = "clavex.txt"; //Recogemos nuestra clave para poder desencriptar la contraseña
+  $handle = fopen('clavex.txt', "r");
+  $clavex = fread($handle, filesize($fichero));
+  fclose($handle);
+  $clave_has = openssl_decrypt($password, "AES-128-ECB", $clavex);//Desencriptamos la contraseña
+  mysqli_close($mysqli);
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +80,7 @@ session_start();
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Contraseña</label>
             <div class="col-sm-4">
-              <input class="form-control" name="contra" type="password" id="formGroup" value="RELLENAR"> 
+              <input class="form-control" name="contra" type="password" id="formGroup" value="<?php echo $clave_has; ?>"> 
           </div>
             <br/>
           <div class="form-group">
@@ -104,9 +99,9 @@ session_start();
       </div>	
       
       <div class="btn-group-vertical">
-        <button type="button" class="btn btn-default"href="ficha_cliente.php">Perfil de usuario</button>
+        <button type="button" class="btn btn-default" href="ficha_cliente.php">Perfil de usuario</button>
         <button type="button" class="btn btn-default" href="ajustes_cliente.php">Ajustes de cuenta</button><!-- Si estas en esta pagina se muestra sin enlace -->
-        <button type="button" class="btn btn-default"href="favoritos.php">Favoritos</button> <!-- Mirar el jueves -->
+        <button type="button" class="btn btn-default" href="favoritos.php">Favoritos</button> <!-- Mirar el jueves -->
       </div>
 
 
@@ -136,16 +131,17 @@ session_start();
       exit();
       }
      
-    $consulta = "UPDATE clientes SET email ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+    //$consulta = "UPDATE clientes SET email ='" . $_POST['email'] . "', contrasena ='" . $_POST['contra'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
-    
-      echo $consulta;
+    $consulta = "UPDATE clientes SET email ='" . $_POST['email'] . "', contrasena ='" . $_POST['contra'] . "'";
+    echo $consulta;
     $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
     if ($resultado)
       {
       
           echo " Mensaje Cambios realizados";
-          
+          //Redireccionamiento a la misma pagina
+          //header("Location: " . $_SERVER("DOCUMENT_ROOT") . "/ajustes_cliente.php");
         }
         
     else
@@ -158,7 +154,7 @@ session_start();
     mysqli_close($conexion);
   }
  
-  else if(@$_POST['cancelar'] == "Cancelar"){
+  elseif(@$_POST['cancelar'] == "Cancelar"){
     
     //mensaje de vuelta a la pagina de inicio del uusario logueado
     header('Location: prueba.php'); // no carga pagina --> header('Location: usuario.php');

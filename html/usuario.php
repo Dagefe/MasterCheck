@@ -22,9 +22,13 @@ if(@$_POST['enviar'])
         $clavex = fread($handle, filesize($fichero));
         fclose($handle);
         //Encriptamos la clave introducida
-        $clave_has = hash_hmac("sha1", $contrasena, $clavex);
+        $clave_has = openssl_encrypt($contrasena, "AES-128-ECB", $clavex);
         //Seleccionamos de la BD la contraseña por el email introducido
+<<<<<<< HEAD
         $query = "SELECT contrasena FROM Clientes WHERE email = '" . $email . "'";
+=======
+        $query = "SELECT contrasena FROM clientes WHERE email = '" . $email . "'";
+>>>>>>> f44eeb1f8cba1b5574904a8f7d381ec1a45e0c05
         //Ejecutamos query
         $res = $mysqli->query($query);
         $row = $res->fetch_array(MYSQLI_NUM);
