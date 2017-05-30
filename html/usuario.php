@@ -5,10 +5,11 @@
 <?php
 if(@$_POST['enviar'])
   {
-  include_once 'conexion.php';
+    include_once ("conexion.php");
 
     $email = $_POST['email'];
     $contrasena = $_POST['contra'];
+
     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
 
       if (mysqli_connect_errno())
@@ -16,13 +17,16 @@ if(@$_POST['enviar'])
           printf("Error de conexión: %s\n", mysqli_connect_error());
           exit();
         }
+
         //Recogemos nuestra clave maestra
         $fichero = "clavex.txt";
         $handle = fopen('clavex.txt', "r");
         $clavex = fread($handle, filesize($fichero));
         fclose($handle);
+
         //Encriptamos la clave introducida
         $clave_has = openssl_encrypt($contrasena, "AES-128-ECB", $clavex);
+
         //Seleccionamos de la BD la contraseña por el email introducido
         $query = "SELECT contrasena FROM Clientes WHERE email = '" . $email . "'";
 
@@ -74,7 +78,7 @@ if(@$_POST['enviar'])
           <div class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">MASTERCHECK</a>
+                <a class="navbar-brand" href="../index.html">MASTERCHECK</a>
               </div><!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -237,34 +241,28 @@ if(@$_POST['enviar'])
 
 
 
+  <footer>
+    <div class="container">
+      <div class="panel-footer">
+        Panel para pie de pagina
 
-              <div class="container">
-
-
-              </div>
-
-            <footer>
-              <div class="container">
-                <div class="panel-footer">
-                  Panel para pie de pagina
-
-                </div>
-              </div>
-            </footer>
+      </div>
+    </div>
+  </footer>
 
 
 
 
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="../js/jquery-3.2.1.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="../js/bootstrap.min.js"></script>
-            <script src="../js/index.js"></script>
-            <script src="fonts/glyphicons-halflings-regular.eot"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/index.js"></script>
 
-          </body>
 
-          </html>
+</body>
+
+</html>
 
 <?php
  $_SESSION['nombre_usuario'] = $nombre;
