@@ -53,7 +53,7 @@
                     $handle = fopen('clavex.txt', "r");
                     $clavex = fread($handle, filesize($fichero));
                     fclose($handle);
-                    $clave_has = hash_hmac("sha1", $_POST['pass'], $clavex);
+                    $clave_has = openssl_encrypt($_POST['pass'], "AES-128-ECB", $clavex);
 
                     // Declaramos las variables
                     $nombre = $_POST['name']; $email = $_POST['email'];

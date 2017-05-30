@@ -112,9 +112,9 @@ session_start();
       
       
         <div class="btn-group-vertical">
-          <input type="submit" class="btn btn-default "href="ficha_cliente.php">Perfil de usuario <!-- Si estas en esta pagina se muestra sin enlace -->
-          <input type="submit" class="btn btn-default "href="ajustes_cliente.php">Ajustes de cuenta
-          <button type="button" class="btn btn-default "href="favoritos.php">Favoritos</button>
+          <input type="submit" class="btn btn-default" href="ficha_cliente.php">Perfil de usuario <!-- Si estas en esta pagina se muestra sin enlace -->
+          <input type="submit" class="btn btn-default" href="ajustes_cliente.php">Ajustes de cuenta
+          <button type="button" class="btn btn-default" href="favoritos.php">Favoritos</button>
         </div>
       
       
@@ -131,10 +131,7 @@ session_start();
   </html> <!-- Final codigo -->
 
 <?php
- 
   
-
- 
   if(@$_POST['guardar'] == "Guardar"){
     
     $conexion = new mysqli(db_server,db_username, db_password, db_database);
@@ -155,7 +152,8 @@ session_start();
       {
       
           echo " Mensaje Cambios realizados";
-          
+          //Redireccion a la misma pagina con los cambios actualizados
+          //header('Location: ' . $_SERVER("DOCUMENT_ROOT") . '/ficha_cliente.php');
         }
         
     else
