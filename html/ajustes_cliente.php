@@ -10,12 +10,12 @@ if (mysqli_connect_errno()) { //Posible error al conectar a la base de datos
     exit();
 }
 
-$ema = "SELECT * FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+$ema = "SELECT email,contrasena FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
  
 if ($email_cliente = $mysqli->query($ema)){
     while ($fila = $email_cliente->fetch_row()){
-          $email = $fila[3];
-          $password = $fila[4];
+          $email = $fila[0];
+          $password = $fila[1];
     }
 }
         
