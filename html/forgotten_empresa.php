@@ -186,11 +186,11 @@
             else {
               echo '<script>swal({
                       title: "Error",
-                      text: "Debe rellenar los campos requeridos",
+                      text: "Email no encontrado en nuestro sistema",
                       cancelButtonText: "Volver a intentarlo",
                       type: "warning"
                   }, function() {
-                      window.location = "alta_cliente.php";
+                      window.location = "alta_empresa.php";
                   })</script>';
                 //echo "<p>Lo sentimos pero su correo no pertenece a ningun usuario<p><br>";
                 //ventana

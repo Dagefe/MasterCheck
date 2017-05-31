@@ -1,11 +1,9 @@
 <?php
  session_start();
-?>
 
-<?php
 if(@$_POST['enviar'])
   {
-    include_once ("conexion.php");
+    include_once 'conexion.php';
 
     $email = $_POST['email'];
     $contrasena = $_POST['contra'];
@@ -29,7 +27,6 @@ if(@$_POST['enviar'])
 
         //Seleccionamos de la BD la contraseña por el email introducido
         $query = "SELECT contrasena FROM Clientes WHERE email = '" . $email . "'";
-
         //Ejecutamos query
         $res = $mysqli->query($query);
         $row = $res->fetch_array(MYSQLI_NUM);
@@ -37,12 +34,15 @@ if(@$_POST['enviar'])
         if($row[0] === $clave_has){
             //Contrasena coincide en la BD
 
-            $nom = "SELECT nombre FROM Clientes WHERE email = '" . $email . "'";
+            $nom = "SELECT nombre,apellidos,movil,provincia FROM Clientes WHERE email = '" . $email . "'";
 
             if ($nombre_completo = $mysqli->query($nom)){
               while ($fila = $nombre_completo->fetch_row()){
 
                 $nombre = $fila[0];
+                $_SESSION['apellidos_usuario'] = $fila[1];
+                $_SESSION['movil_usuario'] = $fila[2];
+                $_SESSION['provincia_usuario'] = $fila[3];  
               }
             }
             else {
@@ -84,7 +84,7 @@ if(@$_POST['enviar'])
                 <ul class="nav navbar-nav navbar-right">
                   <li><a><?php echo $nombre; ?></a></li>
                   <li><a href="ficha_cliente.php">Perfil</a></li>
-                  <li><a href="#">Cerrar sesion</a></li> <!-- Como cerrar sesion???? -->
+                  <li><a href="logout.php">Cerrar sesion</a></li> <!-- Como cerrar sesion???? -->
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -163,7 +163,7 @@ if(@$_POST['enviar'])
                 <div class="input-group">
                   <div class="input-group-btn">
                     <button class="btn btn-primary etiquetaLupa" href="#" role="button">
-                      Busqueda azanzada
+                      Busqueda avanzada
                     </button>
                   </div>
                   <div id="btnBusquedaAvanzada" class="input-group-btn">

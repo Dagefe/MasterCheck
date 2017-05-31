@@ -138,7 +138,7 @@
                   <button id="btnEnviar" input name="enviar" type="submit" class="btn btn-primary">Dar de alta</button>
                     <a id="btnBorrar" type="reset" class="btn btn-danger" role="button"
                        data-toggle="modal" data-target="#miModal">Borrar</a>
-                    <a id="btnOlvido" class="btn btn-primary" role="button" href="olvido.html">¿Has olvidado tu contraseña?</a>
+                    <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
                 </div>
               </div>
             </div>

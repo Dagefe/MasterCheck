@@ -1,10 +1,5 @@
 <?php
-session_start();
-
-?> 
-
-<?php
- 
+session_start(); 
  include_once 'conexion.php';
 
     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -86,13 +81,13 @@ session_start();
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Movil</label>
             <div class="col-sm-4">
-              <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $movil; ?>">
+              <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $movil; ?>" placeholder="Introduza un tlf movil">
           </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
             <div class="col-sm-4">
-              <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $provincia; ?>">
+              <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $provincia; ?>" placeholder="Introduza aqui la provincia">
           </div>
 
             <br/>
@@ -124,7 +119,7 @@ session_start();
 
       <script src="js/jquery-1.11.1.min.js"></script>
       <script src="js/bootstrap.js"></script>
-
+      <script src="../js/sweetalert.min.js"></script>
 
 
     </body>
@@ -142,16 +137,29 @@ session_start();
       ", $conexion->connect_error);
       exit();
       }
-     
-    $consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+    if (empty($_POST['movil'])){
+      $movil = '';
+    }
+    if (empty($_POST['provincia'])){
+      $provincia = '';
+    }
+    $consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil ='" . $movil . "', provincia ='" . $provincia . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     
       echo $consulta;
     $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
+    mysqli_close($conexion);
     if ($resultado)
       {
-      
-          echo " Mensaje Cambios realizados";
+          
+          echo '<script>swal({
+                            title: "¡Hecho!",
+                            text: "Cambios realizados correctamente",
+                            confirmButtonText: "Aceptar",
+                            type: "success"
+                        }, function() {
+                            window.location = "ficha_cliente.php";
+                        })</script>';
           //Redireccion a la misma pagina con los cambios actualizados
           //header('Location: ' . $_SERVER("DOCUMENT_ROOT") . '/ficha_cliente.php');
         }
@@ -163,7 +171,6 @@ session_start();
           
         }
     #Cerrar la conexión
-    mysqli_close($conexion);
   }
  
   else if(@$_POST['cancelar'] == "Cancelar"){

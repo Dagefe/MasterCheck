@@ -1,6 +1,3 @@
-<?php
-  session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,8 +22,9 @@
 
 
 <?php
+  session_start();
     //Incluimos nuestros credenciales de acceso a la base de datos
-    include_once('conexion.php');
+    include_once 'conexion.php';
 
     //Inicializamos las variables a false
     $datos_acceso = false;
@@ -52,7 +50,7 @@
     }
 
     //En el caso de que esten todos rellenados sigue el proceso
-    if($datos_acceso = true && $datos_contacto = true && $datos_empresa = true)
+    if($datos_acceso == true && $datos_contacto == true && $datos_empresa == true)
     {
         //Comprobacion que las contraseñas coindicen
         if($_POST['pass'] === $_POST['repass'])
@@ -72,8 +70,14 @@
             $row_cnt = $res->num_rows;
 
             if ($row_cnt > 0){ //Hay algun registro, con lo cual email duplicado
-                echo "Email duplicado, por favor, seleccione otro email para proceder al registro";
-                header('Location: ../html/login_empresa.php');
+                echo '<script>swal({
+                  title: "Error: Email duplicado",
+                  text: "Lo sentimos, el email introducido esta duplicado, por favor seleccione otro.",
+                  confirmButtonText: "Volver al formulario",
+                  type: "warning"
+              }, function() {
+                  window.location = "alta_empresa.php";
+              })</script>';
             }
             else
             { //No hay email duplicados en nuestra base de datos
@@ -82,7 +86,7 @@
               //Leemos la contraseña clave de nuestro archivo
               $fichero = "clavex.txt";
               $handle = fopen($fichero, "r");
-              $clavex = fread($handle, filesize($handle));
+              $clavex = fread($handle, filesize($fichero));
               fclose($handle);
 
               //Encriptamos las contreaseñas con el metodo sha1
@@ -95,7 +99,7 @@
               $actividad = $_POST['activ']; $direccion = $_POST['direccion']; $pais = $_POST['pais'];
 
               //Query para insertar los valores
-              $query = "INSERT INTO Empresa VALUES (NULL, '$email', '$pass', '$contacto', $movil, '$empresa', '$direccion', '$pob', $cp, '$pais', '$activ')";
+              $query = "INSERT INTO Empresa VALUES (NULL, '$email', '$pass', '$contacto', $movil, '$empresa', '$direccion', '$pob', $cp, '$pais', '$actividad')";
 
                 if(!$mysqli->query($query))
                 {
@@ -126,11 +130,11 @@
         else {
           echo '<script>swal({
                       title: "Error",
-                      text: "Datos mal introducidos",
+                      text: "Las contraseñas no coindicen.",
                       cancelButtonText: "Volver a intentarlo",
                       type: "warning"
                   }, function() {
-                      window.location = "alta_cliente.php";
+                      window.location = "alta_empresa.php";
                   })</script>';
           //echo "Las contraseñas no coindicen";
         }
@@ -143,7 +147,7 @@
                 cancelButtonText: "Volver a intentarlo",
                 type: "warning"
             }, function() {
-                window.location = "alta_cliente.php";
+                window.location = "alta_empresa.php";
             })</script>';
       //echo "Tienes que completar todos los campos para poder registrarte como empresa, disculpen las molestias";
     }

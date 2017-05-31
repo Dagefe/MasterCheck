@@ -82,7 +82,7 @@
             <form method="post" action="usuario.php" name="form">
 
               <div class="input-group ajusteLateral">
-                <input id="email" name="email" type="email" placeholder="email" class="form-control inputForm"
+                <input id="email" name="email" type="email" placeholder="Introduzca su email" class="form-control inputForm"
                       onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
 
                 <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm"
@@ -90,7 +90,7 @@
               </div>
 
               <div class="input-group-btn ajusteLateral separacionTop">
-                <button id="btnAcceder" name="enviar" type="submit" class="btn btn-primary">Acceder</button>
+                <input id="btnAcceder" name="enviar" value="Acceder" type="submit" class="btn btn-primary">Acceder
                 <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
                 <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
               </div>
