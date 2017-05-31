@@ -28,9 +28,14 @@
   margin-right: 5px;
 }
 
-.ajusteLateral {
-  padding-left: 63px;
+.ajusteLateralInicio {
+  padding-left: 20px;
 }
+
+.ajusteLateralRegistro {
+  padding-left: 15px;
+}
+
 
 .separacionTop {
   padding-top: 13px;
@@ -42,7 +47,7 @@
 /*** ESTILOS INPUT ***/
 
 #email, #password {
-  width: 195px;
+  width: 296px;
 }
 
 /*** FIN ***/
@@ -58,6 +63,84 @@
   margin-left: 90px;
   padding-bottom: 15px;
 
+}
+
+body {
+  background-image: url("../imagenes/entradaBar1.jpg");
+
+}
+
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
+}
+
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	display: inline;
+	zoom: 1;
+}
+
+.index-busc {
+	top: 150px;
+	text-align: center;
+	position: relative;
+}
+
+
+.index-busc .index-busc-cab-registro  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 390px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+
+.index-busc .index-busc-cab-alta  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 690px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+  left: -30px;
+}
+
+.index-busc .index-busc-cab-formulario-datosAcceso  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 320px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+
+.index-busc .index-busc-cab-formulario-datosContacto  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 320px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+  margin-left: 115px;
+}
+
+.form-control {
+  width: 88% !important;
 }
 
 

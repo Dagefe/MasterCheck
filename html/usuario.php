@@ -42,7 +42,7 @@ if(@$_POST['enviar'])
                 $nombre = $fila[0];
                 $_SESSION['apellidos_usuario'] = $fila[1];
                 $_SESSION['movil_usuario'] = $fila[2];
-                $_SESSION['provincia_usuario'] = $fila[3];  
+                $_SESSION['provincia_usuario'] = $fila[3];
               }
             }
             else {
@@ -229,7 +229,12 @@ if(@$_POST['enviar'])
                   </div>
                   <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                      <img src="../imagenes/naru.jpg" alt="Bar Naru">
+                      <img src="../imagenes/pataNegra.jpg" alt="Bar Naru">
+                    </a>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                      <img src="../imagenes/pataNegra.jpg" alt="Bar Pata Negra">
                     </a>
                   </div>
                 </div>

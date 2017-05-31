@@ -48,17 +48,17 @@
                 <ul class="nav navbar-nav navbar-right">
                   <!-- <li><a href="login_cliente.html">Particular</a></li>
                   <li><a href="login_empresa.html">Empresa</a></li> -->
-                  <li class="dropdown">
+                  <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user "></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="login_cliente.html">Particular</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="login_empresa.html">Empresa</a></li>
-                      <!-- <li><a href="#">Something else here</a></li>
+                       <li><a href="#">Something else here</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li> -->
+                      <li><a href="#">Separated link</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -69,29 +69,26 @@
   </div><!-- /.row -->
 
 
-  <div class="container-welcome">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-lg-8">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title text-center">Bienvenido al área de Empresa</h3>
-          </div>
 
-          <div class="panel-body">
-            <h5 class="text-center">Iniciar sesion</h5>
-            <form method="post" action="ficha_empresa.php" name="form">
+      <div class="col-xs-12 col-lg-6">
+        <div class="index-busc">
+          <div class="wrapper">
+            <div class="index-busc-cab-registro">
+              <h3 class="titulo-busqueda">Inicio sesion</h3>
+                <form method="post" action="ficha_empresa.php" name="form">
 
-              <div class="input-group ajusteLateral">
-                <input id="email" name="email" type="email" placeholder="Introduzca su email" class="form-control inputForm"
-                      onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+                  <div class="input-group ajusteLateralInicio">
+                    <input id="email" name="email" type="email" placeholder="Introduzca su email" class="form-control inputForm"
+                          onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
 
-                <input id="password" name="contra" type="password" placeholder="Introduzca su contraseña" class="form-control inputForm"
-                       onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
-              </div>
+                    <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm"
+                           onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+                  </div>
 
               <div class="input-group-btn ajusteLateral separacionTop">
-                <button id="btnAcceder" type="submit" class="btn btn-primary">Acceder</button>
-                <a id="btnAlta" class="btn btn-primary" role="button" href="alta_empresa.php">Alta nueva</a>
+                <input id="btnAcceder" name="enviar" value="Acceder" type="submit" class="btn btn-primary">Acceder
                 <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_empresa.php">¿Has olvidado tu contraseña?</a>
               </div>
             </form>
@@ -99,8 +96,22 @@
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="col-xs-12 col-lg-6">
+      <div class="index-busc">
+        <div class="wrapper">
+          <div class="index-busc-cab-alta">
+            <h3 class="titulo-busqueda">Resgístrate</h3>
+                <div class="input-group-btn ajusteLateralRegistro separacionTop">
+                  <a id="btnAlta" class="btn btn-primary" role="button" href="alta_empresa.php">Alta nueva</a>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery-3.2.1.min.js"></script>

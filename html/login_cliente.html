@@ -47,18 +47,18 @@
               -->
                 <ul class="nav navbar-nav navbar-right">
                   <!-- <li><a href="login_cliente.html">Particular</a></li>
-                  <li><a href="login_empresa.html">Empresa</a></li> -->
+                  <li><a href="login_empresa.html">Empresa</a></li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user "></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="login_cliente.html">Particular</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="login_empresa.html">Empresa</a></li>
-                      <!-- <li><a href="#">Something else here</a></li>
+                      <li><a href="#">Something else here</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li> -->
+                      <li><a href="#">Separated link</a></li>
                     </ul>
-                  </li>
+                  </li>-->
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -69,29 +69,26 @@
   </div><!-- /.row -->
 
 
-  <div class="container-welcome">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-lg-8">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title text-center">Bienvenido</h3>
-          </div>
 
-          <div class="panel-body">
-            <h5 class="text-center">Iniciar sesion</h5>
-            <form method="post" action="usuario.php" name="form">
+      <div class="col-xs-12 col-lg-5">
+        <div class="index-busc">
+          <div class="wrapper">
+            <div class="index-busc-cab-registro">
+              <h3 class="titulo-busqueda">Inicio sesion</h3>
+                <form method="post" action="usuario.php" name="form">
 
-              <div class="input-group ajusteLateral">
-                <input id="email" name="email" type="email" placeholder="Introduzca su email" class="form-control inputForm"
-                      onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+                  <div class="input-group ajusteLateralInicio">
+                    <input id="email" name="email" type="email" placeholder="Introduzca su email" class="form-control inputForm"
+                          onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
 
-                <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm"
-                       onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
-              </div>
+                    <input id="password" name="contra" type="password" placeholder="Contraseña" class="form-control inputForm"
+                           onfocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" />
+                  </div>
 
               <div class="input-group-btn ajusteLateral separacionTop">
                 <input id="btnAcceder" name="enviar" value="Acceder" type="submit" class="btn btn-primary">Acceder
-                <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
                 <a id="btnOlvido" class="btn btn-primary" role="button" href="forgotten_cliente.php">¿Has olvidado tu contraseña?</a>
               </div>
             </form>
@@ -99,7 +96,48 @@
         </div>
       </div>
     </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <div class="index-busc">
+        <div class="wrapper">
+          <div class="index-busc-cab-alta">
+            <h3 class="titulo-busqueda">Resgístrate</h3>
+            <form method="post" action="alta_cliente.php" name="form">
+              <div class="row">
+                <div class="col-xs-12 col-lg-4">
+                <div class="index-busc-cab-formulario-datosAcceso">
+                  <h5 class="titulo-busqueda">Datos de Acceso</h5>
+                  <input id="email2" type="email" name="email" class="form-control inputForm" placeholder="Email *" required />
+                  <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña *" required />
+                  <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar Contraseña *" required />
+                </div>
+                </div>
+                <div class="col-xs-12 col-lg-4">
+                <div class="index-busc-cab-formulario-datosContacto">
+                  <h5 class="titulo-busqueda">Datos de Contacto</h5>
+                  <input id="nombre" type="text" name="name" class="form-control inputForm" placeholder="Nombre*" required />
+                  <input id="firstapel" type="text" name="surname" class="form-control inputForm" placeholder="1er Apellido*" required />
+                  <input id="secapel" type="text" name="secondname" class="form-control inputForm" placeholder="2º Apellido" />
+                  <input id="town" type="text" name="town" class="form-control inputForm" placeholder="Poblacion" />
+                  <input id="movil" type="text" name="tel" class="form-control inputForm" placeholder="Movil" />
+                </div>
+              <div class="row">
+                  <div class="input-group-btn ajusteLateralRegistro separacionTop">
+                    <a id="btnAlta" class="btn btn-primary" role="button" href="alta_cliente.php">Alta nueva</a>
+                  </div>
+              </div>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
 
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

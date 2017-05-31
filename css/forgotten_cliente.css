@@ -24,3 +24,48 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
+}
+
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	display: inline;
+	zoom: 1;
+}
+
+.index-busc {
+	top: 150px;
+	text-align: center;
+	position: relative;
+}
+
+
+.index-busc .index-busc-cab-registro  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 390px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+
+.index-busc .index-busc-cab-alta  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 275px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}

@@ -17,9 +17,7 @@
 
 /** CSS general **/
 
-.row {
-  margin-right: 0px !important
-}
+
 
 #myCarousel {
   position: absolute;
@@ -40,6 +38,22 @@ h3.titulo-busqueda {
 
 h4.titulo-empresas {
   color: cornsilk;
+}
+
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
+}
+
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	display: inline;
+	zoom: 1;
 }
 
 .index-busc {

@@ -3,6 +3,11 @@
     margin-left: 325px;
   }
 
+
+.row {
+    margin-right: 0px !important
+  }
+
 .inputForm {
   margin: 10px;
 }
@@ -21,21 +26,4 @@
 
 .panel-body {
   padding: 5px !important;
-}
-
-
-.navbar-wrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 20;
-  margin-top: 20px;
-}
-
-.index-busc .wrapper {
-	display: inline-block;
-	vertical-align: middle;
-	*display: inline;
-	zoom: 1;
 }
