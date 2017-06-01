@@ -96,17 +96,17 @@
                         mysqli_close($mysqli);
                         //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
                         //con su usuario ya logeado
-                        $_SESSION['user'] = $_POST['email'];
+                        $_SESSION['email'] = $email;
+                        $_SESSION['contra'] = $_POST['pass'];
                         echo '<script>swal({
                             title: "Bien",
                             text: "Datos introducidos",
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {
-                            window.location = "../index.html";
+                            window.location = "usuario.php";
                         })</script>';
                     }
-                    //header('Location: ../index.html');
                  }
             }
             else
@@ -127,5 +127,5 @@
                 type: "warning"
             }, function() {
                 window.location = "alta_cliente.php";
-            })</script>'
+            })</script>';
 ?>

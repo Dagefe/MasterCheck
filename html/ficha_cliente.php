@@ -24,7 +24,10 @@ session_start();
         
         $_SESSION['nombre_usuario'] = $nombre;
         $_SESSION['apellidos_usuario'] = $apellidos;
-        $_SESSION['movil_usuario'] = $movil;
+        if ($movil == 0){
+            $_SESSION['movil_usuario'] = "";  
+        }
+        else $_SESSION['movil_usuario'] = $movil;
         $_SESSION['provincia_usuario'] = $provincia;
         
     mysqli_close($mysqli);
@@ -75,19 +78,19 @@ session_start();
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
             <div class="col-sm-4">
-              <input class="form-control" name="apellidos" type="text" id="formGroup" value="<?php echo $apellidos; ?>">
+              <input class="form-control" name="apellidos" type="text" id="formGroup" value="<?php echo $_SESSION['apellidos_usuario']; ?>">
           </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Movil</label>
             <div class="col-sm-4">
-              <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $movil; ?>" placeholder="Introduza un tlf movil">
+              <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_usuario']; ?>" placeholder="Introduza un tlf movil">
           </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
             <div class="col-sm-4">
-              <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $provincia; ?>" placeholder="Introduza aqui la provincia">
+              <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $_SESSION['provincia_usuario']; ?>" placeholder="Introduzca aqui la provincia">
           </div>
 
             <br/>
@@ -107,9 +110,11 @@ session_start();
       
       
         <div class="btn-group-vertical">
-          <input type="submit" class="btn btn-default" href="ficha_cliente.php">Perfil de usuario <!-- Si estas en esta pagina se muestra sin enlace -->
-          <input type="submit" class="btn btn-default" href="ajustes_cliente.php">Ajustes de cuenta
-          <button type="button" class="btn btn-default" href="favoritos.php">Favoritos</button>
+          <a href="ficha_cliente.php"><button type="button" class="btn btn-default">Perfil de usuario</button></a>
+           <!-- Si estas en esta pagina se muestra sin enlace -->
+          <a href="ajustes_cliente.php"><button type="button" class="btn btn-default">Ajustes de cuenta</button></a>
+          <a href="favoritos.php"><button type="button" class="btn btn-default">Favoritos</button></a>
+          <a href="logout.php"><button type="button" class="btn btn-default">Logout</button></a>
         </div>
       
       
@@ -137,16 +142,29 @@ session_start();
       ", $conexion->connect_error);
       exit();
       }
+    if (empty($_POST['nombre']) || empty($_POST['apellidos'])){
+      echo '<script>swal({
+              title: "¡ERROR!",
+              text: "No se puede borrar el nombre o el apellido.",
+              confirmButtonText: "Volver a la pagina anterior",
+              type: "warning"
+              }, function() {
+              window.location = "ficha_cliente.php";
+              })</script>';
+            exit();
+    }
     if (empty($_POST['movil'])){
       $movil = '';
     }
+    else $movil = $_POST['movil'];
     if (empty($_POST['provincia'])){
       $provincia = '';
     }
+    else $provincia = $_POST['provincia'];
     $consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil ='" . $movil . "', provincia ='" . $provincia . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     
-      echo $consulta;
+    echo $consulta;
     $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
     mysqli_close($conexion);
     if ($resultado)
@@ -176,7 +194,7 @@ session_start();
   else if(@$_POST['cancelar'] == "Cancelar"){
     
     //mensaje de vuelta a la pagina de inicio del uusario logueado
-    header('Location: prueba.php'); // no carga pagina --> header('Location: usuario.php');
+    header('Location: usuario.php'); // no carga pagina --> header('Location: usuario.php');
   }
   
   

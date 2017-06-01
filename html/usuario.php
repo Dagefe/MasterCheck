@@ -1,12 +1,15 @@
 <?php
  session_start();
-
-if(@$_POST['enviar'])
-  {
     include_once 'conexion.php';
 
-    $email = $_POST['email'];
-    $contrasena = $_POST['contra'];
+    if (!isset($_POST['email'])){
+      $email = $_SESSION['email'];
+    }
+    else $email = $_POST['email'];
+    if (!isset($_POST['contra'])){
+        $contrasena = $_SESSION['contra'];
+    }
+    else $contrasena = $_POST['contra'];
 
     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
 
@@ -281,8 +284,4 @@ if(@$_POST['enviar'])
 
         }
 			mysqli_close($mysqli);
-
-    }
-
-
 ?>

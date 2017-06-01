@@ -66,7 +66,7 @@ if ($email_cliente = $mysqli->query($ema)){
         <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Email</label>
             <div class="col-sm-4">
-              <input class="form-control" name="email" type="text" id="formGroup" value="<?php echo $email; ?>">
+              <input class="form-control" name="email" type="text" id="formGroup" value="<?php echo $email; ?>" readonly>
             </div>
           </div>
 
@@ -99,9 +99,13 @@ if ($email_cliente = $mysqli->query($ema)){
       </div>	
       
       <div class="btn-group-vertical">
-        <button type="button" class="btn btn-default" href="ficha_cliente.php">Perfil de usuario</button>
-        <button type="button" class="btn btn-default" href="ajustes_cliente.php">Ajustes de cuenta</button><!-- Si estas en esta pagina se muestra sin enlace -->
-        <button type="button" class="btn btn-default" href="favoritos.php">Favoritos</button> <!-- Mirar el jueves -->
+        <a href="ficha_cliente.php"><button type="button" class="btn btn-default">Perfil de usuario</button></a>
+        <a href="ajustes_cliente.php"><button type="button" class="btn btn-default">Ajustes de cuenta</button></a>
+        <!-- Si estas en esta pagina se muestra sin enlace -->
+        <a href="favoritos.php"><button type="button" class="btn btn-default">Favoritos</button></a>
+        <!-- Mirar el jueves -->
+        <a href="logout.php"><button type="button" class="btn btn-default">Logout</button></a>
+         
       </div>
 
 
@@ -109,6 +113,7 @@ if ($email_cliente = $mysqli->query($ema)){
 
       <script src="js/jquery-1.11.1.min.js"></script>
       <script src="js/bootstrap.js"></script>
+      <script src="../js/sweetalert.min.js"></script>
 
 
 
@@ -120,8 +125,8 @@ if ($email_cliente = $mysqli->query($ema)){
   
 
  
-  if(@$_POST['guardar'] == "Guardar"){
-    
+  if(@$_POST['cambiar']){
+    include_once 'conexion.php';
     $conexion = new mysqli(db_server,db_username, db_password, db_database);
 
     /* Comprobar conexión */
@@ -133,13 +138,28 @@ if ($email_cliente = $mysqli->query($ema)){
      
     //$consulta = "UPDATE clientes SET email ='" . $_POST['email'] . "', contrasena ='" . $_POST['contra'] . "', movil =" . $_SESSION['movil_usuario'] . ", provincia ='" . $_SESSION['provincia_usuario'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
-    $consulta = "UPDATE clientes SET email ='" . $_POST['email'] . "', contrasena ='" . $_POST['contra'] . "'";
-    echo $consulta;
-    $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
+
+  $fichero = "clavex.txt"; //Recogemos nuestra clave para poder desencriptar la contraseña
+  $handle = fopen('clavex.txt', "r");
+  $clavex = fread($handle, filesize($fichero));
+  fclose($handle);
+  $clave_has = openssl_encrypt($_POST['contra'], "AES-128-ECB", $clavex);//Desencriptamos la contraseña
+  
+  $consulta = "UPDATE clientes SET contrasena ='" . $clave_has . "' WHERE email='" . $_POST['email'] . "'";
+  $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
+  echo $consulta;
     if ($resultado)
       {
       
           echo " Mensaje Cambios realizados";
+          echo '<script>swal({
+                            title: "¡Hecho!",
+                            text: "Cambios realizados correctamente",
+                            confirmButtonText: "Aceptar",
+                            type: "success"
+                        }, function() {
+                            window.location = "ajustes_cliente.php";
+                        })</script>';
           //Redireccionamiento a la misma pagina
           //header("Location: " . $_SERVER("DOCUMENT_ROOT") . "/ajustes_cliente.php");
         }
@@ -160,3 +180,34 @@ if ($email_cliente = $mysqli->query($ema)){
     header('Location: prueba.php'); // no carga pagina --> header('Location: usuario.php');
   }
 
+  elseif(@$_POST['borrar']){
+      include_once 'conexion.php';
+      $conexion = new mysqli(db_server,db_username, db_password, db_database);
+      if ($conexion->connect_errno) {
+          printf("Conexión fallida: %s
+          ", $conexion->connect_error);
+          exit();
+      }
+
+    $query = "DELETE FROM clientes WHERE email='" . $_POST['email'] . "'";
+    $resultado = $conexion -> query($query) || die("No se pudo realizar la actualización");
+    if ($resultado)
+      {
+        echo "Cuenta borrada satisfactoriamente";
+        echo '<script>swal({
+              title: "Cuenta borrada correctamente!",
+              text: "Te echaremos de menos",
+              confirmButtonText: "Aceptar",
+              type: "success"
+              }, function() {
+              window.location = "../index.html";
+              })</script>';
+              session_destroy();
+        }
+        
+    else {
+          echo " Mensaje Lo sentimos pero en estos momentos no se puede borrar la cuenta solicitada";
+        }
+    mysqli_close($conexion);
+  }
+?>
