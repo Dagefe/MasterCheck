@@ -147,7 +147,7 @@ session_start();
               title: "¡ERROR!",
               text: "No se puede borrar el nombre o el apellido.",
               confirmButtonText: "Volver a la pagina anterior",
-              type: "warning"
+              type: "error"
               }, function() {
               window.location = "ficha_cliente.php";
               })</script>';
@@ -186,7 +186,15 @@ session_start();
       
       {
           echo " Mensaje Lo sentimos pero en estos momentos no podemos realizar los cambios solicitados";
-          
+          echo '<script>swal({
+              title: "¡ERROR!",
+              text: "No se pueden hacer los cambios solicitados.",
+              confirmButtonText: "Volver a la pagina anterior",
+              type: "warning"
+              }, function() {
+              window.location = "ficha_cliente.php";
+              })</script>';
+            exit();
         }
     #Cerrar la conexión
   }

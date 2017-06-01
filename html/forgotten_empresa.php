@@ -188,7 +188,7 @@
                       title: "Error",
                       text: "Email no encontrado en nuestro sistema",
                       cancelButtonText: "Volver a intentarlo",
-                      type: "warning"
+                      type: "error"
                   }, function() {
                       window.location = "alta_empresa.php";
                   })</script>';

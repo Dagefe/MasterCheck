@@ -266,6 +266,7 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/index.js"></script>
+  <script src="../js/sweetalert.min.js"></script>
 
 
 </body>
@@ -279,8 +280,15 @@
 
         }
         else{
-          echo "<p>Lo sentimos pero la contraseña introducida no es correcta, por favor, vuelve a intentarlo.<p><br>";
-              //ventana y que te regrese a la de login.
+          echo "Las contraseñas no coindicen";
+          echo '<script>swal({
+                title: "Error: Contraseñas",
+                text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
+                confirmButtonText: "Volver al formulario",
+                type: "error"
+              }, function() {
+                window.location = "login_cliente.html";
+              })</script>';
 
         }
 			mysqli_close($mysqli);

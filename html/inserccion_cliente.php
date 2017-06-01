@@ -47,7 +47,7 @@
                   title: "Error: Email duplicado",
                   text: "Lo sentimos, el email introducido esta duplicado, por favor seleccione otro.",
                   confirmButtonText: "Volver al formulario",
-                  type: "success"
+                  type: "warning"
               }, function() {
                   window.location = "alta_cliente.php";
               })</script>';
@@ -114,7 +114,7 @@
                       title: "Error",
                       text: "Las contraseñas no coinciden",
                       cancelButtonText: "Volver a intentarlo",
-                      type: "warning"
+                      type: "error"
                   }, function() {
                       window.location = "alta_cliente.php";
                   })</script>';

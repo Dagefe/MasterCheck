@@ -74,7 +74,7 @@
                   title: "Error: Email duplicado",
                   text: "Lo sentimos, el email introducido esta duplicado, por favor seleccione otro.",
                   confirmButtonText: "Volver al formulario",
-                  type: "warning"
+                  type: "error"
               }, function() {
                   window.location = "alta_empresa.php";
               })</script>';

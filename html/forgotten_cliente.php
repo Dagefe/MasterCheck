@@ -183,7 +183,7 @@
                       title: "Error",
                       text: "Email no encontrado",
                       cancelButtonText: "Volver a intentarlo",
-                      type: "warning"
+                      type: "error"
                   }, function() {
                       window.location = "forgotten_cliente.php";
                   })</script>';
