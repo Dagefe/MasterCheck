@@ -29,7 +29,7 @@
         $clave_has = openssl_encrypt($contrasena, "AES-128-ECB", $clavex);
 
         //Seleccionamos de la BD la contraseña por el email introducido
-        $query = "SELECT contrasena FROM Clientes WHERE email = '" . $email . "'";
+        $query = "SELECT contrasena FROM clientes WHERE email = '" . $email . "'";
         //Ejecutamos query
         $res = $mysqli->query($query);
         $row = $res->fetch_array(MYSQLI_NUM);
@@ -37,7 +37,7 @@
         if($row[0] === $clave_has){
             //Contrasena coincide en la BD
 
-            $nom = "SELECT nombre,apellidos,movil,provincia FROM Clientes WHERE email = '" . $email . "'";
+            $nom = "SELECT nombre,apellidos,movil,provincia FROM clientes WHERE email = '" . $email . "'";
 
             if ($nombre_completo = $mysqli->query($nom)){
               while ($fila = $nombre_completo->fetch_row()){
