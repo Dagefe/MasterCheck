@@ -42,7 +42,7 @@ session_start();
 
       <!-- Bootstrap -->
       <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="#"/>
+      <link rel="stylesheet" href="../css/sweetalert.css">
 
     </head>
     <body>
@@ -122,10 +122,10 @@ session_start();
 
 
 
-      <script src="js/jquery-1.11.1.min.js"></script>
-      <script src="js/bootstrap.js"></script>
+      <script src="../js/jquery-1.11.1.min.js"></script>
+      <script src="../js/bootstrap.js"></script>
       <script src="../js/sweetalert.min.js"></script>
-
+      <script src="../js/ficha_cliente.js"></script>
 
     </body>
   </html> <!-- Final codigo -->
@@ -164,7 +164,6 @@ session_start();
     $consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil ='" . $movil . "', provincia ='" . $provincia . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
     
-    echo $consulta;
     $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
     mysqli_close($conexion);
     if ($resultado)

@@ -267,6 +267,7 @@
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/index.js"></script>
   <script src="../js/sweetalert.min.js"></script>
+  <script src="../js/usuario.js"></script>
 
 
 </body>

@@ -37,7 +37,7 @@ if ($email_cliente = $mysqli->query($ema)){
 
       <!-- Bootstrap -->
       <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="#"/>
+      <link rel="stylesheet" href="../css/sweetalert.css">
 
     </head>
     <body>
@@ -147,11 +147,12 @@ if ($email_cliente = $mysqli->query($ema)){
   
   $consulta = "UPDATE clientes SET contrasena ='" . $clave_has . "' WHERE email='" . $_POST['email'] . "'";
   $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
-  echo $consulta;
+  
     if ($resultado)
       {
       
-          echo " Mensaje Cambios realizados";
+        echo " Mensaje Cambios realizados";
+        
           echo '<script>swal({
                             title: "¡Hecho!",
                             text: "Cambios realizados correctamente",
@@ -193,7 +194,6 @@ if ($email_cliente = $mysqli->query($ema)){
     $resultado = $conexion -> query($query) || die("No se pudo realizar la actualización");
     if ($resultado)
       {
-        echo "Cuenta borrada satisfactoriamente";
         echo '<script>swal({
               title: "Cuenta borrada correctamente!",
               text: "Te echaremos de menos",
@@ -204,9 +204,9 @@ if ($email_cliente = $mysqli->query($ema)){
               })</script>';
               session_destroy();
         }
-        
     else {
           echo " Mensaje Lo sentimos pero en estos momentos no se puede borrar la cuenta solicitada";
+          header('Location: ficha_cliente.php');
         }
     mysqli_close($conexion);
   }
