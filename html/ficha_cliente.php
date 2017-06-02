@@ -113,7 +113,9 @@ session_start();
             <div class="index-busc">
               <div class="wrapper">
                 <div class="index-busc-cab-perfil">
-                  <h2 class="labelPerfil">Perfil de usuario</h2>
+                  <div class="header">
+                    <h3>Perfil de usuario</h3>
+                  </div>
                     <form class="form-horizontal" name="formulario_ficha" method="POST">
                       <div class="form-group">
 
@@ -158,13 +160,28 @@ session_start();
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-lg-4">
-              <div class="cuadroEnlaces">
-                <a href="ficha_cliente.php"><button type="button" class="btn btn-default">Perfil de usuario</button></a>
-                 <!-- Si estas en esta pagina se muestra sin enlace -->
-                <a href="ajustes_cliente.php"><button type="button" class="btn btn-default">Ajustes de cuenta</button></a>
-                <a href="favoritos.php"><button type="button" class="btn btn-default">Favoritos</button></a>
-                <a href="logout.php"><button type="button" class="btn btn-default">Logout</button></a>
+            <div class="col-xs-12 col-lg-3">
+              <div class="box-herramientas">
+                <div class="header">
+                  <h3>Configuracion</h3>
+                </div>
+                <div class="box-opciones">
+                  <ul>
+                    <li class="selected">
+                      <a href="ficha_cliente.php">Perfil de usuario</button></a>
+                      <!-- Si estas en esta pagina se muestra sin enlace -->
+                    </li>
+                    <li>
+                      <a href="ajustes_cliente.php">Ajustes de cuenta</button></a>
+                    </li>
+                    <li>
+                      <a href="favoritos.php">Favoritos</button></a>
+                    </li>
+                    <li>
+                      <a href="logout.php">Logout</button></a>
+                    </li>
+                  </ul>
+                </DIV>
               </div>
             </div>
           </div>
