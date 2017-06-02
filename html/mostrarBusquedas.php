@@ -25,7 +25,7 @@
 
 
   /* Consultas de selección que devuelven un conjunto de resultados */
-  if ($resultado = $mysqli->query("SELECT * FROM Ofertas WHERE nombre = '$busqueda' and tipo = '$tipo'")) {
+  if ($resultado = $mysqli->query("SELECT * FROM ofertas WHERE nombre = '$busqueda' and tipo = '$tipo'")) {
 
       //printf("La selección devolvió %d filas.\n", $resultado->num_rows);
       $oferta = $resultado->fetch_assoc();
