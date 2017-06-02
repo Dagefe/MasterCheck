@@ -1,0 +1,53 @@
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
+}
+
+.welcomeUser {
+  margin-top: 10%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.labelPerfil {
+  margin-top: 5%;
+}
+
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	display: inline;
+	zoom: 1;
+}
+
+.index-busc {
+	top: 0px;
+	text-align: center;
+	position: relative;
+}
+
+
+.index-busc .index-busc-cab-perfil  {
+	text-align: left;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+  margin-left: 5%;
+	width: ;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+
+.cuadroEnlaces {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  text-align: right;
+  margin-right: 15%;
+  background-color: beige;
+}
