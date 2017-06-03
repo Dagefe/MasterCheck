@@ -45,6 +45,8 @@ session_start();
         <link rel="stylesheet" href="../css/general.css">
           <link rel="stylesheet" href="../css/ficha_cliente.css">
       <link rel="stylesheet" href="../css/sweetalert.css">
+      <!-- To insert the icon: -->
+      <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
     </head>
     <body>
@@ -168,17 +170,17 @@ session_start();
                 <div class="box-opciones">
                   <ul>
                     <li class="selected">
-                      <a href="ficha_cliente.php">Perfil de usuario</button></a>
+                      <span class="fa fa-user"><a href="ficha_cliente.php">Perfil de usuario</button></a></span>
                       <!-- Si estas en esta pagina se muestra sin enlace -->
                     </li>
                     <li>
-                      <a href="ajustes_cliente.php">Ajustes de cuenta</button></a>
+                      <span class="fa fa-cog"><a href="ajustes_cliente.php">Ajustes de cuenta</button></a></span>
                     </li>
                     <li>
-                      <a href="favoritos.php">Favoritos</button></a>
+                      <span class="fa fa-star"><a href="favoritos.php">Favoritos</button></a></span>
                     </li>
                     <li>
-                      <a href="logout.php">Logout</button></a>
+                      <span class="fa fa-sign-out"><a href="logout.php">Logout</button></a></span>
                     </li>
                   </ul>
                 </DIV>

@@ -73,7 +73,7 @@
 	background-color: #fff;
 	border: 1px solid #e1e1e1;
 	margin-bottom: 15px;
-	margin-top: 20%;
+	margin-top: 7%;
 }
 
 .selected {
@@ -108,4 +108,13 @@ li {
 
 h3 {
 	margin-top: 5px;
+}
+
+
+/** Iconos **/
+
+.fa-cog, .fa-star, .fa-sign-out, .fa-user  {
+  margin-left: 10px;
+  font-size: 17px;
+  vertical-align: text-top;
 }
