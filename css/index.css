@@ -91,7 +91,8 @@ h4.titulo-empresas {
 .cuadro-ofertas {
   height: 170px;
   padding-top: 5px !important;
-  background-image: url("../imagenes/fondo-ofertas.jpg") !important;
+  left: -10px;
+  /*background-image: url("../imagenes/fondo-ofertas.jpg") !important;*/
 }
 
 .containerImage {

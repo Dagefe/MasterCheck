@@ -50,6 +50,7 @@ session_start();
 
     </head>
     <body>
+
       <!-- Navbar -->
       <div class="row">
         <div class="col-xs-12 col-lg-12">
@@ -120,77 +121,71 @@ session_start();
                   </div>
                     <form class="form-horizontal" name="formulario_ficha" method="POST">
                       <div class="form-group">
-
-                        <div class="row">
                           <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="nombre" type="text" id="formGroup" value="<?php echo $nombre; ?>">
                           </div>
-                        </div>
+                      </div>
 
-                        <div class="row">
-                          <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
-                          <div class="col-sm-4">
-                            <input class="form-control" name="apellidos" type="text" id="formGroup" value="<?php echo $_SESSION['apellidos_usuario']; ?>">
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <label class="col-sm-2 control-label" for="formGroup">Movil</label>
-                          <div class="col-sm-4">
-                            <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_usuario']; ?>" placeholder="Introduza un tlf movil">
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
-                          <div class="col-sm-4">
-                            <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $_SESSION['provincia_usuario']; ?>" placeholder="Introduzca aqui la provincia">
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <label class="col-sm-2 control-label" for="formGroup"></label>
-                          <div class="col-sm-4">
-                            <input type="submit" name="guardar" class="btn btn-success btn-lg" value="Guardar">
-                            <input type="submit" name="cancelar" class="btn btn-danger btn-lg" value="Cancelar">
-                          </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
+                        <div class="col-sm-4">
+                          <input class="form-control" name="apellidos" type="text" id="formGroup" value="<?php echo $_SESSION['apellidos_usuario']; ?>">
                         </div>
                       </div>
-                    </form>
-                  </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="formGroup">Movil</label>
+                        <div class="col-sm-4">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_usuario']; ?>" placeholder="Introduza un tlf movil">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
+                        <div class="col-sm-4">
+                          <input class="form-control" name="provincia" type="text" id="formGroup" value="<?php echo $_SESSION['provincia_usuario']; ?>" placeholder="Introduzca aqui la provincia">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="formGroup"></label>
+                        <div class="col-sm-6 botonera-perfil">
+                          <input type="submit" name="guardar" class="btn btn-success" value="Guardar">
+                          <input type="submit" name="cancelar" class="btn btn-danger" value="Cancelar">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-lg-3">
-              <div class="box-herramientas">
-                <div class="header">
-                  <h3>Configuracion</h3>
-                </div>
-                <div class="box-opciones">
-                  <ul>
-                    <li class="selected">
-                      <span class="fa fa-user"><a href="ficha_cliente.php">Perfil de usuario</button></a></span>
-                      <!-- Si estas en esta pagina se muestra sin enlace -->
-                    </li>
-                    <li>
-                      <span class="fa fa-cog"><a href="ajustes_cliente.php">Ajustes de cuenta</button></a></span>
-                    </li>
-                    <li>
-                      <span class="fa fa-star"><a href="favoritos.php">Favoritos</button></a></span>
-                    </li>
-                    <li>
-                      <span class="fa fa-sign-out"><a href="logout.php">Logout</button></a></span>
-                    </li>
-                  </ul>
-                </DIV>
+          <div class="col-xs-12 col-lg-3">
+            <div class="box-herramientas">
+              <div class="header">
+                <h3>Configuracion</h3>
               </div>
+            <div class="box-opciones">
+              <ul>
+                <li class="selected">
+                  <span class="fa fa-user"></span><a href="ficha_cliente.php">Perfil de usuario</button></a>
+                  <!-- Si estas en esta pagina se muestra sin enlace -->
+                </li>
+                <li>
+                  <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</button></a>
+                </li>
+                <li>
+                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</button></a>
+                </li>
+                <li>
+                  <span class="fa fa-sign-out"></span><a href="logout.php">Logout</button></a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-
-
-
+      </div>
+    </div>
 
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

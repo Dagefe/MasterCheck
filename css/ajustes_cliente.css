@@ -7,15 +7,6 @@
   margin-top: 20px;
 }
 
-.welcomeUser {
-  margin-top: 10%;
-  margin-left: 5%;
-  text-align: center;
-}
-
-.labelPerfil {
-  margin-top: 5%;
-}
 
 .index-busc .wrapper {
 	display: inline-block;
@@ -32,7 +23,7 @@
 }
 
 
-.index-busc .index-busc-cab-perfil  {
+.index-busc .index-busc-cab-ajustes  {
 	text-align: left;
 	background: rgba(255,255,255,.8);
 	/*padding: 20px 15px;*/
@@ -55,17 +46,22 @@
 	padding-top: 25px;
 }
 
-.row-inputs {
-	padding: 15px;
+.form-group {
+  margin-right: -145px !important;
 }
 
-.cuadroEnlaces {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20%;
-  text-align: right;
-  margin-right: 15%;
-  background-color: beige;
+.header {
+	position: relative;
+	background: #f1f1f1;
+	border-radius: 2px 2px 0 0;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 10px;
+}
+
+.welcomeUser {
+  margin-top: 10%;
+  margin-left: 5%;
+  text-align: center;
 }
 
 .header {
@@ -79,8 +75,6 @@
 .box-opciones {
 	box-sizing: border-box;
 	border-bottom: 1px solid #e1e1e1;
-
-
 }
 
 .box-herramientas {
@@ -97,16 +91,6 @@
 .selected {
 	color: #222;
 	font-weight: 600;
-}
-
-.botonera-perfil {
-	left: 450px;
-	top: -196px;
-	position: relative;
-}
-
-body {
-
 }
 
 a {
@@ -139,12 +123,11 @@ h3 {
 	margin-top: 5px;
 }
 
-
-/** Iconos **/
-
-.fa-cog, .fa-star, .fa-sign-out, .fa-user  {
-  margin-left: 10px;
-  font-size: 16px !important;
-  vertical-align: text-top;
-	padding-right: 15px;
+.cuadroEnlaces {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  text-align: right;
+  margin-right: 15%;
+  background-color: beige;
 }
