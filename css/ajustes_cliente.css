@@ -131,3 +131,12 @@ h3 {
   margin-right: 15%;
   background-color: beige;
 }
+
+/** Iconos **/
+
+.fa-cog, .fa-star, .fa-sign-out, .fa-user  {
+  margin-left: 10px;
+  font-size: 16px !important;
+  vertical-align: text-top;
+	padding-right: 15px;
+}
