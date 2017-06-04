@@ -18,7 +18,7 @@
     <!-- Arbol de navegacion -->
     <header>
         <ol class="breadcrumb">
-            <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
+            <li class="glyphicon glyphicon-home"><a href="../index.php"> Inicio</a></li>
             <li><a href="login_empresa.html">Empresa</a></li>
             <li class="active">Alta empresa</li>
         </ol>

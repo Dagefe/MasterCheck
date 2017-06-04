@@ -99,7 +99,7 @@
               $actividad = $_POST['activ']; $direccion = $_POST['direccion']; $pais = $_POST['pais'];
 
               //Query para insertar los valores
-              $query = "INSERT INTO empresa VALUES (NULL, '$email', '$pass', '$contacto', $movil, '$empresa', '$direccion', '$pob', $cp, '$pais', '$actividad')";
+              $query = "INSERT INTO empresa VALUES (NULL, '$email', '$pass', '$contacto', $movil, '$pais', '$pob', $cp, '$direccion', '$empresa', '$actividad')";
 
                 if(!$mysqli->query($query))
                 {
@@ -108,7 +108,7 @@
                 }
                 else
                 {
-                  printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
+                  //printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
                   // Cerramos la conexion
                   mysqli_close($mysqli);
                   //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
@@ -120,7 +120,7 @@
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {
-                            window.location = "../index.html";
+                            window.location = "../index.php";
                         })</script>';
                   //header('Location: ../index.html');
                 }

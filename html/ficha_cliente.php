@@ -29,7 +29,7 @@ session_start();
         }
         else $_SESSION['movil_usuario'] = $movil;
         $_SESSION['provincia_usuario'] = $provincia;
-
+        
     mysqli_close($mysqli);
 ?>
 
@@ -65,7 +65,7 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                    <a class="navbar-brand" href="../index.html">MASTERCHECK</a>
+                    <a class="navbar-brand" href="usuario.php">MASTERCHECK</a>
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -152,7 +152,7 @@ session_start();
                         <label class="col-sm-2 control-label" for="formGroup"></label>
                         <div class="col-sm-6 botonera-perfil">
                           <input type="submit" name="guardar" class="btn btn-success" value="Guardar">
-                          <input type="submit" name="cancelar" class="btn btn-danger" value="Cancelar">
+                          <input type="submit" name="restaurar" class="btn btn-danger" value="Restaurar">
                         </div>
                       </div>
                     </div>
@@ -168,17 +168,17 @@ session_start();
             <div class="box-opciones">
               <ul>
                 <li class="selected">
-                  <span class="fa fa-user"></span><a href="ficha_cliente.php">Perfil de usuario</button></a>
+                  <span class="fa fa-user"></span>Perfil de usuario
                   <!-- Si estas en esta pagina se muestra sin enlace -->
                 </li>
                 <li>
-                  <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</button></a>
+                  <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</a>
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</button></a>
+                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</a>
                 </li>
                 <li>
-                  <span class="fa fa-sign-out"></span><a href="logout.php">Logout</button></a>
+                  <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
                 </li>
               </ul>
             </div>

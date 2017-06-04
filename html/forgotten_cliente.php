@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                <a class="navbar-brand" href="../index.html">MASTERCHECK</a>
+                <a class="navbar-brand" href="../index.php">MASTERCHECK</a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -175,7 +175,7 @@
                   confirmButtonText: "Aceptar",
                   type: "success"
               }, function() {
-                  window.location = "../index.html";
+                  window.location = "../index.php";
               })</script>';
                 //echo "<p>Se le proporcionara una nueva contraseña por correo en unos instantes.<br>";
                 //echo "Por favor, revise su carpeta de spam y siga las instrucciones una vez le llegue el correo, gracias por las molestias.</p>";
