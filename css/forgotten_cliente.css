@@ -3,13 +3,25 @@
   margin-left: 73px !important;
 }
 
+body {
+  background-image: url('../imagenes/entradaBar1.jpg');
+}
+
 
 /** Estilo boton **/
 
 #btnSendMail {
   background-color: darkcyan;
   font-size: 20px;
+  margin-left: 40px !important;
 }
+
+#email {
+  margin-left: 0px;
+  width: 123% !important
+}
+
+
 
 .btn-group {
   padding-left: 70px;
@@ -18,9 +30,9 @@
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
-  font-size: 25px !important;
+  font-size: 19px !important;
   text-rendering: auto;
-  vertical-align: middle;
+  vertical-align: baseline;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,24 +60,19 @@
 }
 
 
-.index-busc .index-busc-cab-registro  {
+.index-busc .index-busc-cab-forgotten  {
 	text-align: center;
 	background: rgba(255,255,255,.8);
 	padding: 20px 15px;
 	margin: 0 auto;
-	width: 390px;
+	width: 400px;
+  height: 205px;
 	z-index: 100;
 	position: relative;
   border-radius: 4px;
 }
 
-.index-busc .index-busc-cab-alta  {
-	text-align: center;
-	background: rgba(255,255,255,.8);
-	padding: 20px 15px;
-	margin: 0 auto;
-	width: 275px;
-	z-index: 100;
-	position: relative;
-  border-radius: 4px;
+.box-forgotten {
+  left: 33%;
+  position: relative;
 }
