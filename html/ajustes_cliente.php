@@ -58,7 +58,7 @@ if ($email_cliente = $mysqli->query($ema)){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                    <a class="navbar-brand" href="../index.html">MASTERCHECK</a>
+                    <a class="navbar-brand" href="../index.php">MASTERCHECK</a>
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -135,7 +135,7 @@ if ($email_cliente = $mysqli->query($ema)){
                       <label class="col-sm-2 control-label" for="formGroup"></label>
                     <div class="col-sm-4">
                       <input type="submit" name="cambiar" class="btn btn-success" value="Cambiar">
-                      <input type="submit" name="cancelar" class="btn btn-danger" value="Cancelar">
+                      <input type="submit" name="restaurar" class="btn btn-danger" value="Restaurar">
                       <input type="submit" name="borrar" class="btn btn-danger" value="Borrar cuenta">
                     </div>
                     </div>
@@ -152,17 +152,17 @@ if ($email_cliente = $mysqli->query($ema)){
             <div class="box-opciones">
               <ul>
                 <li>
-                  <span class="fa fa-user"></span><a href="ficha_cliente.php">Perfil de usuario</button></a>
+                  <span class="fa fa-user"></span><a href="ficha_cliente.php">Perfil de usuario</a>
                   <!-- Si estas en esta pagina se muestra sin enlace -->
                 </li>
                 <li class="selected">
-                  <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</button></a>
+                  <span class="fa fa-cog"></span>Ajustes de cuenta
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</button></a>
+                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</a>
                 </li>
                 <li>
-                  <span class="fa fa-sign-out"></span><a href="logout.php">Logout</button></a>
+                  <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
                 </li>
               </ul>
             </div>
@@ -238,10 +238,9 @@ if ($email_cliente = $mysqli->query($ema)){
     mysqli_close($conexion);
   }
 
-  else if(@$_POST['cancelar'] == "Cancelar"){
-
-    //mensaje de vuelta a la pagina de inicio del uusario logueado
-    header('Location: prueba.php'); // no carga pagina --> header('Location: usuario.php');
+  else if(@$_POST['restaurar']){
+    
+    // 
   }
 
   else if(@$_POST['borrar']){
@@ -269,7 +268,7 @@ if ($email_cliente = $mysqli->query($ema)){
               closeOnConfirm: false,
               }, function() {
                 swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                window.location = "../index.html";
+                window.location = "../index.php";
               })</script>';
 
               session_destroy();

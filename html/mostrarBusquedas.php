@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-12 col-lg-12 noPaddingDirectorio">
           <ol class="breadcrumb panelLogin">
-            <li class="glyphicon glyphicon-home"><a href="../index.html">  Inicio</a></li>
+            <li class="glyphicon glyphicon-home"><a href="../index.php">  Inicio</a></li>
             <li class="active"><a href="#">Ofertas</a></li>
             <!-- <li class="active">Data</li>-->
           </ol>

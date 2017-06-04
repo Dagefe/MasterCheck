@@ -60,7 +60,7 @@
                     $clavex = fread($handle, filesize($fichero));
                     fclose($handle);
                     $clave_has = openssl_encrypt($_POST['pass'], "AES-128-ECB", $clavex);
-                    echo $clave_has;
+                    //echo $clave_has;
                     // Declaramos las variables
                     $nombre = $_POST['name']; $email = $_POST['email'];
                     //Juntamos apellidos
@@ -91,7 +91,7 @@
                     }
                     else
                     {
-                        printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
+                        //printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
                         // Cerramos la conexion
                         mysqli_close($mysqli);
                         //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal

@@ -120,7 +120,7 @@
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {
-                            window.location = "../index.html";
+                            window.location = "../index.php";
                         })</script>';
                   //header('Location: ../index.html');
                 }
