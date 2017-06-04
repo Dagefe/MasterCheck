@@ -40,6 +40,8 @@ if ($email_cliente = $mysqli->query($ema)){
       <link rel="stylesheet" href="../css/general.css"/>
       <link rel="stylesheet" href="../css/ajustes_cliente.css"/>
       <link rel="stylesheet" href="../css/sweetalert.css">
+      <!-- To insert the icon: -->
+      <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
     </head>
     <body>
@@ -265,10 +267,23 @@ if ($email_cliente = $mysqli->query($ema)){
               showCancelButton: true,
               confirmButtonClass: "btn-danger",
               confirmButtonText: "Si, deseo borrarla",
+              cancelButtonText: "No, deselo cancelar!",
               closeOnConfirm: false,
+<<<<<<< HEAD
               }, function() {
                 swal("Deleted!", "Your imaginary file has been deleted.", "success");
                 window.location = "../index.php";
+=======
+              closeOnCancel: false
+              }, function(isConfirm) {
+                if (isConfirm) {
+                  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                  window.location = "../index.html";
+                }
+                else {
+                  swal("Cancelled", "Su cuenta no hasido borrada :)", "error")
+                }
+>>>>>>> 25ca8982d6f56ba11ccd54a4f0e3160a97ac63e7
               })</script>';
 
               session_destroy();
