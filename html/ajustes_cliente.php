@@ -60,7 +60,7 @@ if ($email_cliente = $mysqli->query($ema)){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                    <a class="navbar-brand" href="../index.php">MASTERCHECK</a>
+                    <a class="navbar-brand" href="usuario.php">MASTERCHECK</a>
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
