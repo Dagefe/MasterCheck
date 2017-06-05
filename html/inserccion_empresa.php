@@ -113,14 +113,15 @@
                   mysqli_close($mysqli);
                   //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
                   //con su usuario ya logeado
-                  $_SESSION['user'] = $_POST['email'];
+                  $_SESSION['email_empresa'] = $_POST['email'];
+                  $_SESSION['contra_empresa'] = $_POST['pass'];
                   echo '<script>swal({
                             title: "Bien",
                             text: "Datos introducidos",
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {
-                            window.location = "../index.php";
+                            window.location = "empresa.php";
                         })</script>';
                   //header('Location: ../index.html');
                 }

@@ -98,7 +98,7 @@
                         mysqli_close($mysqli);
                         //Se crea la sesion de usuario para, una vez registrado correctamente, se rediriga a la pagina principal
                         //con su usuario ya logeado
-                        $_SESSION['email'] = $email;
+                        $_SESSION['email_cliente'] = $email;
                         $_SESSION['contra'] = $_POST['pass'];
                         echo '<script>swal({
                             title: "Bien",
