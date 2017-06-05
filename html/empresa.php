@@ -1,9 +1,6 @@
 <?php
  session_start();
-<<<<<<< HEAD
 
- $_SESSION['email_empresa'] = $_POST['email'];
-=======
  include_once 'conexion.php';
 
  if (isset($_POST['email'])){
@@ -40,28 +37,29 @@
     	$nom = "SELECT nombre_empresa FROM clientes WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
       	if ($nombre_completo = $mysqli->query($nom)){
-            while ($fila = $nombre_completo->fetch_row()){
-				$_SESSION['nombre_empresa'] = $fila[0];
-              }
+            while ($fila = $nombre_completo->fetch_row())
+            {
+                $nombre = $fila[0];
+				        $_SESSION['nombre_empresa'] = $fila[0];
             }
-            else {
-              echo ("error");
-            }
+        }
+        else {
+          echo ("error");
+        }
         header('Location: ficha_empresa.php');
 	}
 	else{
-        echo "Las contraseñas no coindicen";
-        echo '<script>swal({
-                title: "Error: Contraseñas",
-                text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
-                confirmButtonText: "Volver al formulario",
-                type: "error"
-              }, function() {
-                window.location = "login_empresa.html";
-              })</script>';
+    echo "Las contraseñas no coindicen";
+    echo '<script>swal({
+            title: "Error: Contraseñas",
+            text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
+            confirmButtonText: "Volver al formulario",
+            type: "error"
+            }, function() {
+              window.location = "login_empresa.html";
+          })</script>';
 	}
 	mysqli_close($mysqli);
->>>>>>> 2f47d4667816e5e23230ff40647612229ff3303e
 ?>
 <!-- Login_empresa -> Empresa -> ficha_empresa -> Ajustes_empresa -->
 <!-- Hoja de creacion de ofertas -->

@@ -1,16 +1,100 @@
 /** ESTILO CONTENEDOR **/
-.container-fluid{
-    margin-left: 360px;
+.container {
+    margin-left: 73px !important;
 }
 /** FIN **/
 
+body {
+  background-image: url('../imagenes/entradaBar3.jpg');
+    background-size: 1366px;
+}
+
+h3 {
+	margin-top: 5px;
+}
+
+
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
+}
+
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	display: inline;
+	zoom: 1;
+}
+
+.index-busc {
+	top: 150px;
+	text-align: center;
+	position: relative;
+}
+
+
+.index-busc .index-busc-cab-acceso  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 320px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+  left:23px;
+}
+
+.index-busc .index-busc-cab-contacto  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 325px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+
+}
+
+.index-busc .index-busc-cab-datos-empresa  {
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 325px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+  right: 25px;
+}
+
+
+.index-busc .index-busc-cab-datos-botonera  {
+  position: relative;
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 460px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+  top: -105px;
+  left: -30px;
+}
+
+.input-group {
+  width: 93%;
+}
 
 /** ESTILO INPUT **/
 
-.inputForm {
-  margin-bottom: 10px !important;
-  border-radius: 4px !important;
-}
+
 
 /** FIN **/
 
