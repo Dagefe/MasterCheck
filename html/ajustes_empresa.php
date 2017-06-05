@@ -10,11 +10,13 @@ if (mysqli_connect_errno()) { //Posible error al conectar a la base de datos
     exit();
 }
 
-$ema = "SELECT email,contrasena FROM clientes WHERE email = '" . $_SESSION['email_cliente'] . "'";
+$ema = "SELECT email,contrasena,nombre_empresa FROM empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
 if ($email_cliente = $mysqli->query($ema)){
     while ($fila = $email_cliente->fetch_row()){
+          $_SESSION['email_empresa'] = $fila[0];
           $password = $fila[1];
+          $_SESSION['nombre_empresa'] = $fila[2];
     }
 }
 
@@ -22,7 +24,7 @@ if ($email_cliente = $mysqli->query($ema)){
   $handle = fopen('clavex.txt', "r");
   $clavex = fread($handle, filesize($fichero));
   fclose($handle);
-  $_SESSION['contra'] = openssl_decrypt($password, "AES-128-ECB", $clavex);//Desencriptamos la contraseña
+  $clave_has = openssl_decrypt($password, "AES-128-ECB", $clavex);//Desencriptamos la contraseña
   mysqli_close($mysqli);
 ?>
 
@@ -101,7 +103,7 @@ if ($email_cliente = $mysqli->query($ema)){
 
         <div class="row">
           <div class="col-xs-12 col-lg-12">
-            <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_usuario']; ?></h3>
+            <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_empresa']; ?></h3>
           </div>
         </div>
 
@@ -119,7 +121,14 @@ if ($email_cliente = $mysqli->query($ema)){
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="formGroup">Email</label>
                         <div class="col-sm-4">
-                          <input class="form-control" name="email" type="text" id="formGroup" value="<?php echo $_SESSION['email_cliente']; ?>" readonly>
+                          <input class="form-control" name="email" type="text" id="formGroup" value="<?php echo $_SESSION['email_empresa']; ?>" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="formGroup">Nombre de la Empresa</label>
+                        <div class="col-sm-4">
+                          <input class="form-control" name="nom_empre" type="text" id="formGroup" value="<?php echo $_SESSION['nombre_empresa']; ?>">
                         </div>
                     </div>
 
@@ -127,7 +136,7 @@ if ($email_cliente = $mysqli->query($ema)){
                       <!-- Recoger contraseña encriptada y mostrar en el campo -->
                       <label class="col-sm-2 control-label" for="formGroup">Contraseña</label>
                       <div class="col-sm-4">
-                        <input class="form-control" name="contra" type="password" id="formGroup" value="<?php echo $_SESSION['contra']; ?>">
+                        <input class="form-control" name="contra" type="password" id="formGroup" value="<?php echo $clave_has; ?>">
                       </div>
                     </div>
 
@@ -152,7 +161,7 @@ if ($email_cliente = $mysqli->query($ema)){
             <div class="box-opciones">
               <ul>
                 <li>
-                  <span class="fa fa-user"></span><a href="ficha_cliente.php">Perfil de usuario</a>
+                  <span class="fa fa-user"></span><a href="ficha_empresa.php">Perfil de usuario</a>
                   <!-- Si estas en esta pagina se muestra sin enlace -->
                 </li>
                 <li class="selected">
@@ -209,7 +218,7 @@ if ($email_cliente = $mysqli->query($ema)){
     fclose($handle);
     $clave_has = openssl_encrypt($_POST['contra'], "AES-128-ECB", $clavex);//Desencriptamos la contraseña
 
-    $consulta = "UPDATE clientes SET contrasena ='" . $clave_has . "' WHERE email='" . $_POST['email'] . "'";
+    $consulta = "UPDATE empresa SET contrasena ='" . $clave_has . "', nombre_empresa='" . $_POST['nom_empre']  . "' WHERE email='" . $_SESSION['email_empresa'] . "'";
     $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
 
     if ($resultado)
@@ -223,7 +232,7 @@ if ($email_cliente = $mysqli->query($ema)){
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {
-                            window.location = "ajustes_cliente.php";
+                            window.location = "ajustes_empresa.php";
                         })</script>';
           //Redireccionamiento a la misma pagina
           //header("Location: " . $_SERVER("DOCUMENT_ROOT") . "/ajustes_cliente.php");
@@ -253,7 +262,7 @@ if ($email_cliente = $mysqli->query($ema)){
           exit();
       }
 
-    $query = "DELETE FROM clientes WHERE email='" . $_POST['email'] . "'";
+    $query = "DELETE FROM empresa WHERE email='" . $_POST['email'] . "'";
     $resultado = $conexion -> query($query) || die("No se pudo realizar la actualización");
 
     if ($resultado)
@@ -274,7 +283,7 @@ if ($email_cliente = $mysqli->query($ema)){
               }, function(isConfirm) {
                 if (isConfirm) {
                   swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                  window.location = "../index.html";
+                  window.location = "../index.php";
                 }
                 else {
                   swal("Cancelled", "Su cuenta no hasido borrada :)", "error")
@@ -285,7 +294,7 @@ if ($email_cliente = $mysqli->query($ema)){
         }
     else {
           echo " Mensaje Lo sentimos pero en estos momentos no se puede borrar la cuenta solicitada";
-          header('Location: ficha_cliente.php');
+          header('Location: ficha_empresa.php');
         }
     mysqli_close($conexion);
   }

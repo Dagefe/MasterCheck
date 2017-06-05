@@ -3,13 +3,12 @@
     include_once 'conexion.php';
 
     if (!isset($_POST['email'])){
-      $email = $_SESSION['email'];
+      $email = $_SESSION['email_cliente'];
     }
     else $email = $_POST['email'];
-    if (!isset($_POST['contra'])){
-        $contrasena = $_SESSION['contra'];
+    if (isset($_POST['contra'])){
+        $_SESSION['contra'] = $_POST['contra'];
     }
-    else $contrasena = $_POST['contra'];
 
     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
 
@@ -26,7 +25,7 @@
         fclose($handle);
 
         //Encriptamos la clave introducida
-        $clave_has = openssl_encrypt($contrasena, "AES-128-ECB", $clavex);
+        $clave_has = openssl_encrypt($_SESSION['contra'], "AES-128-ECB", $clavex);
 
         //Seleccionamos de la BD la contraseña por el email introducido
         $query = "SELECT contrasena FROM clientes WHERE email = '" . $email . "'";
@@ -37,15 +36,13 @@
         if($row[0] === $clave_has){
             //Contrasena coincide en la BD
 
-            $nom = "SELECT nombre,apellidos,movil,provincia FROM clientes WHERE email = '" . $email . "'";
+            $nom = "SELECT nombre,email FROM clientes WHERE email = '" . $email . "'";
 
             if ($nombre_completo = $mysqli->query($nom)){
               while ($fila = $nombre_completo->fetch_row()){
 
                 $nombre = $fila[0];
-                $_SESSION['apellidos_usuario'] = $fila[1];
-                $_SESSION['movil_usuario'] = $fila[2];
-                $_SESSION['provincia_usuario'] = $fila[3];
+                $_SESSION['email_cliente'] = $fila[1];
               }
             }
             else {
@@ -280,7 +277,6 @@
 </html>
 
 <?php
- $_SESSION['nombre_usuario'] = $nombre;
  //expira en una hora
 
 

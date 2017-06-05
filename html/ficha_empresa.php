@@ -10,26 +10,22 @@ session_start();
           exit();
         }
 
-         $nom = "SELECT * FROM Empresa WHERE nombre = '" . $_SESSION['email_empresa'] . "'";
+         $nom = "SELECT * FROM Empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
         if ($nombre_completo = $mysqli->query($nom)){
 
           while ($fila = $nombre_completo->fetch_row()){
-            $contacto = $fila[3];
-            $movil = $fila[4];
-            $pais = $fila[5];
-            $poblacion = $fila[6];
+            $_SESSION['nombre_empresa'] = $fila[9];
+            $_SESSION['contacto_empresa'] = $fila[3];
+            $_SESSION['movil_empresa'] = $fila[4];
+            $_SESSION['pais_empresa'] = $fila[5];
+            $_SESSION['pob_empresa'] = $fila[6];
+            $_SESSION['cp_empresa'] = $fila[7];
+            $_SESSION['direccion_empresa'] = $fila[8];
+            $_SESSION['sector_empresa'] = $fila[10];
             
           }
         }
-
-        $_SESSION['nombre_usuario'] = $nombre;
-        $_SESSION['apellidos_usuario'] = $apellidos;
-        if ($movil == 0){
-            $_SESSION['movil_usuario'] = "";
-        }
-        else $_SESSION['movil_usuario'] = $movil;
-        $_SESSION['provincia_usuario'] = $provincia;
         
     mysqli_close($mysqli);
 ?>
@@ -107,7 +103,7 @@ session_start();
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-lg-12">
-            <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_usuario']; ?></h3>
+            <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_empresa']; ?></h3>
           </div>
         </div>
 
@@ -124,56 +120,49 @@ session_start();
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Contacto</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="nombre" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="contacto" type="text" id="formGroup" value="<?php echo $_SESSION['contacto_empresa']; ?>">
                           </div>
                       </div>
 
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="formGroup">Movil</label>
                         <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_usuario']; ?>" placeholder="Introduza un tlf movil">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label" for="formGroup">Nombre de la empresa</label>
-                        <div class="col-sm-4">
-                          <input class="form-control" name="nom_emp" type="text" id="formGroup" value="<?php echo $_SESSION['provincia_usuario']; ?>" placeholder="Introduzca aqui la provincia">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_empresa']; ?>" placeholder="Introduza un tlf movil">
                         </div>
                       </div>
                       
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Dirección</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="direccion" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="direccion" type="text" id="formGroup" value="<?php echo $_SESSION['direccion_empresa']; ?>">
                           </div>
                       </div>
                         
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Población</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="poblacion" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="poblacion" type="text" id="formGroup" value="<?php echo $_SESSION['pob_empresa']; ?>">
                           </div>
                       </div>
                         
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Código postal</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="cp" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="cp" type="text" id="formGroup" value="<?php echo $_SESSION['cp_empresa']; ?>">
                           </div>
                       </div>
                         
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">País</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="pais" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="pais" type="text" id="formGroup" value="<?php echo $_SESSION['pais_empresa']; ?>">
                           </div>
                       </div>
                         
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Actividad empresarial</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="actividad" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="actividad" type="text" id="formGroup" value="<?php echo $_SESSION['sector_empresa']; ?>">
                           </div>
                       </div>
 
@@ -201,7 +190,7 @@ session_start();
                   <!-- Si estas en esta pagina se muestra sin enlace -->
                 </li>
                 <li>
-                  <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</a>
+                  <span class="fa fa-cog"></span><a href="ajustes_empresa.php">Ajustes de cuenta</a>
                 </li>
                 <li>
                   <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</a>
@@ -238,26 +227,18 @@ session_start();
       ", $conexion->connect_error);
       exit();
       }
-    if (empty($_POST['nombre']) || empty($_POST['apellidos'])){
+    if (empty($_POST['contacto']) || empty($_POST['movil']) || empty($_POST['direccion']) || empty($_POST['poblacion']) || empty($_POST['cp']) || empty($_POST['pais']) || empty($_POST['actividad'])){
       echo '<script>swal({
               title: "¡ERROR!",
-              text: "No se puede borrar el nombre o el apellido.",
+              text: "No se pueden dejar en blanco ningun campo.",
               confirmButtonText: "Volver a la pagina anterior",
               type: "error"
               }, function() {
-              window.location = "ficha_cliente.php";
+              window.location = "ficha_empresa.php";
               })</script>';
             exit();
     }
-    if (empty($_POST['movil'])){
-      $movil = '';
-    }
-    else $movil = $_POST['movil'];
-    if (empty($_POST['provincia'])){
-      $provincia = '';
-    }
-    else $provincia = $_POST['provincia'];
-    $consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "', apellidos ='" . $_POST['apellidos'] . "', movil ='" . $movil . "', provincia ='" . $provincia . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+    $consulta = "UPDATE empresa SET contacto ='" . $_POST['contacto'] . "', movil ='" . $_POST['movil'] . "', pais ='" . $_POST['pais'] . "', poblacion ='" . $_POST['poblacion'] . "', cp ='" . $_POST['cp'] . "', direccion='" . $_POST['direccion'] . "', sector='" . $_POST['actividad'] . "' WHERE email = '" . $_SESSION['email_empresa'] . "'";
     //$consulta = "UPDATE clientes SET nombre ='" . $_POST['nombre'] . "' WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
 
     $resultado = $conexion -> query($consulta) || die("No se pudo realizar la actualización");
@@ -271,7 +252,7 @@ session_start();
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {
-                            window.location = "ficha_cliente.php";
+                            window.location = "ficha_empresa.php";
                         })</script>';
           //Redireccion a la misma pagina con los cambios actualizados
           //header('Location: ' . $_SERVER("DOCUMENT_ROOT") . '/ficha_cliente.php');
@@ -287,7 +268,7 @@ session_start();
               confirmButtonText: "Volver a la pagina anterior",
               type: "warning"
               }, function() {
-              window.location = "ficha_cliente.php";
+              window.location = "ficha_empresa.php";
               })</script>';
             exit();
         }
@@ -297,5 +278,5 @@ session_start();
   else if(@$_POST['cancelar'] == "Cancelar"){
 
     //mensaje de vuelta a la pagina de inicio del uusario logueado
-    header('Location: usuario.php'); // no carga pagina --> header('Location: usuario.php');
+    header('Location: empresa.php'); // no carga pagina --> header('Location: usuario.php');
   }

@@ -10,20 +10,18 @@ session_start();
           exit();
         }
 
-         $nom = "SELECT * FROM clientes WHERE nombre = '" . $_SESSION['nombre_usuario'] . "'";
+         $nom = "SELECT * FROM clientes WHERE email = '" . $_SESSION['email_cliente'] . "'";
 
         if ($nombre_completo = $mysqli->query($nom)){
 
           while ($fila = $nombre_completo->fetch_row()){
-            $nombre = $fila[1];
-            $apellidos = $fila[2];
+            $_SESSION['nombre_usuario'] = $fila[1];
+            $_SESSION['apellidos_usuario'] = $fila[2];
             $movil = $fila[5];
             $provincia = $fila[6];
           }
         }
 
-        $_SESSION['nombre_usuario'] = $nombre;
-        $_SESSION['apellidos_usuario'] = $apellidos;
         if ($movil == 0){
             $_SESSION['movil_usuario'] = "";
         }
@@ -124,7 +122,7 @@ session_start();
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
                           <div class="col-sm-4">
-                            <input class="form-control" name="nombre" type="text" id="formGroup" value="<?php echo $nombre; ?>">
+                            <input class="form-control" name="nombre" type="text" id="formGroup" value="<?php echo $_SESSION['nombre_usuario']; ?>">
                           </div>
                       </div>
 
