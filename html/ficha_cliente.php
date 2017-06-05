@@ -29,7 +29,7 @@ session_start();
         }
         else $_SESSION['movil_usuario'] = $movil;
         $_SESSION['provincia_usuario'] = $provincia;
-        
+
     mysqli_close($mysqli);
 ?>
 
@@ -50,6 +50,7 @@ session_start();
 
     </head>
     <body>
+
 
       <!-- Navbar -->
       <div class="row">
