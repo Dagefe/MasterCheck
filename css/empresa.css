@@ -1,3 +1,77 @@
+/** Correcion margen izquierdo navbar **/
+.container {
+  margin-left: 73px !important;
+}
+
 body {
   background-image: url('../imagenes/entradaBar3.jpg');
+  background-size: 1366px;
+}
+
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+  margin-top: 20px;
+}
+/*
+.index-busc .wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	display: inline;
+	zoom: 1;
+}
+
+.index-busc {
+	top: 150px;
+	text-align: center;
+	position: relative;
+}
+
+
+.index-busc .index-busc-cab  {
+  display: flex;
+  flex: 0,0,100px;
+	text-align: center;
+	background: rgba(255,255,255,.8);
+	padding: 20px 15px;
+	margin: 0 auto;
+	width: 390px;
+  height: 300px;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+*/
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: auto;
+  height: 150px;
+  position: relative;
+  top:190px;
+}
+
+.flex-item {
+  display: flex;
+  flex: 0 0 45%;
+  background: rgba(255,255,255,.8);
+	padding: 20px 25px;
+	margin: 10px auto;
+	z-index: 100;
+	position: relative;
+  border-radius: 4px;
+}
+
+
+
+
+/* Apartado de login */
+
+.fa-sign-in, .fa-user  {
+  margin-left: 10px;
+  font-size: 17px;
+  vertical-align: text-top;
 }

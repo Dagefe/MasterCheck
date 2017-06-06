@@ -31,7 +31,7 @@
     $res = $mysqli->query($query);
     $row = $res->fetch_array(MYSQLI_NUM);
     //Comparamos la clave introducida encriptada por la clave en la BD
-    if($row[0] === $clave_has){ 
+    if($row[0] === $clave_has){
     //Contrasena coincide en la BD
 
     	$nom = "SELECT nombre_empresa FROM empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
@@ -47,7 +47,7 @@
           echo ("error");
         }
         //header('Location: ficha_empresa.php');
-	
+
 ?>
 <!-- Login_empresa -> Empresa -> ficha_empresa -> Ajustes_empresa -->
 <!-- Hoja de creacion de ofertas -->
@@ -105,6 +105,23 @@
     </div>
   </div>
 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="flex-container">
+        <div class="flex-item">
+            <h3>Oferta</h3>
+        </div>
+
+      <div class="flex-item">
+          <h3>Foto</h3>
+      </div>
+      <div class="flex-item">
+          <p>asfasfasfsdaf</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
 
 
 
@@ -113,12 +130,14 @@
 
 
   <footer>
+    <!--
     <div class="container">
       <div class="panel-footer">
         Panel para pie de pagina
 
       </div>
     </div>
+  -->
   </footer>
 
 
@@ -157,6 +176,6 @@
         showConfirmButton: false,
         })</script>';*/
   mysqli_close($mysqli);
-} 
+}
 
 ?>
