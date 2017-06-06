@@ -62,7 +62,7 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                    <a class="navbar-brand" href="usuario.php">MASTERCHECK</a>
+                    <a class="navbar-brand" href="empresa.php">MASTERCHECK</a>
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -193,7 +193,7 @@ session_start();
                   <span class="fa fa-cog"></span><a href="ajustes_empresa.php">Ajustes de cuenta</a>
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</a>
+                  <span class="fa fa-star"></span><a href="ofertas_empresa.php">Mis ofertas</a>
                 </li>
                 <li>
                   <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
@@ -275,8 +275,13 @@ session_start();
     #Cerrar la conexión
   }
 
-  else if(@$_POST['cancelar'] == "Cancelar"){
-
-    //mensaje de vuelta a la pagina de inicio del uusario logueado
-    header('Location: empresa.php'); // no carga pagina --> header('Location: usuario.php');
+  else if(@$_POST['restaurar']){
+    $_POST['contacto'] = $_SESSION['contacto_empresa'];
+    $_POST['movil'] = $_SESSION['movil_empresa'];
+    $_POST['direccion'] = $_SESSION['direccion_empresa'];
+    $_POST['poblacion'] = $_SESSION['pob_empresa'];
+    $_POST['cp'] = $_SESSION['cp_empresa'];
+    $_POST['pais'] = $_SESSION['pais_empresa'];
+    $_POST['actividad'] = $_SESSION['sector_empresa'];
   }
+?>

@@ -31,10 +31,10 @@
     $res = $mysqli->query($query);
     $row = $res->fetch_array(MYSQLI_NUM);
     //Comparamos la clave introducida encriptada por la clave en la BD
-    if($row[0] === $clave_has){
+    if($row[0] === $clave_has){ 
     //Contrasena coincide en la BD
 
-    	$nom = "SELECT nombre_empresa FROM clientes WHERE email = '" . $_SESSION['email_empresa'] . "'";
+    	$nom = "SELECT nombre_empresa FROM empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
       	if ($nombre_completo = $mysqli->query($nom)){
             while ($fila = $nombre_completo->fetch_row())
@@ -46,20 +46,8 @@
         else {
           echo ("error");
         }
-        header('Location: ficha_empresa.php');
-	}
-	else{
-    echo "Las contraseñas no coindicen";
-    echo '<script>swal({
-            title: "Error: Contraseñas",
-            text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
-            confirmButtonText: "Volver al formulario",
-            type: "error"
-            }, function() {
-              window.location = "login_empresa.html";
-          })</script>';
-	}
-	mysqli_close($mysqli);
+        //header('Location: ficha_empresa.php');
+	
 ?>
 <!-- Login_empresa -> Empresa -> ficha_empresa -> Ajustes_empresa -->
 <!-- Hoja de creacion de ofertas -->
@@ -80,6 +68,7 @@
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/empresa.css">
   <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/sweetalert.css">
   <!-- To insert the icon: -->
   <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
@@ -147,3 +136,26 @@
 </body>
 
 </html>
+
+<?php
+  }
+  else{
+    echo "Las contraseñas no coindicen";
+    echo '<script>swal({
+                        title: "Error, las contraseñas no coindicen.",
+                        text: "La contraseña introducida no es correcta, se te redirigira al panel de login.",
+                        showConfirmButton: false,
+                        type: "success",
+                        timer: 5000
+                        })</script>';
+  /*echo '<script>swal({
+        title: "Error en las contraseñas!",
+        text: "Lo sentimos, la contraseña introducida no coincide con el email solicitado, se te redirigira automaticamente a la pantlla principal",
+        timer: 5000,
+        type: "error",
+        showConfirmButton: false,
+        })</script>';*/
+  mysqli_close($mysqli);
+} 
+
+?>

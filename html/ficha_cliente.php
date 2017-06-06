@@ -264,8 +264,10 @@ session_start();
     #Cerrar la conexión
   }
 
-  else if(@$_POST['cancelar'] == "Cancelar"){
-
-    //mensaje de vuelta a la pagina de inicio del uusario logueado
-    header('Location: usuario.php'); // no carga pagina --> header('Location: usuario.php');
+  else if(@$_POST['restaurar']){
+    $_POST['nombre'] = $_SESSION['nombre_usuario'];
+    $_POST['apellidos'] = $_SESSION['apellidos_usuario'];
+    $_POST['movil'] = $_SESSION['movil_usuario'];
+    $_POST['provincia'] = $_SESSION['provincia_usuario'];
   }
+?>

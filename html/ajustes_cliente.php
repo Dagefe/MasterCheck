@@ -239,7 +239,7 @@ if ($email_cliente = $mysqli->query($ema)){
   }
 
   else if(@$_POST['restaurar']){
-    
+    $_POST['contra'] = $_SESSION['contra'];
     // 
   }
 
