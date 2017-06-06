@@ -148,6 +148,7 @@
                         type: "success",
                         timer: 5000
                         })</script>';
+    unset($_SESSION['email_empresa']);
   /*echo '<script>swal({
         title: "Error en las contraseñas!",
         text: "Lo sentimos, la contraseña introducida no coincide con el email solicitado, se te redirigira automaticamente a la pantlla principal",

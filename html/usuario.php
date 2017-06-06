@@ -291,7 +291,7 @@
               }, function() {
                 window.location = "login_cliente.html";
               })</script>';
-
+        unset($_SESSION['email_cliente']);
         }
 			mysqli_close($mysqli);
 ?>

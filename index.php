@@ -1,5 +1,13 @@
 <?php
  session_start();
+
+ if (isset($_SESSION['email_empresa'])){
+  header('Location: html/empresa.php');
+ }
+ elseif (isset($_SESSION['email_cliente'])) {
+   header('Location: html/usuario.php');
+ }
+ else{
  ?>
 <!DOCTYPE html>
 <!-- Idea de ofertas diarias con paginacion -->
@@ -243,3 +251,6 @@
 </body>
 
 </html>
+<?php
+}
+?>
