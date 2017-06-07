@@ -130,7 +130,7 @@ if($_POST['enviar'])
                 </div>
                 <div class="row">
                     <div class="ajusteLateralRegistro separacionTop">
-                      <input type="submit" name="enviar" value="Alta nueva" id="btnAlta" class="btn btn-primary"/>
+                      <input type="submit" name="enviar" value="Subir oferta" id="btnAlta" class="btn btn-primary"/>
                       <a id="btnCancel" type="button" class="btn btn-warning" href="usuario.php">Cancelar</a>
                     </div>
                 </div>
