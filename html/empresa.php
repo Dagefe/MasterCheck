@@ -3,6 +3,8 @@
 
  include_once 'conexion.php';
 
+if($_POST['enviar'])
+{
  if (isset($_POST['email'])){
  	$_SESSION['email_empresa'] = $_POST['email'];
  }
@@ -47,7 +49,7 @@
           echo ("error");
         }
         //header('Location: ficha_empresa.php');
-
+}
 ?>
 <!-- Login_empresa -> Empresa -> ficha_empresa -> Ajustes_empresa -->
 <!-- Hoja de creacion de ofertas -->
@@ -105,20 +107,37 @@
     </div>
   </div>
 
+
+
   <div class="container-fluid">
     <div class="row">
-      <div class="flex-container">
-        <div class="flex-item">
-            <h3>Oferta</h3>
+      <div class="col-xs-12 col-lg-8">
+        <div class="index-busc">
+          <div class="wrapper">
+            <div class="index-busc-cab">
+              <form method="post" action="inserccion_oferta.php" name="form">
+              <h3 class="titulo-busqueda">Formulario</h3>
+                <input id="nombre" type="text" name="nombre" class="form-control inputForm" placeholder="Nombre *" required />
+                <!-- <input id="logo" type="file" name="logo" class="form-control inputForm" required />-->
+                <input id="desc" type="text" name="desc" class="form-control inputForm" placeholder="Descripcion *" required />
+                <input id="precio" type="number" name="precio" class="form-control inputForm" placeholder="Precio *" required />
+                <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control inputForm" placeholder="Fecha inicio *" required />
+                <input id="fecha_fin" type="date" name="fecha_fin" class="form-control inputForm" placeholder="Fecha fin *" required />
+                <input id="tipo" type="text" name="tipo" class="form-control inputForm" placeholder="Bar/Restaurante *" required />
+                <div class="form-group">
+                  <label for="logotipo">Adjuntar logotipo</label>
+                  <input type="file" id="logotipo">
+                </div>
+                <div class="row">
+                    <div class="ajusteLateralRegistro separacionTop">
+                      <input type="submit" name="enviar" value="Alta nueva" id="btnAlta" class="btn btn-primary"/>
+                      <a id="btnCancel" type="button" class="btn btn-warning" href="usuario.php">Cancelar</a>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
-      <div class="flex-item">
-          <h3>Foto</h3>
-      </div>
-      <div class="flex-item">
-          <p>asfasfasfsdaf</p>
-      </div>
-
       </div>
     </div>
   </div>
