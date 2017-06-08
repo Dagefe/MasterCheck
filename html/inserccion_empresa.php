@@ -117,7 +117,7 @@
                   $_SESSION['contra_empresa'] = $_POST['pass'];
                   echo '<script>swal({
                             title: "Bien",
-                            text: "Datos introducidos",
+                            text: "Datos introducidos correctamente",
                             confirmButtonText: "Aceptar",
                             type: "success"
                         }, function() {

@@ -3,8 +3,6 @@
 
  include_once 'conexion.php';
 
-if($_POST['enviar'])
-{
  if (isset($_POST['email'])){
  	$_SESSION['email_empresa'] = $_POST['email'];
  }
@@ -49,7 +47,7 @@ if($_POST['enviar'])
           echo ("error");
         }
         //header('Location: ficha_empresa.php');
-}
+
 ?>
 <!-- Login_empresa -> Empresa -> ficha_empresa -> Ajustes_empresa -->
 <!-- Hoja de creacion de ofertas -->
@@ -115,7 +113,7 @@ if($_POST['enviar'])
         <div class="index-busc">
           <div class="wrapper">
             <div class="index-busc-cab">
-              <form method="post" action="inserccion_oferta.php" name="form">
+              <form method="post" action="inserccion_oferta.php" name="form" enctype="multipart/form-data">
               <h3 class="titulo-busqueda">Formulario</h3>
                 <input id="nombre" type="text" name="nombre" class="form-control inputForm" placeholder="Nombre *" required />
                 <!-- <input id="logo" type="file" name="logo" class="form-control inputForm" required />-->
@@ -123,10 +121,14 @@ if($_POST['enviar'])
                 <input id="precio" type="number" name="precio" class="form-control inputForm" placeholder="Precio *" required />
                 <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control inputForm" placeholder="Fecha inicio *" required />
                 <input id="fecha_fin" type="date" name="fecha_fin" class="form-control inputForm" placeholder="Fecha fin *" required />
-                <input id="tipo" type="text" name="tipo" class="form-control inputForm" placeholder="Bar/Restaurante *" required />
+                <select name="tipo" class="form-control inputForm" required>
+                <option value="Bar">Bar</option>
+                <option value="Pub">Pub</option>
+                <option value="Restaurante">Restaurante</option>
+                </select>
                 <div class="form-group">
                   <label for="logotipo">Adjuntar logotipo</label>
-                  <input type="file" id="logotipo">
+                  <input type="file" id="logotipo" name="logotipo">
                 </div>
                 <div class="row">
                     <div class="ajusteLateralRegistro separacionTop">
@@ -196,5 +198,4 @@ if($_POST['enviar'])
         })</script>';*/
   mysqli_close($mysqli);
 }
-
 ?>
