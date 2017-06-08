@@ -1,6 +1,6 @@
 body {
-	background-color: transparent;
-	background-image: url('../imagenes/entradaBar1.jpg');
+	background-image: url('../imagenes/entradaBar3.jpg');
+	background-size: 1366px;
 }
 
 
@@ -13,6 +13,15 @@ body {
   margin-top: 20px;
 }
 
+.welcomeUser {
+  margin-top: 10%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.labelPerfil {
+  margin-top: 5%;
+}
 
 .index-busc .wrapper {
 	display: inline-block;
@@ -29,7 +38,7 @@ body {
 }
 
 
-.index-busc .index-busc-cab-ajustes  {
+.index-busc .index-busc-cab-perfil  {
 	text-align: left;
 	background: rgba(255,255,255,.8);
 	/*padding: 20px 15px;*/
@@ -52,22 +61,17 @@ body {
 	padding-top: 25px;
 }
 
-.form-group {
-  margin-right: -145px !important;
+.row-inputs {
+	padding: 15px;
 }
 
-.header {
-	position: relative;
-	background: #f1f1f1;
-	border-radius: 2px 2px 0 0;
-	border-bottom: 1px solid #e1e1e1;
-	padding: 10px;
-}
-
-.welcomeUser {
-  margin-top: 10%;
-  margin-left: 5%;
-  text-align: center;
+.cuadroEnlaces {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  text-align: right;
+  margin-right: 15%;
+  background-color: beige;
 }
 
 .header {
@@ -81,6 +85,8 @@ body {
 .box-opciones {
 	box-sizing: border-box;
 	border-bottom: 1px solid #e1e1e1;
+
+
 }
 
 .box-herramientas {
@@ -97,6 +103,16 @@ body {
 .selected {
 	color: #222;
 	font-weight: 600;
+}
+
+.botonera-perfil {
+	left: 450px;
+	top: -196px;
+	position: relative;
+}
+
+body {
+
 }
 
 a {
@@ -129,14 +145,6 @@ h3 {
 	margin-top: 5px;
 }
 
-.cuadroEnlaces {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20%;
-  text-align: right;
-  margin-right: 15%;
-  background-color: beige;
-}
 
 /** Iconos **/
 

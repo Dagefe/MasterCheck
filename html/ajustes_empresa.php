@@ -38,7 +38,7 @@ if ($email_cliente = $mysqli->query($ema)){
       <!-- Bootstrap -->
       <link rel="stylesheet" href="../css/bootstrap.min.css"/>
       <link rel="stylesheet" href="../css/general.css"/>
-      <link rel="stylesheet" href="../css/ajustes_cliente.css"/>
+      <link rel="stylesheet" href="../css/ajustes_empresa.css"/>
       <link rel="stylesheet" href="../css/sweetalert.css">
       <!-- To insert the icon: -->
       <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
@@ -114,7 +114,7 @@ if ($email_cliente = $mysqli->query($ema)){
               <div class="wrapper">
                 <div class="index-busc-cab-ajustes">
                   <div class="header">
-                    <h3>Ajustes de usuario</h3>
+                    <h3>Ajustes de empresa</h3>
                   </div>
                   <form class="form-horizontal" name="formulario_ficha" method="POST">
 
@@ -161,7 +161,7 @@ if ($email_cliente = $mysqli->query($ema)){
             <div class="box-opciones">
               <ul>
                 <li>
-                  <span class="fa fa-user"></span><a href="ficha_empresa.php">Perfil de usuario</a>
+                  <span class="fa fa-user"></span><a href="ficha_empresa.php">Perfil de empresa</a>
                   <!-- Si estas en esta pagina se muestra sin enlace -->
                 </li>
                 <li class="selected">
@@ -250,7 +250,7 @@ if ($email_cliente = $mysqli->query($ema)){
   else if(@$_POST['restaurar']){
     $_POST['nom_empre'] = $_SESSION['nombre_empresa'];
     $_POST['contra'] = $clave_has;
-    // 
+    //
   }
 
   else if(@$_POST['borrar']){

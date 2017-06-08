@@ -23,10 +23,10 @@ session_start();
             $_SESSION['cp_empresa'] = $fila[7];
             $_SESSION['direccion_empresa'] = $fila[8];
             $_SESSION['sector_empresa'] = $fila[10];
-            
+
           }
         }
-        
+
     mysqli_close($mysqli);
 ?>
 
@@ -40,7 +40,7 @@ session_start();
       <!-- Bootstrap -->
       <link rel="stylesheet" href="../css/bootstrap.min.css"/>
         <link rel="stylesheet" href="../css/general.css">
-          <link rel="stylesheet" href="../css/ficha_cliente.css">
+          <link rel="stylesheet" href="../css/ficha_empresa.css">
       <link rel="stylesheet" href="../css/sweetalert.css">
       <!-- To insert the icon: -->
       <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
@@ -130,35 +130,35 @@ session_start();
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_empresa']; ?>" placeholder="Introduza un tlf movil">
                         </div>
                       </div>
-                      
+
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Dirección</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="direccion" type="text" id="formGroup" value="<?php echo $_SESSION['direccion_empresa']; ?>">
                           </div>
                       </div>
-                        
+
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Población</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="poblacion" type="text" id="formGroup" value="<?php echo $_SESSION['pob_empresa']; ?>">
                           </div>
                       </div>
-                        
+
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Código postal</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="cp" type="text" id="formGroup" value="<?php echo $_SESSION['cp_empresa']; ?>">
                           </div>
                       </div>
-                        
+
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">País</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="pais" type="text" id="formGroup" value="<?php echo $_SESSION['pais_empresa']; ?>">
                           </div>
                       </div>
-                        
+
                       <div class="form-group">
                           <label class="col-sm-2 control-label" for="formGroup">Actividad empresarial</label>
                           <div class="col-sm-4">

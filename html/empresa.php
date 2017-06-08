@@ -1,3 +1,4 @@
+
 <?php
  session_start();
 
@@ -105,7 +106,7 @@
     </div>
   </div>
 
-
+<!--
 
   <div class="container-fluid">
     <div class="row">
@@ -116,7 +117,6 @@
               <form method="post" action="inserccion_oferta.php" name="form" enctype="multipart/form-data">
               <h3 class="titulo-busqueda">Formulario</h3>
                 <input id="nombre" type="text" name="nombre" class="form-control inputForm" placeholder="Nombre *" required />
-                <!-- <input id="logo" type="file" name="logo" class="form-control inputForm" required />-->
                 <input id="desc" type="text" name="desc" class="form-control inputForm" placeholder="Descripcion *" required />
                 <input id="precio" type="number" name="precio" class="form-control inputForm" placeholder="Precio *" required />
                 <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control inputForm" placeholder="Fecha inicio *" required />
@@ -143,11 +143,52 @@
       </div>
     </div>
   </div>
-
-
-
-
-
+-->
+<!-- Usando Flexbox -->
+  <div class="container-fluid">
+    <div class="flex-container">
+      <div class="flex-item flex-item-centrado">
+        <form method="post" action="inserccion_oferta.php" name="form" enctype="multipart/form-data">
+          <h3 class="titulo-busqueda">Formulario</h3>
+        </div>
+        <div class="flex-item">
+            <input id="nombre" type="text" name="nombre" class="form-control inputForm" placeholder="Nombre *" required />
+        </div>
+        <div class="flex-item">
+            <input id="desc" type="text" name="desc" class="form-control inputForm" placeholder="Descripcion *" required />
+        </div>
+        <div class="flex-item">
+            <input id="precio" type="number" name="precio" class="form-control inputForm" placeholder="Precio *" required />
+        </div>
+        <div class="flex-item">
+            <input id="fecha_inicio" type="date" name="fecha_inicio" class="form-control inputForm" placeholder="Fecha inicio *" required />
+        </div>
+        <div class="flex-item">
+            <input id="fecha_fin" type="date" name="fecha_fin" class="form-control inputForm" placeholder="Fecha fin *" required />
+        </div>
+        <div class="flex-item">
+            <select name="tipo" class="form-control inputForm" required>
+            <option value="Bar">Bar</option>
+            <option value="Restaurante">Restaurante</option>
+            </select>
+        </div>
+        <div class="flex-item">
+            <div class="form-group">
+              <label for="logotipo">Adjuntar logotipo</label>
+              <input type="file" id="logotipo" name="logotipo">
+            </div>
+        </div>
+        <div class="flex-item flex-item-centrado">
+            <div class="row">
+                <div class="ajusteLateralRegistro separacionTop">
+                  <input type="submit" name="enviar" value="Subir oferta" id="btnAlta" class="btn btn-primary"/>
+                  <a id="btnCancel" type="button" class="btn btn-warning" href="usuario.php">Cancelar</a>
+                </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div><!-- Fin container-fluid -->
 
 
   <footer>
@@ -160,7 +201,6 @@
     </div>
   -->
   </footer>
-
 
 
 

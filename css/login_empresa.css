@@ -54,6 +54,7 @@ h3 {
 	padding: 20px 15px;
 	margin: 0 auto;
 	width: 275px;
+  left: 9%;
 	z-index: 100;
 	position: relative;
   border-radius: 4px;
@@ -85,7 +86,7 @@ h3 {
 /*** ESTILOS INPUT ***/
 
 #email, #password {
-  width: 195px;
+  width: 95%;
 }
 
 /*** FIN ***/
