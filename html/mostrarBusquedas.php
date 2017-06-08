@@ -51,8 +51,7 @@
     <link rel="stylesheet" href="../css/index.css">
 
     <!-- To insert the icon: -->
-    <link type="text/css" rel="stylesheet" href="../fontello/css/iconset.css" />
-    <!-- <svg class="lnr lnr-linearicons"><use xlink:href="#lnr-linearicons"></use></svg> -->
+    <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
 
   </head>
@@ -71,7 +70,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                  <a class="navbar-brand" href="empresa.php">MASTERCHECK</a>
+                  <a class="navbar-brand" href="../index.php">MASTERCHECK</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
