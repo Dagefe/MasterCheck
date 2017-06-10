@@ -119,14 +119,14 @@ if ($email_cliente = $mysqli->query($ema)){
                   <form class="form-horizontal" name="formulario_ficha" method="POST">
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="formGroup">Email</label>
+                        <label class="col-sm-3 control-label" for="formGroup">Email</label>
                         <div class="col-sm-4">
                           <input class="form-control" name="email" type="text" id="formGroup" value="<?php echo $_SESSION['email_empresa']; ?>" readonly>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="formGroup">Nombre de la Empresa</label>
+                        <label class="col-sm-3 control-label" for="formGroup">Nombre de la Empresa</label>
                         <div class="col-sm-4">
                           <input class="form-control" name="nom_empre" type="text" id="formGroup" value="<?php echo $_SESSION['nombre_empresa']; ?>">
                         </div>
@@ -134,15 +134,15 @@ if ($email_cliente = $mysqli->query($ema)){
 
                     <div class="form-group">
                       <!-- Recoger contraseña encriptada y mostrar en el campo -->
-                      <label class="col-sm-2 control-label" for="formGroup">Contraseña</label>
+                      <label class="col-sm-3 control-label" for="formGroup">Contraseña</label>
                       <div class="col-sm-4">
                         <input class="form-control" name="contra" type="password" id="formGroup" value="<?php echo $clave_has; ?>">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label class="col-sm-2 control-label" for="formGroup"></label>
-                    <div class="col-sm-4">
+                      <label class="col-sm-3 control-label" for="formGroup"></label>
+                    <div class="col-sm-5">
                       <input type="submit" name="cambiar" class="btn btn-success" value="Cambiar">
                       <input type="submit" name="restaurar" class="btn btn-danger" value="Restaurar">
                       <input type="submit" name="borrar" class="btn btn-danger" value="Borrar cuenta">
@@ -168,7 +168,7 @@ if ($email_cliente = $mysqli->query($ema)){
                   <span class="fa fa-cog"></span>Ajustes de cuenta
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="ofertas_empresa.php">Mis ofertas</a>
+                  <span class="fa fa-star"></span><a href="mis_ofertas.php">Mis ofertas</a>
                 </li>
                 <li>
                   <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>

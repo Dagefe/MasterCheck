@@ -10,7 +10,7 @@ session_start();
           exit();
         }
 
-         $nom = "SELECT * FROM Empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
+         $nom = "SELECT * FROM empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
         if ($nombre_completo = $mysqli->query($nom)){
 
@@ -114,53 +114,53 @@ session_start();
               <div class="wrapper">
                 <div class="index-busc-cab-perfil">
                   <div class="header">
-                    <h3>Perfil de usuario</h3>
+                    <h3>Perfil de empresa</h3>
                   </div>
                     <form class="form-horizontal" name="formulario_ficha" method="POST">
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="formGroup">Contacto</label>
+                          <label class="col-sm-3 control-label" for="formGroup">Contacto</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="contacto" type="text" id="formGroup" value="<?php echo $_SESSION['contacto_empresa']; ?>">
                           </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="col-sm-2 control-label" for="formGroup">Movil</label>
+                        <label class="col-sm-3 control-label" for="formGroup">Movil</label>
                         <div class="col-sm-4">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $_SESSION['movil_empresa']; ?>" placeholder="Introduza un tlf movil">
                         </div>
                       </div>
 
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="formGroup">Dirección</label>
+                          <label class="col-sm-3 control-label" for="formGroup">Dirección</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="direccion" type="text" id="formGroup" value="<?php echo $_SESSION['direccion_empresa']; ?>">
                           </div>
                       </div>
 
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="formGroup">Población</label>
+                          <label class="col-sm-3 control-label" for="formGroup">Población</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="poblacion" type="text" id="formGroup" value="<?php echo $_SESSION['pob_empresa']; ?>">
                           </div>
                       </div>
 
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="formGroup">Código postal</label>
+                          <label class="col-sm-3 control-label" for="formGroup">Código postal</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="cp" type="text" id="formGroup" value="<?php echo $_SESSION['cp_empresa']; ?>">
                           </div>
                       </div>
 
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="formGroup">País</label>
+                          <label class="col-sm-3 control-label" for="formGroup">País</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="pais" type="text" id="formGroup" value="<?php echo $_SESSION['pais_empresa']; ?>">
                           </div>
                       </div>
 
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="formGroup">Actividad empresarial</label>
+                          <label class="col-sm-3 control-label" for="formGroup">Actividad empresarial</label>
                           <div class="col-sm-4">
                             <input class="form-control" name="actividad" type="text" id="formGroup" value="<?php echo $_SESSION['sector_empresa']; ?>">
                           </div>
@@ -168,7 +168,7 @@ session_start();
 
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="formGroup"></label>
-                        <div class="col-sm-6 botonera-perfil">
+                        <div class="col-sm-6 botonera-empresa">
                           <input type="submit" name="guardar" class="btn btn-success" value="Guardar">
                           <input type="submit" name="restaurar" class="btn btn-danger" value="Restaurar">
                         </div>
@@ -186,14 +186,14 @@ session_start();
             <div class="box-opciones">
               <ul>
                 <li class="selected">
-                  <span class="fa fa-user"></span>Perfil de usuario
+                  <span class="fa fa-user"></span>Perfil de empresa
                   <!-- Si estas en esta pagina se muestra sin enlace -->
                 </li>
                 <li>
                   <span class="fa fa-cog"></span><a href="ajustes_empresa.php">Ajustes de cuenta</a>
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="ofertas_empresa.php">Mis ofertas</a>
+                  <span class="fa fa-star"></span><a href="mis_ofertas.php">Mis ofertas</a>
                 </li>
                 <li>
                   <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>

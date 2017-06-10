@@ -3,7 +3,6 @@ body {
 	background-size: 1366px;
 }
 
-
 .navbar-wrapper {
 	position: absolute;
 	top: 0;
@@ -13,14 +12,11 @@ body {
   margin-top: 20px;
 }
 
+
 .welcomeUser {
   margin-top: 10%;
   margin-left: 5%;
   text-align: center;
-}
-
-.labelPerfil {
-  margin-top: 5%;
 }
 
 .index-busc .wrapper {
@@ -38,7 +34,7 @@ body {
 }
 
 
-.index-busc .index-busc-cab-perfil  {
+.index-busc .index-busc-cab-ofertas  {
 	text-align: left;
 	background: rgba(255,255,255,.8);
 	margin: 0 auto;
@@ -56,23 +52,6 @@ body {
 
 }
 
-.form-horizontal {
-	/*border-bottom: 1px solid #e1e1e1;*/
-	padding-top: 25px;
-}
-
-.row-inputs {
-	padding: 15px;
-}
-
-.cuadroEnlaces {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20%;
-  text-align: right;
-  margin-right: 15%;
-  background-color: beige;
-}
 
 .header {
 	position: relative;
@@ -82,43 +61,26 @@ body {
 	padding: 10px;
 }
 
-.box-opciones {
-	box-sizing: border-box;
-	border-bottom: 1px solid #e1e1e1;
+.flex-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
 
+.flex-foto {
+  flex: 0 0 40%;
+  padding: 10px;
 
 }
 
-.box-herramientas {
-	border-radius: 4px;
-	box-shadow: 0 2px 0 0 rgba(0,0,0,.03);
-	background-color: #fff;
-	border: 1px solid #e1e1e1;
-	margin-bottom: 15px;
-	margin-top: 7%;
-	position: relative;
-	left: 50px;
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  box-shadow: 0 11px 0 0 rgba(0,0,0,.03);
 }
 
-.selected {
-	color: #222;
-	font-weight: 600;
-}
-
-.botonera-empresa {
-	left: 450px;
-	top: -345px;
-	margin-bottom: 0px;
-	position: relative;
-}
-
-.control-label {
-	text-align: left !important;
-	padding-left: 35px;
-}
-
-body {
-
+.flex-contenido {
+  flex: 0 0 60%;
 }
 
 a {
@@ -149,14 +111,4 @@ li {
 
 h3 {
 	margin-top: 5px;
-}
-
-
-/** Iconos **/
-
-.fa-cog, .fa-star, .fa-sign-out, .fa-user  {
-  margin-left: 10px;
-  font-size: 16px !important;
-  vertical-align: text-top;
-	padding-right: 15px;
 }

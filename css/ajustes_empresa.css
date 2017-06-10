@@ -35,11 +35,11 @@ body {
 	margin: 0 auto;
   margin-left: 5%;
 	margin-top: 20px;
-	width: ;
+	width: auto;
+	left: 5px;
 	z-index: 100;
 	position: relative;
   border-radius: 4px;
-	border-radius: 2px;
 	box-shadow: 0 2px 0 0 rgba(0,0,0,.03);
 	background-color: #fff;
 	border: 1px solid #e1e1e1;
@@ -83,7 +83,7 @@ body {
 }
 
 .box-herramientas {
-	border-radius: 2px;
+	border-radius: 4px;
 	box-shadow: 0 2px 0 0 rgba(0,0,0,.03);
 	background-color: #fff;
 	border: 1px solid #e1e1e1;
@@ -96,6 +96,11 @@ body {
 .selected {
 	color: #222;
 	font-weight: 600;
+}
+
+.control-label {
+	text-align: left !important;
+	padding-left: 35px;
 }
 
 a {
