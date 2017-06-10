@@ -21,7 +21,7 @@
 <?php
 	session_start();
 	if ((isset($_POST['nombre']) && $_POST['nombre'] != "") && (isset($_POST['desc']) && $_POST['desc'] != "") && (isset($_POST['precio']) && $_POST['precio'] != "") && (isset($_POST['fecha_inicio']) && $_POST['fecha_inicio'] != "") && (isset($_POST['fecha_fin']) && $_POST['fecha_fin'] != "") && (isset($_POST['tipo']) && $_POST['tipo'] != "")){
-		$image_check = getimagesize("../" . $_FILES['logotipo']);
+		/*$image_check = getimagesize("../" . $_FILES['logotipo']); comprobar */
 		if ($image_check == false){
 
 			include_once 'conexion.php';
@@ -49,7 +49,7 @@
 	            //En caso de error lo mostramos
 	            echo "Error en: " . $mysqli->error;
 	        }
-	        else{  
+	        else{
 	            echo '<script>swal({
 	                    title: "Bien",
 	                    text: "Oferta creada correctamente",

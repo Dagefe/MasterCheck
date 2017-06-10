@@ -1,6 +1,47 @@
 <?php
 
   session_start();
+  include_once 'conexion.php';
+
+     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+
+       if (mysqli_connect_errno())
+         { //Posible error al conectar a la base de datos
+           printf("Error de conexión: %s\n", mysqli_connect_error());
+           exit();
+         }
+
+         $empresaID = "SELECT id FROM empresa WHERE nombre_empresa = '" . $_SESSION['pais_empresa'] . "'";
+
+
+         if ($id_empresa = $mysqli->query($empresaID))
+         {
+           $fila_empresa = $id_empresa->fetch_row();
+           $id_Empresa= $fila_empresa[0];
+           $_SESSION['id_empresa'] = $fila_empresa[0];
+
+         }
+
+          $nom = "SELECT * FROM ofertas WHERE id_empresa = '" . $id_Empresa . "'";
+
+         if ($oferta = $mysqli->query($nom))
+         {
+
+           while ($fila = $oferta->fetch_row())
+           {
+
+             $nombre_oferta = $fila[1];
+             $_SESSION['imagen_oferta'] = $fila[2];
+             $descripcion_oferta = $fila[4];
+             $precio_oferta = $fila[5];
+             $fecha_inicio = $fila[6];
+             $fecha_fin = $fila[7];
+
+
+           }
+         }
+
+     mysqli_close($mysqli);
 
 ?>
 
@@ -39,26 +80,13 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <!--
-                  <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
-                -->
                   <ul class="nav navbar-nav navbar-right">
-                    <!-- <li><a href="login_cliente.html">Particular</a></li>
-                    <li><a href="login_empresa.html">Empresa</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user "></span></a>
+                    <!--<li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['pais_empresa']; ?> <span class="fa fa-user "></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="login_cliente.html">Particular</a></li>
+                        <li><a href="ficha_empresa.php">Perfi<span class="fa fa-sign-in"></span></a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="login_empresa.html">Empresa</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="logout.php">Cerrar sesion<span class="fa fa-sign-in"></span></a></li>
                       </ul>
                     </li>-->
                   </ul>
@@ -74,7 +102,7 @@
 
       <div class="row">
         <div class="col-xs-12 col-lg-12">
-          <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_empresa']; ?></h3>
+          <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['pais_empresa']; ?></h3>
         </div>
       </div>
 
@@ -84,17 +112,73 @@
             <div class="wrapper">
               <div class="index-busc-cab-ofertas">
                 <div class="header">
-                  <h3>Ofertas <?php echo $_SESSION['nombre_empresa']; ?></h3>
+                  <h3>Ofertas <?php echo $_SESSION['pais_empresa']; ?></h3>
                 </div>
 
                 <div class="flex-container">
                   <div class="flex-foto">
-                    <img src="../imagenes/naru.jpg">
+                    <div class="img-thumbnail">
+                      <img src="../imagenes/naru.jpg">
+                    </div>
                   </div>
 
                   <div class="flex-contenido">
 
+                    <div class="row">
+                      <div class="form-group">
+                        <label class="col-sm-3 control-label" for="formGroup">Nombre</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $nombre_oferta; ?>" readonly>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-3 control-label" for="formGroup">Descripcion</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $descripcion_oferta; ?>" readonly>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group">
+                        <label class="col-sm-3 control-label" for="formGroup">Precio</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $precio_oferta; ?>" readonly>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-3 control-label" for="formGroup">Fin</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group">
+                        <label class="col-sm-3 control-label" for="formGroup">Inicio</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_inicio; ?>" readonly>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-3 control-label" for="formGroup">Fin</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
                   </div>
+
 
                 </div>
               </div>
