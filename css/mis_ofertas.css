@@ -73,6 +73,14 @@ body {
 
 }
 
+.flex-contenido {
+  flex: 0 0 80%;
+}
+
+.row-superior {
+	padding-top: 25px;
+}
+
 .img-thumbnail {
   box-shadow: 0 0 5px 5px rgb(135, 135, 143);
 }
@@ -85,9 +93,7 @@ img {
 }
 
 
-.flex-contenido {
-  flex: 0 0 80%;
-}
+
 
 a {
 	display: inline-block;

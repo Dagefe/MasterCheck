@@ -31,12 +31,11 @@
            {
 
              $nombre_oferta = $fila[1];
-             $_SESSION['imagen_oferta'] = $fila[2];
+             $imagen_oferta = $fila[2];
              $descripcion_oferta = $fila[4];
              $precio_oferta = $fila[5];
              $fecha_inicio = $fila[6];
              $fecha_fin = $fila[7];
-
 
            }
          }
@@ -124,62 +123,38 @@
 
                   <div class="flex-contenido">
 
-                    <div class="row">
-                      <div class="form-group">
+                    <div class="row row-superior">
                         <label class="col-sm-3 control-label" for="formGroup">Nombre</label>
                         <div class="col-sm-3">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $nombre_oferta; ?>" readonly>
                         </div>
-                      </div>
 
-                      <div class="form-group">
                         <label class="col-sm-3 control-label" for="formGroup">Descripcion</label>
                         <div class="col-sm-3">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $descripcion_oferta; ?>" readonly>
                         </div>
-                      </div>
-
                     </div>
 
                     <div class="row">
-                      <div class="form-group">
                         <label class="col-sm-3 control-label" for="formGroup">Precio</label>
                         <div class="col-sm-3">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $precio_oferta; ?>" readonly>
                         </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-sm-3 control-label" for="formGroup">Fin</label>
-                        <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>
-                        </div>
-                      </div>
-
                     </div>
 
                     <div class="row">
-                      <div class="form-group">
                         <label class="col-sm-3 control-label" for="formGroup">Inicio</label>
                         <div class="col-sm-3">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_inicio; ?>" readonly>
                         </div>
-                      </div>
 
-                      <div class="form-group">
                         <label class="col-sm-3 control-label" for="formGroup">Fin</label>
                         <div class="col-sm-3">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>
                         </div>
-                      </div>
-
                     </div>
 
-
-
                   </div>
-
-
                 </div>
               </div>
             </div>
