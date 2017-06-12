@@ -11,7 +11,7 @@
            exit();
          }
 
-         $empresaID = "SELECT id FROM empresa WHERE nombre_empresa = '" . $_SESSION['pais_empresa'] . "'";
+         $empresaID = "SELECT id FROM Empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
 
          if ($id_empresa = $mysqli->query($empresaID))
@@ -74,7 +74,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                  <a class="navbar-brand" href="ficha_empresa.php">MASTERCHECK</a>
+                  <a class="navbar-brand" href="empresa.php">MASTERCHECK</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -101,7 +101,7 @@
 
       <div class="row">
         <div class="col-xs-12 col-lg-12">
-          <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['pais_empresa']; ?></h3>
+          <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_empresa']; ?></h3>
         </div>
       </div>
 
@@ -111,7 +111,7 @@
             <div class="wrapper">
               <div class="index-busc-cab-ofertas">
                 <div class="header">
-                  <h3>Ofertas <?php echo $_SESSION['pais_empresa']; ?></h3>
+                  <h3>Ofertas de <?php echo $_SESSION['nombre_empresa']; ?></h3>
                 </div>
 
                 <div class="flex-container">

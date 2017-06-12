@@ -41,12 +41,13 @@
             while ($fila = $nombre_completo->fetch_row())
             {
                 $nombre = $fila[0];
-				        $_SESSION['nombre_empresa'] = $fila[0];
+				        //$_SESSION['nombre_empresa'] = $fila[0];
             }
         }
         else {
           echo ("error");
         }
+        $_SESSION['nombre_empresa'] = $nombre;
         //header('Location: ficha_empresa.php');
 
 ?>
@@ -90,7 +91,7 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre; ?> <span class="fa fa-user "></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nombre_empresa']; ?> <span class="fa fa-user "></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="ficha_empresa.php">Perfi<span class="fa fa-sign-in"></span></a></li>
                       <li role="separator" class="divider"></li>
