@@ -85,9 +85,9 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre; ?> <span class="fa fa-user "></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="ficha_cliente.php">Perfi<span class="fa fa-sign-in"></span></a></li>
+                      <li><a href="ficha_cliente.php">Perfil&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="logout.php">Cerrar sesion<span class="fa fa-sign-in"></span></a></li>
+                      <li><a href="logout.php">Cerrar sesion&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
                     </ul>
                   </li>
                 </ul>

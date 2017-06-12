@@ -1,5 +1,4 @@
 <?php
-
   session_start();
   include_once 'conexion.php';
 
@@ -11,7 +10,7 @@
            exit();
          }
 
-         $empresaID = "SELECT id FROM empresa WHERE nombre_empresa = '" . $_SESSION['pais_empresa'] . "'";
+         $empresaID = "SELECT id FROM Empresa WHERE email = '" . $_SESSION['email_empresa'] . "'";
 
 
          if ($id_empresa = $mysqli->query($empresaID))
@@ -21,29 +20,7 @@
            $_SESSION['id_empresa'] = $fila_empresa[0];
 
          }
-
-          $nom = "SELECT * FROM ofertas WHERE id_empresa = '" . $id_Empresa . "'";
-
-         if ($oferta = $mysqli->query($nom))
-         {
-
-           while ($fila = $oferta->fetch_row())
-           {
-
-             $nombre_oferta = $fila[1];
-             $imagen_oferta = $fila[2];
-             $descripcion_oferta = $fila[4];
-             $precio_oferta = $fila[5];
-             $fecha_inicio = $fila[6];
-             $fecha_fin = $fila[7];
-
-           }
-         }
-
-     mysqli_close($mysqli);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,7 +51,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                  <a class="navbar-brand" href="ficha_empresa.php">MASTERCHECK</a>
+                  <a class="navbar-brand" href="empresa.php">MASTERCHECK</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -101,7 +78,7 @@
 
       <div class="row">
         <div class="col-xs-12 col-lg-12">
-          <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['pais_empresa']; ?></h3>
+          <h3 class="welcomeUser">Bienvenido <?php echo $_SESSION['nombre_empresa']; ?></h3>
         </div>
       </div>
 
@@ -111,9 +88,10 @@
             <div class="wrapper">
               <div class="index-busc-cab-ofertas">
                 <div class="header">
-                  <h3>Ofertas <?php echo $_SESSION['pais_empresa']; ?></h3>
+                  <h3>Ofertas de <?php echo $_SESSION['nombre_empresa']; ?></h3>
                 </div>
 
+<<<<<<< HEAD
 
                 <?php
 
@@ -163,6 +141,78 @@
                 ?>
 
 
+=======
+                <div class="flex-container">
+                  <!--div class="flex-foto">
+                    <div class="img-thumbnail">
+                      <img src="../imagenes/naru.jpg">
+                    </div>
+                  </div-->
+
+                  <div class="flex-contenido">
+<?php
+      $nom = "SELECT * FROM ofertas WHERE id_empresa = '" . $id_Empresa . "'";
+        $htmlbody = '';
+         if ($oferta = $mysqli->query($nom))
+         {
+
+           while ($fila = $oferta->fetch_row())
+           {
+
+             $nombre_oferta = $fila[1];
+             $imagen_oferta = $fila[2];
+             $descripcion_oferta = $fila[4];
+             $precio_oferta = $fila[5];
+             $fecha_inicio = $fila[6];
+             $fecha_fin = $fila[7];
+             $baseimagen = base64_encode($imagen_oferta);
+             $htmlbody .= <<<HEAD
+             <div class="flex-foto">
+                    <div class="img-thumbnail">
+                      <img src="data:image/jpeg;base64,$baseimagen"/>
+                    </div>
+                  </div>
+             <div class="row row-superior">
+                        <label class="col-sm-3 control-label" for="formGroup">Nombre</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$nombre_oferta"  readonly>
+                        </div>
+
+                        <label class="col-sm-3 control-label" for="formGroup">Descripcion</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$descripcion_oferta" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-3 control-label" for="formGroup">Precio</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$precio_oferta" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-3 control-label" for="formGroup">Inicio</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_inicio" readonly>
+                        </div>
+
+                        <label class="col-sm-3 control-label" for="formGroup">Fin</label>
+                        <div class="col-sm-3">
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_fin" readonly>
+                        </div>
+                    </div>
+HEAD;
+
+           }
+         }
+
+     mysqli_close($mysqli);
+
+?>
+                  <?php echo $htmlbody?>
+                  </div>
+>>>>>>> 0cda9f2839f648cae4aa3c409e7f66c6f9900d5b
                 </div>
               </div>
             </div>

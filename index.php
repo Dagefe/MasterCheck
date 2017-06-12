@@ -56,9 +56,9 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="html/login_cliente.html">Particular<span class="fa fa-sign-in"></span></a></li>
+                      <li><a href="html/login_cliente.html">Particular&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="html/login_empresa.html">Empresa<span class="fa fa-sign-in"></span></a></li>
+                      <li><a href="html/login_empresa.html">Empresa&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
                     </ul>
                   </li>
                 </ul>

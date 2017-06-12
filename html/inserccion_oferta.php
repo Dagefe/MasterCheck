@@ -22,7 +22,7 @@
 	session_start();
 	if ((isset($_POST['nombre']) && $_POST['nombre'] != "") && (isset($_POST['desc']) && $_POST['desc'] != "") && (isset($_POST['precio']) && $_POST['precio'] != "") && (isset($_POST['fecha_inicio']) && $_POST['fecha_inicio'] != "") && (isset($_POST['fecha_fin']) && $_POST['fecha_fin'] != "") && (isset($_POST['tipo']) && $_POST['tipo'] != "")){
 		/*$image_check = getimagesize("../" . $_FILES['logotipo']); comprobar */
-		if ($image_check == false){
+		//if ($image_check == false){
 
 			include_once 'conexion.php';
 			$mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -43,7 +43,7 @@
 	    	$image = addslashes(file_get_contents($_FILES['logotipo']['tmp_name']));
 	    	$image_name = addslashes($_FILES['logotipo']['name']);
 	    	//Insertamos valores en la BD
-	    	$query = "INSERT INTO ofertas VALUES (NULL, '$nombre', '{$image}', '$image_name', '$desc', '$precio', '$fecha_inicio', '$fecha_fin', '$tipo', '$id_empresa')";
+	    	$query = "INSERT INTO ofertas VALUES (NULL, '$nombre', '$image', '$image_name', '$desc', '$precio', '$fecha_inicio', '$fecha_fin', '$tipo', '$id_empresa')";
 
 	    	if(!$mysqli->query($query)){
 	            //En caso de error lo mostramos
@@ -61,7 +61,7 @@
 	                  //header('Location: ../index.html');
 	                 mysqli_close($mysqli);
 	        }
-    }
+    /*}
     else{//En el caso de que la imagen este vacia
     	echo '<script>swal({
                     title: "ERROR!",
@@ -71,7 +71,7 @@
                     }, function() {
                     window.location = "empresa.php";
                     })</script>';
-    }
+    }*/
 }
 	else {//En el caso de que falte algun campo por completar
 		echo '<script>swal({
