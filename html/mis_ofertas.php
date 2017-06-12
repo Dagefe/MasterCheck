@@ -114,47 +114,55 @@
                   <h3>Ofertas <?php echo $_SESSION['pais_empresa']; ?></h3>
                 </div>
 
-                <div class="flex-container">
-                  <div class="flex-foto">
-                    <div class="img-thumbnail">
-                      <img src="../imagenes/naru.jpg">
-                    </div>
-                  </div>
 
-                  <div class="flex-contenido">
+                <?php
 
-                    <div class="row row-superior">
-                        <label class="col-sm-3 control-label" for="formGroup">Nombre</label>
-                        <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $nombre_oferta; ?>" readonly>
-                        </div>
+                  foreach ($fila as $key => $value) {
+                    echo '<div class="flex-container">';
+                      echo '<div class="flex-foto">';
+                        echo '<div class="img-thumbnail">';
+                          echo '<img src="../imagenes/naru.jpg">';
+                        echo '</div>';
+                      echo '</div>';
 
-                        <label class="col-sm-3 control-label" for="formGroup">Descripcion</label>
-                        <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $descripcion_oferta; ?>" readonly>
-                        </div>
-                    </div>
+                      echo '<div class="flex-contenido">';
 
-                    <div class="row">
-                        <label class="col-sm-3 control-label" for="formGroup">Precio</label>
-                        <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $precio_oferta; ?>" readonly>
-                        </div>
-                    </div>
+                        echo '<div class="row row-superior">';
+                            echo '<label class="col-sm-3 control-label" for="formGroup">Nombre</label>';
+                            echo '<div class="col-sm-3">';
+                              echo '<input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $nombre_oferta; ?>" readonly>';
+                            echo '</div>';
 
-                    <div class="row">
-                        <label class="col-sm-3 control-label" for="formGroup">Inicio</label>
-                        <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_inicio; ?>" readonly>
-                        </div>
+                            echo '<label class="col-sm-3 control-label" for="formGroup">Descripcion</label>';
+                              echo '<div class="col-sm-3">';
+                              echo '<input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $descripcion_oferta; ?>" readonly>';
+                            echo '</div>';
+                        echo '</div>';
 
-                        <label class="col-sm-3 control-label" for="formGroup">Fin</label>
-                        <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>
-                        </div>
-                    </div>
+                        echo '<div class="row">';
+                            echo '<label class="col-sm-3 control-label" for="formGroup">Precio</label>';
+                            echo '<div class="col-sm-3">';
+                              echo '<input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $precio_oferta; ?>" readonly>';
+                            echo '</div>';
+                        echo '</div>';
 
-                  </div>
+                        echo '<div class="row">';
+                            echo '<label class="col-sm-3 control-label" for="formGroup">Inicio</label>';
+                            echo '<div class="col-sm-3">';
+                              echo '<input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_inicio; ?>" readonly>';
+                            echo '</div>';
+
+                            echo '<label class="col-sm-3 control-label" for="formGroup">Fin</label>';
+                            echo '<div class="col-sm-3">';
+                              echo '<input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>';
+                            echo '</div>';
+                        echo '</div>';
+
+                      echo '</div>';
+                  }
+                ?>
+
+
                 </div>
               </div>
             </div>
