@@ -41,7 +41,7 @@ body {
   margin-left: 5%;
 	margin-top: 20px;
 	width: auto;
-	height: 445px;
+	/*height: 385px;*/
 	left: 5px;
 	z-index: 100;
 	position: relative;
@@ -65,6 +65,7 @@ body {
   display: flex;
   flex-flow: row nowrap;
   border-bottom: 1px solid #777;
+
 }
 
 .flex-foto {
@@ -83,6 +84,12 @@ body {
 
 .img-thumbnail {
   box-shadow: 0 0 5px 5px rgb(135, 135, 143);
+}
+
+.scrollLateral {
+	overflow: auto;
+	height: 300px;
+	overflow-x: hidden;
 }
 
 

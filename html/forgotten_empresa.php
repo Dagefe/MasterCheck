@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                <a class="navbar-brand" href="../index.php">MASTERCHECK</a>
+                <a class="navbar-brand" href="../index.php">MASTERCHEQUE</a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -101,7 +101,7 @@
             <form action="forgotten_empresa.php" method="post">
 		          <div class="row">
                 <div class="col-xs-12 col-lg-8">
-            
+
                     <div class="panel panel-primary">
             			    <div class="panel-heading">
                         <h3 class="panel-title text-center">Recuperación de contraseña</h3>
