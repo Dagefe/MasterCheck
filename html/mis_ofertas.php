@@ -1,5 +1,4 @@
 <?php
-
   session_start();
   include_once 'conexion.php';
 
@@ -21,29 +20,7 @@
            $_SESSION['id_empresa'] = $fila_empresa[0];
 
          }
-
-          $nom = "SELECT * FROM ofertas WHERE id_empresa = '" . $id_Empresa . "'";
-
-         if ($oferta = $mysqli->query($nom))
-         {
-
-           while ($fila = $oferta->fetch_row())
-           {
-
-             $nombre_oferta = $fila[1];
-             $imagen_oferta = $fila[2];
-             $descripcion_oferta = $fila[4];
-             $precio_oferta = $fila[5];
-             $fecha_inicio = $fila[6];
-             $fecha_fin = $fila[7];
-
-           }
-         }
-
-     mysqli_close($mysqli);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -115,45 +92,74 @@
                 </div>
 
                 <div class="flex-container">
-                  <div class="flex-foto">
+                  <!--div class="flex-foto">
                     <div class="img-thumbnail">
                       <img src="../imagenes/naru.jpg">
                     </div>
-                  </div>
+                  </div-->
 
                   <div class="flex-contenido">
+<?php
+      $nom = "SELECT * FROM ofertas WHERE id_empresa = '" . $id_Empresa . "'";
+        $htmlbody = '';
+         if ($oferta = $mysqli->query($nom))
+         {
 
-                    <div class="row row-superior">
+           while ($fila = $oferta->fetch_row())
+           {
+
+             $nombre_oferta = $fila[1];
+             $imagen_oferta = $fila[2];
+             $descripcion_oferta = $fila[4];
+             $precio_oferta = $fila[5];
+             $fecha_inicio = $fila[6];
+             $fecha_fin = $fila[7];
+             $baseimagen = base64_encode($imagen_oferta);
+             $htmlbody .= <<<HEAD
+             <div class="flex-foto">
+                    <div class="img-thumbnail">
+                      <img src="data:image/jpeg;base64,$baseimagen"/>
+                    </div>
+                  </div>
+             <div class="row row-superior">
                         <label class="col-sm-3 control-label" for="formGroup">Nombre</label>
                         <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $nombre_oferta; ?>" readonly>
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$nombre_oferta"  readonly>
                         </div>
 
                         <label class="col-sm-3 control-label" for="formGroup">Descripcion</label>
                         <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $descripcion_oferta; ?>" readonly>
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$descripcion_oferta" readonly>
                         </div>
                     </div>
 
                     <div class="row">
                         <label class="col-sm-3 control-label" for="formGroup">Precio</label>
                         <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $precio_oferta; ?>" readonly>
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$precio_oferta" readonly>
                         </div>
                     </div>
 
                     <div class="row">
                         <label class="col-sm-3 control-label" for="formGroup">Inicio</label>
                         <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_inicio; ?>" readonly>
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_inicio" readonly>
                         </div>
 
                         <label class="col-sm-3 control-label" for="formGroup">Fin</label>
                         <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="<?php echo $fecha_fin; ?>" readonly>
+                          <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_fin" readonly>
                         </div>
                     </div>
+HEAD;
 
+           }
+         }
+
+     mysqli_close($mysqli);
+
+?>
+                  <?php echo $htmlbody?>
                   </div>
                 </div>
               </div>
