@@ -186,19 +186,8 @@
         <div class="index-busc ofertasDestacadas">
           <div class="wrapper">
             <div class="index-busc-cab cuadro-ofertas">
-              <h4 class="text-left titulo-empresas">Empresas destacadas</h4>
-              <!--
-              <span class="input-group-btn">
-
-                <a class="btn btn-primary" href="#" role="button">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="btn btn-primary" href="#" role="button">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-
-              </span>
-              -->
+              <div class="box-empresas">
+              <h3 class="text-left titulo-empresas">Empresas destacadas</h3>
               <div class="row">
                 <div class="col-xs-6 col-md-3">
                   <a href="#" class="thumbnail">
@@ -221,6 +210,7 @@
                   </a>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

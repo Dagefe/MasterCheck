@@ -33,12 +33,13 @@
 }
 
 h3.titulo-busqueda {
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
-h4.titulo-empresas {
-  color: cornsilk;
+h3.titulo-empresas {
+  margin-top: 5px;
 }
+
 
 .navbar-wrapper {
 	position: absolute;
@@ -92,8 +93,13 @@ h4.titulo-empresas {
   height: 170px;
   padding-top: 5px !important;
   left: -10px;
-  /*background-image: url("../imagenes/fondo-ofertas.jpg") !important;*/
 }
+
+.box-empresas {
+  left: 8px;
+  position: relative;
+}
+
 
 .containerImage {
   background-color: white;
@@ -111,18 +117,6 @@ h4.titulo-empresas {
   font-family: lao mn;
   font-weight: bolder;
   font-size: 10px;
-}
-
-
-.jumbotron {
-    background-color: transparent;;
-    padding-top: 15px !important;
-    padding-right: 0px !important;
-    padding-left: 0px !important;
-    padding-bottom: 0px !important;
-    margin-bottom: auto;
-    position: relative;
-    z-index: 100px;
 }
 
 #btnBuscar, #btnBusquedaAvanzada, #iconoLupa {

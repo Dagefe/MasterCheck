@@ -90,7 +90,7 @@
                 <div class="header">
                   <h3>Ofertas de <?php echo $_SESSION['pais_empresa']; ?></h3>
                 </div>
-
+                <div class="scrollLateral">
 
                   <!--div class="flex-foto">
                     <div class="img-thumbnail">
@@ -117,7 +117,7 @@
              $baseimagen = base64_encode($imagen_oferta);
              $htmlbody .= <<<HEAD
 
-             <div class="scrollLateral">
+
              <div class="flex-container">
                 <div class="flex-foto">
                   <div class="img-thumbnail">
@@ -126,39 +126,43 @@
                 </div>
                 <div class="flex-contenido">
                   <div class="row row-superior">
-                      <label class="col-sm-3 control-label" for="formGroup">Nombre</label>
-                      <div class="col-sm-3">
+                    <div class="espacioInputs">
+                      <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
+                      <div class="col-sm-4">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="$nombre_oferta"  readonly>
                       </div>
 
-                      <label class="col-sm-3 control-label" for="formGroup">Descripcion</label>
-                      <div class="col-sm-3">
+                      <label class="col-sm-2 control-label" for="formGroup">Descripcion</label>
+                      <div class="col-sm-4">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="$descripcion_oferta" readonly>
                       </div>
+                    </div>
                   </div>
 
                   <div class="row">
-                      <label class="col-sm-3 control-label" for="formGroup">Precio</label>
+                    <div class="espacioInputs">
+                      <label class="col-sm-2 control-label" for="formGroup">Precio</label>
                       <div class="col-sm-3">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="$precio_oferta" readonly>
                       </div>
+                    </div>
                   </div>
 
                   <div class="row">
-                      <label class="col-sm-3 control-label" for="formGroup">Inicio</label>
-                      <div class="col-sm-3">
+                    <div class="espacioInputs">
+                      <label class="col-sm-2 control-label" for="formGroup">Inicio</label>
+                      <div class="col-sm-4">
                         <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_inicio" readonly>
                       </div>
 
-                      <label class="col-sm-3 control-label" for="formGroup">Fin</label>
-                      <div class="col-sm-3">
+                      <label class="col-sm-2 control-label" for="formGroup">Fin</label>
+                      <div class="col-sm-4">
                           <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_fin" readonly>
                       </div>
-                </div>
+                    </div>
+                  </div>
               </div>
             </div>
-          
-
 HEAD;
            }
          }
@@ -167,12 +171,36 @@ HEAD;
 
 ?>
                   <?php echo $htmlbody?>
-
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="col-xs-12 col-lg-3">
+          <div class="box-herramientas">
+            <div class="header">
+              <h3>Configuracion</h3>
+            </div>
+          <div class="box-opciones">
+            <ul>
+              <li>
+                <span class="fa fa-user"></span>Perfil de empresa
+                <!-- Si estas en esta pagina se muestra sin enlace -->
+              </li>
+              <li>
+                <span class="fa fa-cog"></span><a href="ajustes_empresa.php">Ajustes de cuenta</a>
+              </li>
+              <li class="selected">
+                <span class="fa fa-star"></span><a href="mis_ofertas.php">Mis ofertas</a>
+              </li>
+              <li>
+                <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+      </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

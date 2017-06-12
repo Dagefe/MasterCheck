@@ -92,6 +92,50 @@ body {
 	overflow-x: hidden;
 }
 
+.espacioInputs {
+	padding: 4px 0px;
+
+}
+
+.form-control {
+	border-radius: 4px !important;
+}
+
+
+.box-opciones {
+	box-sizing: border-box;
+	border-bottom: 1px solid #e1e1e1;
+
+
+}
+
+.box-herramientas {
+	border-radius: 4px;
+	box-shadow: 0 2px 0 0 rgba(0,0,0,.03);
+	background-color: #fff;
+	border: 1px solid #e1e1e1;
+	margin-bottom: 15px;
+	margin-top: 7%;
+	position: relative;
+	left: 50px;
+}
+
+.selected {
+	color: #222;
+	font-weight: 600;
+}
+
+.botonera-empresa {
+	left: 450px;
+	top: -345px;
+	margin-bottom: 0px;
+	position: relative;
+}
+
+.control-label {
+	text-align: left !important;
+	padding-left: 35px;
+}
 
 img {
   width: 100px;
@@ -130,4 +174,13 @@ li {
 
 h3 {
 	margin-top: 5px;
+}
+
+/** Iconos **/
+
+.fa-cog, .fa-star, .fa-sign-out, .fa-user  {
+  margin-left: 10px;
+  font-size: 16px !important;
+  vertical-align: text-top;
+	padding-right: 15px;
 }

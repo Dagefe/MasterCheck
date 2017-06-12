@@ -75,14 +75,6 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <!--
-                  <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
-                -->
                   <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a href="login_cliente.html">Particular</a></li>
                     <li><a href="login_empresa.html">Empresa</a></li>
@@ -119,7 +111,7 @@
       </div>
 
       <div class="row">
-            <div class="col-xs-3 col col-lg-p">
+            <div class="col-xs-4 col col-lg-3">
               <div class="containerFilter">
                 <ul class="unstyled">
                   <li class="separador" data-sort-index="0">
@@ -148,7 +140,7 @@
               </div>
             </div>
 
-            <div class="col-xs-8">
+            <div class="col-xs-8 col-lg-9">
               <div class="containerSearch">
                 <div class="row">
                   <div class="col-xs-12 listaProductos">
@@ -184,16 +176,7 @@
                     <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
-                  </div>
-                </div>
+
 
 
 
