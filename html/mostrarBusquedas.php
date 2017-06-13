@@ -12,7 +12,7 @@
   {
     $tipo = "restaurante";
   }
-  else $tipo = '%';
+  //else $tipo = '%';
 
   $mysqli = new mysqli(db_server, db_username, db_password, db_database);
 
@@ -105,10 +105,7 @@
         <div class="containerCabecera">
 
 
-
         </div>
-
-
       </div>
 
       <div class="row">
@@ -145,9 +142,10 @@
               <div class="containerSearch">
                 <div class="row">
                   <div class="col-xs-12 listaProductos">
+
                     <?php
                     $search = "SELECT * FROM ofertas WHERE nombre LIKE '%" . $busqueda . "%' AND tipo LIKE '" . $tipo . "'";
-                    echo "$search";
+
                     $htmlbody = '';
                     if ($oferta = $mysqli->query($search)){
 
@@ -157,52 +155,29 @@
                       $imagen_oferta = $fila[2];
                       $descripcion_oferta = $fila[4];
                       $precio_oferta = $fila[5];
+                      $fecha_inicio = $fila[6];
                       $fecha_fin = $fila[7];
                       $baseimagen = base64_encode($imagen_oferta);
                       $htmlbody .= <<<HEAD
 
 
-             <div class="flex-container">
-                <div class="flex-foto">
-                  <div class="img-thumbnail">
-                    <img src="data:image/jpeg;base64,$baseimagen"/>
-                  </div>
-                </div>
-                <div class="flex-contenido">
-                  <div class="row row-superior">
-                    <div class="espacioInputs">
-                      <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
-                      <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$nombre_oferta"  readonly>
+
+                      <div id="imagenNegocio" class="col-xs-2 paddingImagen">
+                        <img src="data:image/jpeg;base64,$baseimagen"/>
                       </div>
 
-                      <label class="col-sm-2 control-label" for="formGroup">Descripcion</label>
-                      <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$descripcion_oferta" readonly>
+                      <div class="col-xs-7 separadorLateral">
+                        <h3 class="tituloOferta">$nombre_oferta</h3>
+                        <p class="infoText"><strong>Descripcion:</strong> $descripcion_oferta</p>
+                        <p class="infoText"><strong>Precio:</strong> $precio_oferta euros</p>
                       </div>
-                    </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="espacioInputs">
-                      <label class="col-sm-2 control-label" for="formGroup">Precio</label>
-                      <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$precio_oferta" readonly>
+                      <div class="col-xs-3">
+                        <div class="paddingFecha">
+                          <span><strong>Inicio:</strong> $fecha_inicio</span>
+                        </div>
+                        <span><strong>Fin:</strong> $fecha_fin</span>
                       </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="espacioInputs">
-
-                      <label class="col-sm-2 control-label" for="formGroup">Fin</label>
-                      <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_fin" readonly>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
 HEAD;
       }
 
@@ -210,45 +185,12 @@ HEAD;
   /* Consultas de selección que devuelven un conjunto de resultados */
   $mysqli->close();
 ?>
-                    <!--div id="imagenNegocio" class="col-xs-2 paddingImagen">
-                      <img class="img-thumbnail" src="../imagenes/naru-torrelodones-escalado.jpg">
-                    </div>
 
-                    <div class="col-xs-7 separadorLateral">
-                      <h3 class="tituloOferta"><?php echo $nombre_oferta; ?></h3>
-                      <p class="infoText"><strong>Descripcion:</strong> <?php echo $descripcion_oferta; ?></p>
-                      <p class="infoText"><strong>Precio:</strong> <?php echo $precio_oferta; ?> euros</p>
-                    </div>
-
-                    <div class="col-xs-3">
-                      <div class="paddingFecha">
-                        <span>Inicio: <?php echo ($oferta['fecha_inicio']); ?> </span>
-                      </div>
-                      <span>Fin:</span> <?php echo ($oferta['fecha_fin']); ?>
-                    </div-->
-                    <?php echo $htmlbody; ?>
-                  </div>
-                </div>
-                <!--div class="row">
-                  <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
-                  </div>
-                  <div class="col-xs-12 listaProductos">
-                    <?php echo ("La busqueda es: " . $busqueda . "mia"); ?>
-                  </div>
-                </div-->
-
-
-
-
+                <?php echo $htmlbody; ?>
               </div>
             </div>
-
+          </div>
+        </div>
       </div>
     </div>
 

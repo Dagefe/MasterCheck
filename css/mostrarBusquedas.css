@@ -3,6 +3,9 @@ body {
 	background-size: 1366px;
 }
 
+img {
+	width: 120px;
+}
 
 
 
@@ -114,11 +117,12 @@ body {
 }
 
 .tituloOferta {
-    font-size: 20px;
+    font-size: 25px;
     color: #535353;
     font-weight: 500;
     line-height: 1.4;
-    margin: 0;
+    margin-bottom: 25px;
+		margin-top: 0px;
 }
 
 #imagenNegocio {
