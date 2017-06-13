@@ -184,14 +184,14 @@ HEAD;
           <div class="box-opciones">
             <ul>
               <li>
-                <span class="fa fa-user"></span>Perfil de empresa
+                <span class="fa fa-user"></span><a href="ficha_empresa.php">Perfil de empresa</a>
                 <!-- Si estas en esta pagina se muestra sin enlace -->
               </li>
               <li>
                 <span class="fa fa-cog"></span><a href="ajustes_empresa.php">Ajustes de cuenta</a>
               </li>
               <li class="selected">
-                <span class="fa fa-star"></span><a href="mis_ofertas.php">Mis ofertas</a>
+                <span class="fa fa-star"></span>Mis ofertas
               </li>
               <li>
                 <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
