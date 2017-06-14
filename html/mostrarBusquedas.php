@@ -109,6 +109,7 @@
       </div>
 
       <div class="row">
+        <!--
             <div class="col-xs-4 col col-lg-3">
               <div class="containerFilter">
                 <ul class="unstyled">
@@ -137,11 +138,12 @@
                 </ul>
               </div>
             </div>
+          -->
 
             <div class="col-xs-8 col-lg-9">
               <div class="containerSearch">
                 <div class="row">
-                  <div class="col-xs-12 listaProductos">
+
 
                     <?php
                     $search = "SELECT * FROM ofertas WHERE nombre LIKE '%" . $busqueda . "%' AND tipo LIKE '" . $tipo . "'";
@@ -161,7 +163,7 @@
                       $htmlbody .= <<<HEAD
 
 
-
+                    <div class="col-xs-12 col-lg-12 listaProductos">
                       <div id="imagenNegocio" class="col-xs-2 col-lg-2 paddingImagen">
                         <img src="data:image/jpeg;base64,$baseimagen"/>
                       </div>
@@ -180,6 +182,7 @@
                           <span><strong>Fin:</strong> $fecha_fin</span>
                         </div>
                       </div>
+                    </div>
 HEAD;
                       }
 
@@ -189,7 +192,7 @@ HEAD;
 ?>
 
                 <?php echo $htmlbody; ?>
-              </div>
+
             </div>
           </div>
         </div>
