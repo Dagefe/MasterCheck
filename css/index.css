@@ -29,7 +29,6 @@
   max-height: 672px;
   max-width: 1366px;
 
-
 }
 
 h3.titulo-busqueda {
@@ -183,43 +182,23 @@ h3.titulo-empresas {
   background-color: white;
 }
 
+#login {
+  
+  margin-bottom: 20px;
+}
+
 /************** fin estilos ************/
 
 
 
 /** Medias queries **/
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
 
-  .paddingBusquedaAvanzada {
-    padding-top: 0px;;
-  }
-}
+  .carousel-inner {
+    max-height: 672px;
+    max-width: 1440px;
 
-@media screen and (max-width: 360px) {
-
-  .row {
-    margin-left: 0px;;
   }
 
-/** Medias queries con valores especificos **/
-
-@media only screen and (max-width: 360px) {
-
-.col-xs-offset-2 {
-  margin-left: 10.667%;
-}
-
-#login {
-  padding: 14px;
-}
-
-@media only screen and (max-width: 320px) {
-
-.col-xs-offset-2 {
-    margin-left: 5.667%;
-}
-
-#login {
-  margin-bottom: 20px;
 }

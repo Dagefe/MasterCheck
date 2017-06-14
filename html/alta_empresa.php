@@ -27,14 +27,14 @@
               </div><!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown">
+                  <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre; ?> <span class="fa fa-user "></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="ficha_empresa.php">Perfi<span class="fa fa-sign-in"></span></a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="logout.php">Cerrar sesion<span class="fa fa-sign-in"></span></a></li>
                     </ul>
-                  </li>
+                  </li>-->
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
