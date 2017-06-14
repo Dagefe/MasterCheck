@@ -182,13 +182,10 @@
               <div class="box-empresas">
                 <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
                   <div class="row">
-<<<<<<< HEAD
-                      <form name="form1" method="POST" action="html/ofertas.php">
-=======
+                      <form method="POST" action="html/ofertas.php">
                   <?php
 
                     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
->>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
 
                     //Query contar cuantas ofertas en total
                     $count_all = "SELECT COUNT(*) FROM ofertas";
@@ -199,24 +196,17 @@
                     $nom = "SELECT * FROM ofertas";
                     $htmlbody = '';
 
-                    if ($oferta = $mysqli->query($nom))
-                    {
-
-<<<<<<< HEAD
                   if ($oferta = $mysqli->query($nom))
                   {
-
-                      while ($fila = $oferta->fetch_row()) {
-                          $id_oferta = $fila[0];
-=======
+                          
                         while ($fila = $oferta->fetch_row()) {
-
->>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
+                          $id_oferta = $fila[0];
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
                             <div class="col-xs-6 col-md-3">
-                              <input type="hidden" name="id_oferta" value="$id_oferta">
+                              <input type="hidden" name="id_oferta" value="$id_oferta" />
+                              <p>$id_oferta</p>
                               <input type="submit" name="enviar" class="btn btn-primary" value="Ver">
                               <a href="#" class="thumbnail">
                                 <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>

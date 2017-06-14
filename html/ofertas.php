@@ -1,48 +1,7 @@
 <?php
   session_start();
-  include_once ("conexion.php");
-  
-  
-
-  $busqueda = $_POST['campoBusqueda'];
-
-  if (@$_POST['tipo'] == "bar")
-  {
-    $tipo = "bar";
-  }
-  else if (@$_POST['tipo'] == "rest")
-  {
-    $tipo = "restaurante";
-  }
-  else if (@$_POST['tipo'] == "rest" && $_POST['tipo'] == "bar"){
-    $tipo = '%';
-  }
-  else $tipo = '%';
-
-  $mysqli = new mysqli(db_server, db_username, db_password, db_database);
-
-  if ($mysqli->connect_errno) {
-      printf("Falló la conexión: %s\n", $mysqli->connect_error);
-      exit();
-  }
-
-  //Query contar cuantas ofertas en total
-  $count_all = "SELECT COUNT(*) FROM ofertas WHERE nombre LIKE '%" . $busqueda . "%' AND tipo LIKE '" . $tipo . "'";
-  if ($co_all = $mysqli->query($count_all)){
-    $_SESSION['count_all'] = mysqli_num_rows($co_all);
-  }
-  //Query contar cuantas ofertas de bar hay
-  $count_bar = "SELECT COUNT(*) FROM ofertas WHERE nombre LIKE '%" . $busqueda . "%' AND tipo = 'Bar'";
-  if ($co_bar = $mysqli->query($count_bar)){
-    $_SESSION['count_bar'] = mysqli_num_rows($co_bar);
-  }
-  //Query contar cuantas ofertas de restaurante hay
-  $count_rest = "SELECT COUNT(*) FROM ofertas WHERE nombre LIKE '%" . $busqueda . "%' AND tipo = 'Restaurante'";
-  if ($co_rest = $mysqli->query($count_rest)){
-    $_SESSION['count_rest'] = mysqli_num_rows($co_rest);
-  }
+  if(@$_POST['enviar']){
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -148,15 +107,22 @@
             <div class="col-xs-8 col-lg-9">
               <div class="containerSearch">
                 <div class="row">
+                <?php
+  					      include_once ("conexion.php");
+                	$mysqli = new mysqli(db_server,db_username, db_password, db_database);
 
+       				if (mysqli_connect_errno())
+         			{ //Posible error al conectar a la base de datos
+           				printf("Error de conexión: %s\n", mysqli_connect_error());
+           				exit();
+         			}
 
-                    <?php
-                    $search = "SELECT * FROM ofertas WHERE nombre LIKE '%" . $busqueda . "%' AND tipo LIKE '" . $tipo . "'";
+         			$oferta = "SELECT * FROM ofertas WHERE id_oferta=" . $_POST['id_oferta'];
 
-                    $htmlbody = '';
-                    if ($oferta = $mysqli->query($search)){
+         			$htmlbody = '';
+                    if ($search = $mysqli->query($oferta)){
 
-                      while ($fila = $oferta->fetch_row()){
+                      while ($fila = $search->fetch_row()){
 
                       $nombre_oferta = $fila[1];
                       $imagen_oferta = $fila[2];
@@ -189,14 +155,12 @@
                       </div>
                     </div>
 HEAD;
-                      }
-
-                    }
-  /* Consultas de selección que devuelven un conjunto de resultados */
-  $mysqli->close();
-?>
-
-                <?php echo $htmlbody; ?>
+				    }
+				}
+				$mysqli->close();
+        echo $_POST['id_oferta'];
+ ?>
+            <?php echo $htmlbody; ?>
 
             </div>
           </div>
@@ -215,3 +179,6 @@ HEAD;
     <script src="../fonts/glyphicons-halflings-regular.eot"></script>
   </body>
 </html>
+<?php
+}
+?>

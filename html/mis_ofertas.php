@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/mis_ofertas.css">
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="../css/sweetalert.css">
   </head>
   <body>
 
@@ -91,7 +91,7 @@
                   <h3>Ofertas de <?php echo $_SESSION['pais_empresa']; ?></h3>
                 </div>
                 <div class="scrollLateral">
-
+                 <form method="POST" action="mis_ofertas.php">
                   <!--div class="flex-foto">
                     <div class="img-thumbnail">
                       <img src="../imagenes/naru.jpg">
@@ -107,7 +107,7 @@
 
            while ($fila = $oferta->fetch_row())
            {
-
+             $id_oferta = $fila[0];
              $nombre_oferta = $fila[1];
              $imagen_oferta = $fila[2];
              $descripcion_oferta = $fila[4];
@@ -129,12 +129,12 @@
                     <div class="espacioInputs">
                       <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
                       <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$nombre_oferta"  readonly>
+                          <input class="form-control" name="nombre_oferta" type="text" id="formGroup" value="$nombre_oferta">
                       </div>
 
                       <label class="col-sm-2 control-label" for="formGroup">Descripcion</label>
                       <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$descripcion_oferta" readonly>
+                          <input class="form-control" name="descripcion_oferta" type="text" id="formGroup" value="$descripcion_oferta">
                       </div>
                     </div>
                   </div>
@@ -143,7 +143,7 @@
                     <div class="espacioInputs">
                       <label class="col-sm-2 control-label" for="formGroup">Precio</label>
                       <div class="col-sm-3">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$precio_oferta" readonly>
+                          <input class="form-control" name="precio_oferta" type="text" id="formGroup" value="$precio_oferta">
                       </div>
                     </div>
                   </div>
@@ -152,14 +152,17 @@
                     <div class="espacioInputs">
                       <label class="col-sm-2 control-label" for="formGroup">Inicio</label>
                       <div class="col-sm-4">
-                        <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_inicio" readonly>
+                        <input class="form-control" name="fecha_ini" type="date" id="formGroup" value="$fecha_inicio">
                       </div>
 
                       <label class="col-sm-2 control-label" for="formGroup">Fin</label>
                       <div class="col-sm-4">
-                          <input class="form-control" name="movil" type="text" id="formGroup" value="$fecha_fin" readonly>
+                          <input class="form-control" name="fecha_fin" type="date" id="formGroup" value="$fecha_fin">
                       </div>
                     </div>
+                    <input type="hidden" name="id_oferta" value="$id_oferta" />
+                    <input type="submit" name="borrar" class="btn btn-danger" value="Borrar oferta">
+                    <input type="submit" name="editar" class="btn btn-danger" value="Editar oferta">
                   </div>
               </div>
             </div>
@@ -171,6 +174,7 @@ HEAD;
 
 ?>
                   <?php echo $htmlbody?>
+                  </form>
                 </div>
               </div>
             </div>
@@ -206,5 +210,50 @@ HEAD;
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
   </body>
 </html>
+<?php
+  if (@$_POST['borrar']){
+      $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+      if (mysqli_connect_errno())
+         { //Posible error al conectar a la base de datos
+           printf("Error de conexión: %s\n", mysqli_connect_error());
+           exit();
+         }
+      $delete_oferta = "DELETE FROM ofertas WHERE id_oferta=" . $_POST['id_oferta'];
+      if ($oferta = $mysqli->query($delete_oferta))
+        {
+          echo '<script>swal({
+                  title: "¡Hecho!",
+                  text: "Oferta borrada correctamente",
+                  confirmButtonText: "Aceptar",
+                  type: "success"
+                  }, function() {
+                  window.location = "mis_ofertas.php";
+                })</script>';
+                mysqli_close($mysqli);
+        }
+  }
+  elseif(@$_POST['editar']) {
+    $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+      if (mysqli_connect_errno())
+         { //Posible error al conectar a la base de datos
+           printf("Error de conexión: %s\n", mysqli_connect_error());
+           exit();
+         }
+    $editar_oferta = "UPDATE ofertas SET nombre='" . $_POST['nombre_oferta'] . "', descripcion='" . $_POST['descripcion_oferta'] . "', precio=" . $_POST['precio_oferta'] . ", fecha_inicio='" . $_POST['fecha_ini'] . "', fecha_fin='" . $_POST['fecha_fin'] . "' WHERE id_oferta=" . $_POST['id_oferta'];
+      if ($oferta = $mysqli->query($editar_oferta))
+        {
+          echo '<script>swal({
+                  title: "¡Hecho!",
+                  text: "Oferta editada correctamente",
+                  confirmButtonText: "Aceptar",
+                  type: "success"
+                  }, function() {
+                  window.location = "mis_ofertas.php";
+                })</script>';
+                mysqli_close($mysqli);
+      }
+  }
+?>

@@ -63,9 +63,9 @@
               <div class="index-busc-cab-acceso">
                 <h3 class="titulo-busqueda">Datos de acceso</h3>
                   <div class="input-group">
-                    <input id="email" type="text" name="email" class="form-control inputForm" placeholder="Email*" />
-                    <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" />
-                    <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar contraseña*" />
+                    <input id="email" type="text" name="email" class="form-control inputForm" placeholder="Email*" required/>
+                    <input id="contrasena" type="password" name="pass" class="form-control inputForm" placeholder="Contraseña*" required/>
+                    <input id="recontrasena" type="password" name="repass" class="form-control inputForm" placeholder="Confirmar contraseña*" required/>
                   </div>
               </div>
             </div>
@@ -78,8 +78,8 @@
               <div class="index-busc-cab-contacto">
                 <h3 class="titulo-busqueda">Datos de contacto</h3>
                   <div class="input-group">
-                    <input id="name" type="text" name="name" class="form-control inputForm" placeholder="Nombre y apellidos*" />
-                    <input id="movil" type="text" name="movil" class="form-control inputForm" placeholder="Movil*" />
+                    <input id="name" type="text" name="name" class="form-control inputForm" placeholder="Nombre y apellidos*" required/>
+                    <input id="movil" type="text" name="movil" class="form-control inputForm" placeholder="Movil*" required/>
                   </div>
               </div>
             </div>
@@ -92,12 +92,12 @@
               <div class="index-busc-cab-datos-empresa">
                 <h3 class="titulo-busqueda">Datos de la empresa</h3>
                   <div class="input-group">
-                    <input id="nameempresa" type="text" name="empresa" class="form-control inputForm" placeholder="Nombre de la empresa*" />
-                    <input id="direccion" type="text" name="direccion" class="form-control inputForm" placeholder="Direccion*" />
-                    <input id="poblacion" type="text" name="town" class="form-control inputForm" placeholder="Poblacion*" />
-                    <input id="codpostal" type="text" name="cp" class="form-control inputForm" placeholder="Codigo Postal*" />
-                    <input id="pais" type="text" name="pais" class="form-control inputForm" placeholder="Pais*" />
-                    <input id="actividad" type="text" name="activ" class="form-control inputForm" placeholder="Actividad empresarial*" />
+                    <input id="nameempresa" type="text" name="empresa" class="form-control inputForm" placeholder="Nombre de la empresa*" required/>
+                    <input id="direccion" type="text" name="direccion" class="form-control inputForm" placeholder="Direccion*" required/>
+                    <input id="poblacion" type="text" name="town" class="form-control inputForm" placeholder="Poblacion*" required/>
+                    <input id="codpostal" type="text" name="cp" class="form-control inputForm" placeholder="Codigo Postal*" required/>
+                    <input id="pais" type="text" name="pais" class="form-control inputForm" placeholder="Pais*" required/>
+                    <input id="actividad" type="text" name="activ" class="form-control inputForm" placeholder="Actividad empresarial*" required/>
                   </div>
               </div>
             </div>
