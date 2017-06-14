@@ -138,7 +138,7 @@
                         <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
                         <div class="input-group-btn">
-                          <button id="btnBuscar" type="submit" class="btn btn-primary" href="">
+                          <button id="btnBuscar" type="submit" class="btn btn-primary">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </div>
@@ -147,7 +147,7 @@
                     <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2">
                       <div class="input-group">
                         <div class="input-group-btn">
-                          <button class="btn btn-primary etiquetaLupa" href="#" role="button">
+                          <button class="btn btn-primary etiquetaLupa" role="button">
                           Busqueda avanzada
                         </button>
                         </div>
@@ -193,7 +193,7 @@
               <div class="box-empresas">
                 <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
                   <div class="row">
-
+                      <form name="form1" method="POST" action="html/ofertas.php">
 
               <?php
 
@@ -212,11 +212,13 @@
                   {
 
                       while ($fila = $oferta->fetch_row()) {
-
+                          $id_oferta = $fila[0];
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
                             <div class="col-xs-6 col-md-3">
+                              <input type="hidden" name="id_oferta" value="$id_oferta">
+                              <input type="submit" name="enviar" class="btn btn-primary" value="Ver">
                               <a href="#" class="thumbnail">
                                 <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
                               </a>
@@ -230,7 +232,8 @@ HEAD;
 
                  ?>
                  <?php echo $htmlbody; ?>
-
+                          
+                      </form>
                 </div>
               </div>
             </div>

@@ -1,18 +1,20 @@
 <?php
   session_start();
   include_once ("conexion.php");
+  
+  
 
   $busqueda = $_POST['campoBusqueda'];
 
-  if ($_POST['tipo'] == "bar")
+  if (@$_POST['tipo'] == "bar")
   {
     $tipo = "bar";
   }
-  else if ($_POST['tipo'] == "rest")
+  else if (@$_POST['tipo'] == "rest")
   {
     $tipo = "restaurante";
   }
-  //else $tipo = '%';
+  else $tipo = '%';
 
   $mysqli = new mysqli(db_server, db_username, db_password, db_database);
 

@@ -136,7 +136,7 @@
       <div class="index-busc-cab">
           <h3 class="panel-title text-center">Busca tu oferta mas cercana</h3>
 
-        <form method="post" action="html/mostrarBusquedas.php">
+        <form method="post" action="mostrarBusquedas.php">
 
             <!-- Fila de busqueda siempre visible -->
             <div class="row">
@@ -158,7 +158,7 @@
                   <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
                   <div class="input-group-btn">
-                    <button id="btnBuscar" type="submit" class="btn btn-primary" href="">
+                    <button id="btnBuscar" type="submit" class="btn btn-primary">
                       <span class="glyphicon glyphicon-search"></span>
                     </button>
                   </div>
@@ -167,7 +167,7 @@
               <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2 paddingBusquedaAvanzada">
                 <div class="input-group">
                   <div class="input-group-btn">
-                    <button class="btn btn-primary etiquetaLupa" href="#" role="button">
+                    <button class="btn btn-primary etiquetaLupa" role="button">
                       Busqueda avanzada
                     </button>
                   </div>
