@@ -57,7 +57,7 @@ h3.titulo-empresas {
 }
 
 .index-busc {
-	top: 150px;
+	top: 210px;
 	text-align: center;
 	position: relative;
 }
@@ -79,7 +79,7 @@ h3.titulo-empresas {
 }
 
 .ofertasDestacadas {
-  margin-top: 220px;
+  margin-top: 130px;
   padding-left: 15px;
 
 }
@@ -165,7 +165,7 @@ h3.titulo-empresas {
 /* Padding busqueda avanzada */
 
 .paddingBusquedaAvanzada {
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 /************** FIN ESTILOS ************/
@@ -181,7 +181,7 @@ h3.titulo-empresas {
 }
 
 #login {
-  
+
   margin-bottom: 20px;
 }
 
@@ -199,8 +199,7 @@ h3.titulo-empresas {
 
   }
 
-<<<<<<< HEAD
-=======
+
 /** Medias queries con valores especificos **/
 }
 
@@ -224,18 +223,17 @@ h3.titulo-empresas {
 
 #login {
   margin-bottom: 20px;
->>>>>>> a66aa42a7536b89783025973fde3637ced93aaf8
 }
 
 }
-
+/*
 @media screen and (min-width: 1440px) {
 
   .carousel-inner {
     min-height: 1024px;
     min-width: 1440px;
-    
+
   }
 
 }
-
+*/

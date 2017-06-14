@@ -144,7 +144,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2 paddingBusquedaAvanzada">
+                    <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2">
                       <div class="input-group">
                         <div class="input-group-btn">
                           <button class="btn btn-primary etiquetaLupa" href="#" role="button">
@@ -162,7 +162,7 @@
 
 
                   <!-- Fila de busqueda avanzada visible al activar -->
-                  <div id="busquedaAvanzada" class="row" style="display:none">
+                  <div id="busquedaAvanzada" class="row paddingBusquedaAvanzada" style="display:none">
                     <div class="col-xs-12 col-lg-2">
                       <div class="input-group-btn paddingOculto">
                         <span class="input-group-addon paddingOcultoFondo">
@@ -193,8 +193,8 @@
               <div class="box-empresas">
                 <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
                   <div class="row">
-                    
-                      
+
+
               <?php
 
                   $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -216,9 +216,9 @@
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
-                            <div class="col-xs-6 col-md-3"> 
+                            <div class="col-xs-6 col-md-3">
                               <a href="#" class="thumbnail">
-                                <img src="data:image/jpeg;base64,$baseimagen"/>
+                                <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
                               </a>
                             </div>
 
@@ -230,7 +230,7 @@ HEAD;
 
                  ?>
                  <?php echo $htmlbody; ?>
-                  
+
                 </div>
               </div>
             </div>

@@ -26,7 +26,7 @@ $(document).ready(function () {
     {
       $('#busquedaAvanzada').css({'display': 'block'});
       $('#busquedaAvanzada').slideDown();
-      $(this).parents().find('.ofertasDestacadas').css({"margin-top":"184px"});
+      $(this).parents().find('.ofertasDestacadas').css({"margin-top":"154px"});
       $(this).find('span').removeClass('glyphicon-chevron-down');
       $(this).find('span').addClass('glyphicon-chevron-up');
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
         $('#restaurante').prop('checked','');
         $('#busquedaAvanzada').css({'display': 'none'});
         $('#busquedaAvanzada').slideUp();
-          $(this).parents().find('.ofertasDestacadas').css({"margin-top":"220px"});
+          $(this).parents().find('.ofertasDestacadas').css({"margin-top":"200px"});
         $(this).find('span').removeClass('glyphicon-chevron-up');
         $(this).find('span').addClass('glyphicon-chevron-down');
       }
