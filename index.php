@@ -1,5 +1,8 @@
 <?php
  session_start();
+ include_once ('html/conexion.php');
+
+
 
  if (isset($_SESSION['email_empresa'])){
   header('Location: html/empresa.php');
@@ -8,28 +11,29 @@
    header('Location: html/usuario.php');
  }
  else{
- ?>
-<!DOCTYPE html>
-<!-- Idea de ofertas diarias con paginacion -->
-<html lang="en">
+?>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Master Cheque</title>
+  <!DOCTYPE html>
+  <!-- Idea de ofertas diarias con paginacion -->
+  <html lang="en">
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="css/index.css">
-  <!-- To insert the icon: -->
-  <link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Master Cheque</title>
 
-</head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- To insert the icon: -->
+    <link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.css" />
 
-<body>
+  </head>
+
+  <body>
 
   <!-- Navbar -->
   <div class="row">
@@ -186,47 +190,55 @@
         <div class="index-busc ofertasDestacadas">
           <div class="wrapper">
             <div class="index-busc-cab cuadro-ofertas">
-              <div class="box-empresas">
-              <h3 class="text-left titulo-empresas">Empresas destacadas</h3>
-              <div class="row">
-                <div class="col-xs-6 col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img id="santos" src="imagenes/barSantos.jpg" onclick="aumentarImg()" alt="Bar Santos">
-                  </a>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="imagenes/pataNegra.jpg" alt="Bar Pata Negra">
-                  </a>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="imagenes/pataNegra.jpg" alt="Bar Naru">
-                  </a>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="imagenes/pataNegra.jpg" alt="Bar Naru">
-                  </a>
-                </div>
-              </div>
-            </div>
+
+              <?php
+
+                  $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+
+                  //Query contar cuantas ofertas en total
+                  $count_all = "SELECT COUNT(*) FROM ofertas";
+                  if ($co_all = $mysqli->query($count_all)){
+                    $_SESSION['count_all'] = mysqli_num_rows($co_all);
+                  }
+
+                  $nom = "SELECT * FROM ofertas";
+                  $htmlbody = '';
+
+                  if ($oferta = $mysqli->query($nom))
+                  {
+
+                      while ($fila = $oferta->fetch_row()) {
+
+                          $imagen_oferta = $fila[2];
+                          $baseimagen = base64_encode($imagen_oferta);
+                          $htmlbody .= <<<HEAD
+
+
+                            <div class="box-empresas">
+                            <h3 class="text-left titulo-empresas">Empresas destacadas</h3>
+                              <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                  <a href="#" class="thumbnail">
+                                    <img src="data:image/jpeg;base64,$baseimagen"/>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+HEAD;
+                      }
+                  }
+
+                 mysqli_close($mysqli);
+
+                 ?>
+                 <?php echo $htmlbody; ?>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-  <footer>
-    <div class="container">
-      <div class="panel-footer">
-        Panel para pie de pagina
-
-      </div>
-    </div>
-  </footer>
 
 
 
