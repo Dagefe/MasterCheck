@@ -15,15 +15,16 @@ session_start();
         if ($nombre_completo = $mysqli->query($nom)){
 
           while ($fila = $nombre_completo->fetch_row()){
-            $_SESSION['nombre_empresa'] = $fila[9];
+
             $_SESSION['contacto_empresa'] = $fila[3];
             $_SESSION['movil_empresa'] = $fila[4];
-            $_SESSION['pais_empresa'] = $fila[5];
-            $_SESSION['pob_empresa'] = $fila[6];
-            $_SESSION['cp_empresa'] = $fila[7];
-            $_SESSION['direccion_empresa'] = $fila[8];
+            $_SESSION['nombre_empresa'] = $fila[5];
+            $_SESSION['direccion_empresa'] = $fila[6];
+            $_SESSION['pob_empresa'] = $fila[7];
+            $_SESSION['cp_empresa'] = $fila[8];
+            $_SESSION['pais_empresa'] = $fila[9];
             $_SESSION['sector_empresa'] = $fila[10];
-
+            
           }
         }
 

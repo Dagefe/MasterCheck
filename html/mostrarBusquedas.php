@@ -162,26 +162,28 @@
 
 
 
-                      <div id="imagenNegocio" class="col-xs-2 paddingImagen">
+                      <div id="imagenNegocio" class="col-xs-2 col-lg-2 paddingImagen">
                         <img src="data:image/jpeg;base64,$baseimagen"/>
                       </div>
 
-                      <div class="col-xs-7 separadorLateral">
+                      <div class="col-xs-7 col-lg-8 separadorLateral">
                         <h3 class="tituloOferta">$nombre_oferta</h3>
                         <p class="infoText"><strong>Descripcion:</strong> $descripcion_oferta</p>
                         <p class="infoText"><strong>Precio:</strong> $precio_oferta euros</p>
                       </div>
 
-                      <div class="col-xs-3">
-                        <div class="paddingFecha">
-                          <span><strong>Inicio:</strong> $fecha_inicio</span>
+                      <div class="col-xs-3 col-lg-2">
+                        <div class="box-fecha">
+                          <div class="paddingFecha">
+                            <span><strong>Inicio:</strong> $fecha_inicio</span>
+                          </div>
+                          <span><strong>Fin:</strong> $fecha_fin</span>
                         </div>
-                        <span><strong>Fin:</strong> $fecha_fin</span>
                       </div>
 HEAD;
-      }
+                      }
 
-  }
+                    }
   /* Consultas de selección que devuelven un conjunto de resultados */
   $mysqli->close();
 ?>
