@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="es">
 
@@ -78,7 +81,7 @@
           <div class="wrapper">
             <div class="index-busc-cab-registro">
               <h3 class="titulo-busqueda">Inicio sesion</h3>
-                <form method="post" action="usuario.php" name="form">
+                <form method="post" action="login_cliente.php" name="form">
 
                   <div class="input-group ajusteLateralInicio">
                     <input id="email" name="email" type="email" placeholder="Introduzca su email" class="form-control inputForm"
@@ -148,3 +151,67 @@
 </body>
 
 </html>
+
+<?php
+  if(@$_POST['enviar']){
+    include_once 'conexion.php';
+
+    if (!isset($_POST['email'])){
+      $email = $_SESSION['email_cliente'];
+      $_SESSION['email_cliente'] = $email;
+    }
+    else {
+      $email = $_POST['email'];
+      $_SESSION['email_cliente'] = $email;
+    }
+    if (isset($_POST['contra'])){
+        $_SESSION['contra'] = $_POST['contra'];
+    }
+
+    $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+
+      if (mysqli_connect_errno())
+        { //Posible error al conectar a la base de datos
+          printf("Error de conexión: %s\n", mysqli_connect_error());
+          exit();
+        }
+
+        //Recogemos nuestra clave maestra
+        $fichero = "clavex.txt";
+        $handle = fopen('clavex.txt', "r");
+        $clavex = fread($handle, filesize($fichero));
+        fclose($handle);
+
+        //Encriptamos la clave introducida
+        $clave_has = openssl_encrypt($_SESSION['contra'], "AES-128-ECB", $clavex);
+
+        //Seleccionamos de la BD la contraseña por el email introducido
+        $query = "SELECT contrasena FROM clientes WHERE email = '" . $email . "'";
+        //Ejecutamos query
+        $res = $mysqli->query($query);
+        $row = $res->fetch_array(MYSQLI_NUM);
+        //Comparamos la clave introducida encriptada por la clave en la BD
+        if($row[0] !== $clave_has){
+          echo '<script>swal({
+          title: "Error: Contraseñas",
+          text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
+          confirmButtonText: "Volver al formulario",
+          type: "error"
+        }, function() {
+          window.location = "login_cliente.php";
+        })</script>';
+
+        unset($_SESSION['email_cliente']);
+        }
+      else {
+        echo '<script>swal({
+          title: "Bienvenido a MASTERCHEQUE",
+          text: "Disfrute de su estancia.",
+          confirmButtonText: "Seguir!",
+          type: "success"
+        }, function() {
+          window.location = "usuario.php";
+        })</script>';
+      }
+  }
+?>

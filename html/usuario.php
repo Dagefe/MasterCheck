@@ -1,15 +1,6 @@
 <?php
  session_start();
     include_once 'conexion.php';
-
-    if (!isset($_POST['email'])){
-      $email = $_SESSION['email_cliente'];
-    }
-    else $email = $_POST['email'];
-    if (isset($_POST['contra'])){
-        $_SESSION['contra'] = $_POST['contra'];
-    }
-
     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
 
       if (mysqli_connect_errno())
@@ -17,26 +8,7 @@
           printf("Error de conexión: %s\n", mysqli_connect_error());
           exit();
         }
-
-        //Recogemos nuestra clave maestra
-        $fichero = "clavex.txt";
-        $handle = fopen('clavex.txt', "r");
-        $clavex = fread($handle, filesize($fichero));
-        fclose($handle);
-
-        //Encriptamos la clave introducida
-        $clave_has = openssl_encrypt($_SESSION['contra'], "AES-128-ECB", $clavex);
-
-        //Seleccionamos de la BD la contraseña por el email introducido
-        $query = "SELECT contrasena FROM clientes WHERE email = '" . $email . "'";
-        //Ejecutamos query
-        $res = $mysqli->query($query);
-        $row = $res->fetch_array(MYSQLI_NUM);
-        //Comparamos la clave introducida encriptada por la clave en la BD
-        if($row[0] === $clave_has){
-            //Contrasena coincide en la BD
-
-            $nom = "SELECT nombre,email FROM clientes WHERE email = '" . $email . "'";
+        $nom = "SELECT nombre,email FROM clientes WHERE email = '" . $_SESSION['email_cliente'] . "'";
 
             if ($nombre_completo = $mysqli->query($nom)){
               while ($fila = $nombre_completo->fetch_row()){
@@ -48,6 +20,7 @@
             else {
               echo ("error");
             }
+            mysqli_close($mysqli);
 ?>
 <!DOCTYPE html>
 <!-- Idea de ofertas diarias con paginacion -->
@@ -274,25 +247,3 @@ HEAD;
 </body>
 
 </html>
-
-<?php
-
-  }
-
-  else {
-
-    echo "Las contraseñas no coindicen";
-    echo '<script>swal({
-          title: "Error: Contraseñas",
-          text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
-          confirmButtonText: "Volver al formulario",
-          type: "error"
-        }, function() {
-          window.location = "login_cliente.html";
-        })</script>';
-
-        unset($_SESSION['email_cliente']);
-
-      }
-			mysqli_close($mysqli);
-?>
