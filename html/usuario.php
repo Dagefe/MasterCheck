@@ -63,6 +63,8 @@
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/sweetalert.css">
+
   <!-- To insert the icon: -->
   <link type="text/css" rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
 
@@ -136,11 +138,11 @@
           <div class="index-busc-cab">
             <h3 class="titulo-busqueda">Busca tu oferta mas cercana</h3>
 
-<<<<<<< HEAD
+
         <form method="post" action="mostrarBusquedas.php">
-=======
+
             <form method="post" action="html/mostrarBusquedas.php">
->>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
+
 
               <!-- Fila de busqueda siempre visible -->
               <div class="container-fluid">
@@ -148,36 +150,20 @@
                   <div class="col-xs-12 col-sm-8 col-lg-8">
 
                     <div class="input-group">
-                    
+
                       <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
-<<<<<<< HEAD
-                  <div class="input-group-btn">
-                    <button id="btnBuscar" type="submit" class="btn btn-primary">
-                      <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2 paddingBusquedaAvanzada">
-                <div class="input-group">
-                  <div class="input-group-btn">
-                    <button class="btn btn-primary etiquetaLupa" role="button">
-                      Busqueda avanzada
-                    </button>
-=======
                       <div class="input-group-btn">
-                        <button id="btnBuscar" type="submit" class="btn btn-primary" href="">
+                        <button id="btnBuscar" type="submit" class="btn btn-primary">
                         <span class="glyphicon glyphicon-search"></span>
                       </button>
                       </div>
                     </div>
->>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
                   </div>
                   <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2">
                     <div class="input-group">
                       <div class="input-group-btn">
-                        <button class="btn btn-primary etiquetaLupa" href="#" role="button">
+                        <button class="btn btn-primary etiquetaLupa" role="button">
                         Busqueda avanzada
                       </button>
                       </div>
@@ -223,8 +209,8 @@
         <div class="wrapper">
           <div class="index-busc-cab cuadro-ofertas">
             <div class="box-empresas">
-              <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
                 <div class="row">
+                  <form name="form1" method="POST" action="html/ofertas.php">
                 <?php
 
                   $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -243,10 +229,13 @@
 
                       while ($fila = $oferta->fetch_row()) {
 
+                        $id_oferta = $fila[0];
                         $imagen_oferta = $fila[2];
                         $baseimagen = base64_encode($imagen_oferta);
                         $htmlbody .= <<<HEAD
                           <div class="col-xs-6 col-md-3">
+                            <input type="hidden" name="id_oferta" value="$id_oferta">
+                            <input type="submit" name="enviar" class="btn btnBuscar" value="Ver">
                             <a href="#" class="thumbnail">
                               <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
                             </a>
@@ -259,7 +248,7 @@ HEAD;
 
                ?>
                <?php echo $htmlbody; ?>
-
+                </form>
               </div>
             </div>
           </div>
@@ -287,21 +276,23 @@ HEAD;
 </html>
 
 <?php
- //expira en una hora
 
+  }
 
-        }
-        else{
-          echo "Las contraseñas no coindicen";
-          echo '<script>swal({
-                title: "Error: Contraseñas",
-                text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
-                confirmButtonText: "Volver al formulario",
-                type: "error"
-              }, function() {
-                window.location = "login_cliente.html";
-              })</script>';
+  else {
+
+    echo "Las contraseñas no coindicen";
+    echo '<script>swal({
+          title: "Error: Contraseñas",
+          text: "Lo sentimos, la contraseña introducida no coindice con el email solicitado.",
+          confirmButtonText: "Volver al formulario",
+          type: "error"
+        }, function() {
+          window.location = "login_cliente.html";
+        })</script>';
+
         unset($_SESSION['email_cliente']);
-        }
+
+      }
 			mysqli_close($mysqli);
 ?>
