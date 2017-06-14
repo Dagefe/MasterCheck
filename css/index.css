@@ -97,6 +97,7 @@ h3.titulo-empresas {
 .box-empresas {
   left: 8px;
   position: relative;
+  top: 15px;
 }
 
 
@@ -123,6 +124,12 @@ h3.titulo-empresas {
 .etiquetaLupa {
   background-color: darkcyan;
 }
+
+.btnBuscar {
+  width: 161px;
+  background-color: darkcyan;
+}
+
 
 
 
