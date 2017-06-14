@@ -190,7 +190,11 @@
         <div class="index-busc ofertasDestacadas">
           <div class="wrapper">
             <div class="index-busc-cab cuadro-ofertas">
-
+              <div class="box-empresas">
+                <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
+                  <div class="row">
+                    
+                      
               <?php
 
                   $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -212,18 +216,12 @@
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
-
-
-                            <div class="box-empresas">
-                            <h3 class="text-left titulo-empresas">Empresas destacadas</h3>
-                              <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                  <a href="#" class="thumbnail">
-                                    <img src="data:image/jpeg;base64,$baseimagen"/>
-                                  </a>
-                                </div>
-                              </div>
+                            <div class="col-xs-6 col-md-3"> 
+                              <a href="#" class="thumbnail">
+                                <img src="data:image/jpeg;base64,$baseimagen"/>
+                              </a>
                             </div>
+
 HEAD;
                       }
                   }
@@ -232,7 +230,9 @@ HEAD;
 
                  ?>
                  <?php echo $htmlbody; ?>
-
+                  
+                </div>
+              </div>
             </div>
           </div>
         </div>
