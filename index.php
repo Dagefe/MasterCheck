@@ -123,7 +123,7 @@
                     <div class="col-xs-12 col-sm-8 col-lg-8">
 
                       <div class="input-group">
-                        
+
                         <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
                         <div class="input-group-btn">
@@ -180,7 +180,7 @@
           <div class="wrapper">
             <div class="index-busc-cab cuadro-ofertas">
               <div class="box-empresas">
-                <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
+              
                   <div class="row">
                       <form method="POST" action="html/ofertas.php">
                   <?php
@@ -196,17 +196,17 @@
                     $nom = "SELECT * FROM ofertas";
                     $htmlbody = '';
 
-                  if ($oferta = $mysqli->query($nom))
-                  {
-                          
-                        while ($fila = $oferta->fetch_row()) {
+                    if ($oferta = $mysqli->query($nom))
+                    {
+
+                      while ($fila = $oferta->fetch_row()) {
+
                           $id_oferta = $fila[0];
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
                             <div class="col-xs-6 col-md-3">
                               <input type="hidden" name="id_oferta" value="$id_oferta" />
-                              <p>$id_oferta</p>
                               <input type="submit" name="enviar" class="btn btn-primary" value="Ver">
                               <a href="#" class="thumbnail">
                                 <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
@@ -220,7 +220,7 @@ HEAD;
 
                  ?>
                  <?php echo $htmlbody; ?>
-                          
+
                       </form>
                 </div>
               </div>

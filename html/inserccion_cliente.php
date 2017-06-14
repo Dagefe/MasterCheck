@@ -15,7 +15,7 @@
 
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/insercion_cliente.js"></script>
     <script src="../js/sweetalert.min.js"></script>
   </body>
@@ -46,13 +46,13 @@
 
                 if ($row_cnt > 0){ //Hay algun registro, con lo cual email duplicado
                     echo '<script>swal({
-                  title: "Error: Email duplicado",
-                  text: "Lo sentimos, el email introducido esta duplicado, por favor seleccione otro.",
-                  confirmButtonText: "Volver al formulario",
-                  type: "warning"
-              }, function() {
-                  window.location = "alta_cliente.php";
-              })</script>';
+                              title: "Error: Email duplicado",
+                              text: "Lo sentimos, el email introducido esta duplicado, por favor seleccione otro.",
+                              confirmButtonText: "Volver al formulario",
+                              type: "warning"
+                          }, function() {
+                              window.location = "alta_cliente.php";
+                          })</script>';
                 }
                 else
                 { //No hay email duplicados en nuestra base de datos
