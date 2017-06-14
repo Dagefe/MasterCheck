@@ -123,18 +123,7 @@
                     <div class="col-xs-12 col-sm-8 col-lg-8">
 
                       <div class="input-group">
-                        <div class="input-group-btn">
-                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            Nombre <span class="caret"></span>
-                        </button>
-
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Nombre  <span class="glyphicon glyphicon-search"></span></a></li>
-                            <li><a href="#">CP  <span class="glyphicon glyphicon-search"></span></a></li>
-                            <li><a href="#">Ciudad  <span class="glyphicon glyphicon-search"></span></a></li>
-                          </ul>
-                        </div>
-
+                        
                         <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
                         <div class="input-group-btn">
@@ -193,26 +182,36 @@
               <div class="box-empresas">
                 <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
                   <div class="row">
+<<<<<<< HEAD
                       <form name="form1" method="POST" action="html/ofertas.php">
+=======
+                  <?php
 
-              <?php
+                    $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+>>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
 
-                  $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+                    //Query contar cuantas ofertas en total
+                    $count_all = "SELECT COUNT(*) FROM ofertas";
+                    if ($co_all = $mysqli->query($count_all)){
+                      $_SESSION['count_all'] = mysqli_num_rows($co_all);
+                    }
 
-                  //Query contar cuantas ofertas en total
-                  $count_all = "SELECT COUNT(*) FROM ofertas";
-                  if ($co_all = $mysqli->query($count_all)){
-                    $_SESSION['count_all'] = mysqli_num_rows($co_all);
-                  }
+                    $nom = "SELECT * FROM ofertas";
+                    $htmlbody = '';
 
-                  $nom = "SELECT * FROM ofertas";
-                  $htmlbody = '';
+                    if ($oferta = $mysqli->query($nom))
+                    {
 
+<<<<<<< HEAD
                   if ($oferta = $mysqli->query($nom))
                   {
 
                       while ($fila = $oferta->fetch_row()) {
                           $id_oferta = $fila[0];
+=======
+                        while ($fila = $oferta->fetch_row()) {
+
+>>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
@@ -223,10 +222,9 @@
                                 <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
                               </a>
                             </div>
-
 HEAD;
-                      }
-                  }
+                        }
+                    }
 
                  mysqli_close($mysqli);
 

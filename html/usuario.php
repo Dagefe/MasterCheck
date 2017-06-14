@@ -133,30 +133,25 @@
     <div class="col-xs-12 col-md-8 col-lg-12">
       <div class="index-busc">
         <div class="wrapper">
-      <div class="index-busc-cab">
-          <h3 class="panel-title text-center">Busca tu oferta mas cercana</h3>
+          <div class="index-busc-cab">
+            <h3 class="titulo-busqueda">Busca tu oferta mas cercana</h3>
 
+<<<<<<< HEAD
         <form method="post" action="mostrarBusquedas.php">
+=======
+            <form method="post" action="html/mostrarBusquedas.php">
+>>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
 
-            <!-- Fila de busqueda siempre visible -->
-            <div class="row">
-              <div class="col-xs-12 col-sm-8 col-lg-8">
+              <!-- Fila de busqueda siempre visible -->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-8 col-lg-8">
 
-                <div class="input-group">
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Nombre <span class="caret"></span>
-                    </button>
+                    <div class="input-group">
+                    
+                      <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
 
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Nombre  <span class="glyphicon glyphicon-search"></span></a></li>
-                      <li><a href="#">CP  <span class="glyphicon glyphicon-search"></span></a></li>
-                      <li><a href="#">Ciudad  <span class="glyphicon glyphicon-search"></span></a></li>
-                    </ul>
-                  </div>
-
-                  <input name="campoBusqueda" type="search" class="form-control" placeholder="Introduce tu busqueda">
-
+<<<<<<< HEAD
                   <div class="input-group-btn">
                     <button id="btnBuscar" type="submit" class="btn btn-primary">
                       <span class="glyphicon glyphicon-search"></span>
@@ -170,31 +165,48 @@
                     <button class="btn btn-primary etiquetaLupa" role="button">
                       Busqueda avanzada
                     </button>
+=======
+                      <div class="input-group-btn">
+                        <button id="btnBuscar" type="submit" class="btn btn-primary" href="">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                      </div>
+                    </div>
+>>>>>>> 8a935ed2f232a153402531e9183d36c5a4e3a8ab
                   </div>
-                  <div id="btnBusquedaAvanzada" class="input-group-btn">
-                    <a id="iconoLupa" class="btn btn-primary" href="#" role="button">
-                      <span class="glyphicon glyphicon-chevron-down"></span>
-                    </a>
+                  <div class="col-xs-9 col-sm-1 col-lg-1 col-xs-offset-2 col-lg-pull-2 col-sm-pull-2">
+                    <div class="input-group">
+                      <div class="input-group-btn">
+                        <button class="btn btn-primary etiquetaLupa" href="#" role="button">
+                        Busqueda avanzada
+                      </button>
+                      </div>
+                      <div id="btnBusquedaAvanzada" class="input-group-btn">
+                        <a id="iconoLupa" class="btn btn-primary" href="#" role="button">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+
 
                 <!-- Fila de busqueda avanzada visible al activar -->
-                <div id="busquedaAvanzada" class="row" style="display:none">
+                <div id="busquedaAvanzada" class="row paddingBusquedaAvanzada" style="display:none">
                   <div class="col-xs-12 col-lg-2">
                     <div class="input-group-btn paddingOculto">
                       <span class="input-group-addon paddingOcultoFondo">
-                                    <span class="fa fa-cutlery" aria-hidden="true"></span>
+                                  <span class="fa fa-cutlery" aria-hidden="true"></span>
                       <input id="restaurante" name="tipo" type="checkbox" value="rest">
                       </span>
                       <span class="input-group-addon paddingOcultoFondo">
-                                    <span class="fa fa-glass" aria-hidden="true"></span>
+                                  <span class="fa fa-glass" aria-hidden="true"></span>
                       <input id="bar" name="tipo" type="checkbox" value="bar">
                       </span>
                     </div>
                   </div>
                 </div>
+              </div><!-- Fin container-fluid -->
             </form>
           </div>
         </div>
@@ -202,63 +214,61 @@
     </div>
   </div>
 
-      <!-- Imagenes de bares -->
-      <div class="row">
-        <div class="col-xs-12 col-md-4 col-lg-12">
-          <div class="index-busc ofertasDestacadas">
-            <div class="wrapper">
-              <div class="index-busc-cab cuadro-ofertas">
-                <h3 class="panel-title text-left">Empresas destacadas</h3>
-              <!--
-              <span class="input-group-btn">
 
-                <a class="btn btn-primary" href="#" role="button">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="btn btn-primary" href="#" role="button">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
 
-              </span>
-              -->
+  <!-- Imagenes de bares -->
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-lg-12">
+      <div class="index-busc ofertasDestacadas">
+        <div class="wrapper">
+          <div class="index-busc-cab cuadro-ofertas">
+            <div class="box-empresas">
+              <h3 class="text-left titulo-empresas">Ofertas destacadas</h3>
                 <div class="row">
-                  <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                      <img id="santos" src="../imagenes/barSantos.jpg" onclick="aumentarImg()" alt="Bar Santos">
-                    </a>
-                  </div>
-                  <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                      <img src="../imagenes/pataNegra.jpg" alt="Bar Pata Negra">
-                    </a>
-                  </div>
-                  <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                      <img src="../imagenes/pataNegra.jpg" alt="Bar Naru">
-                    </a>
-                  </div>
-                  <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                      <img src="../imagenes/pataNegra.jpg" alt="Bar Pata Negra">
-                    </a>
-                  </div>
-                </div>
+                <?php
+
+                  $mysqli = new mysqli(db_server,db_username, db_password, db_database);
+
+                  //Query contar cuantas ofertas en total
+                  $count_all = "SELECT COUNT(*) FROM ofertas";
+                  if ($co_all = $mysqli->query($count_all)){
+                    $_SESSION['count_all'] = mysqli_num_rows($co_all);
+                  }
+
+                  $nom = "SELECT * FROM ofertas";
+                  $htmlbody = '';
+
+                  if ($oferta = $mysqli->query($nom))
+                  {
+
+                      while ($fila = $oferta->fetch_row()) {
+
+                        $imagen_oferta = $fila[2];
+                        $baseimagen = base64_encode($imagen_oferta);
+                        $htmlbody .= <<<HEAD
+                          <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                              <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
+                            </a>
+                          </div>
+HEAD;
+                      }
+                  }
+
+               mysqli_close($mysqli);
+
+               ?>
+               <?php echo $htmlbody; ?>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
-
-  <footer>
-    <div class="container">
-      <div class="panel-footer">
-        Panel para pie de pagina
-
-      </div>
     </div>
-  </footer>
+  </div>
+
+
 
 
 
