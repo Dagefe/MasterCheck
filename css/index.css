@@ -102,8 +102,6 @@ h3.titulo-empresas {
 
 .containerImage {
   background-color: white;
-  width: ;
-  height: ;
   padding: 5px;
   height: 400px;
   overflow-x: hidden;
@@ -201,4 +199,43 @@ h3.titulo-empresas {
 
   }
 
+<<<<<<< HEAD
+=======
+/** Medias queries con valores especificos **/
 }
+
+@media only screen and (max-width: 360px) {
+
+.col-xs-offset-2 {
+  margin-left: 10.667%;
+}
+
+#login {
+  padding: 14px;
+}
+
+}
+
+@media only screen and (max-width: 320px) {
+
+.col-xs-offset-2 {
+    margin-left: 5.667%;
+}
+
+#login {
+  margin-bottom: 20px;
+>>>>>>> a66aa42a7536b89783025973fde3637ced93aaf8
+}
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  .carousel-inner {
+    min-height: 1024px;
+    min-width: 1440px;
+    
+  }
+
+}
+

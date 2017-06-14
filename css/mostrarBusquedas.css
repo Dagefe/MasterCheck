@@ -20,8 +20,6 @@ img {
 /* EStilos para contenedor de filtros */
 .containerFilter {
   background-color: white;
-  width: ;
-  height: ;
   padding: 5px;
   margin: 5px;
   border-radius: 4px;
@@ -72,7 +70,6 @@ img {
 
 .containerSearch {
   background-color: white;
-  width: ;
   padding: 5px;
   margin: 5px;
   padding-left: 40px;
@@ -102,7 +99,7 @@ img {
   padding-bottom: 5px;
 }
 
-}
+
 .infoText--primary {
 
     font-size: 16px;
