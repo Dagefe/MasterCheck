@@ -39,23 +39,8 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                    <!-- <li><a href="login_cliente.html">Particular</a></li>
-                    <li><a href="login_empresa.html">Empresa</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user "></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="login_cliente.html">Particular</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="login_empresa.html">Empresa</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                      </ul>
-                    </li>-->
-                  </ul>
-                </div><!-- /.navbar-collapse -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">   
+              </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
             </div><!-- /.nav-inverse -->
           </div><!-- /.container-fluid -->
@@ -123,7 +108,7 @@
                     if ($search = $mysqli->query($oferta)){
 
                       while ($fila = $search->fetch_row()){
-
+                      $id_oferta = $fila[0];
                       $nombre_oferta = $fila[1];
                       $imagen_oferta = $fila[2];
                       $descripcion_oferta = $fila[4];
@@ -133,7 +118,7 @@
                       $baseimagen = base64_encode($imagen_oferta);
                       $htmlbody .= <<<HEAD
 
-
+                    <form action="inserccion_favorito.php" method="POST" />
                     <div class="col-xs-12 col-lg-12 listaProductos">
                       <div id="imagenNegocio" class="col-xs-2 col-lg-2 paddingImagen">
                         <img src="data:image/jpeg;base64,$baseimagen"/>
@@ -156,7 +141,11 @@
                     </div>
 HEAD;
                     if (@ isset ($_SESSION['email_cliente'])){
-                        echo "<input type=submit name=enviar class=btn btnBuscar value=Ver>";
+                      $htmlbody .= <<<HEAD
+                        <input type="hidden" name="id_oferta" value="$id_oferta">
+                        <input type="submit" name="enviar" class="btn btnBuscar" value="Añadir a favoritos">
+                      </form>
+HEAD;
                   }
 				    }
 				}

@@ -14,6 +14,7 @@
               while ($fila = $nombre_completo->fetch_row()){
 
                 $nombre = $fila[0];
+                $_SESSION['nombre_cliente'] = $fila[0];
                 $_SESSION['email_cliente'] = $fila[1];
               }
             }
@@ -183,7 +184,7 @@
           <div class="index-busc-cab cuadro-ofertas">
             <div class="box-empresas">
                 <div class="row">
-                  <form name="form1" method="POST" action="ofertas.php">
+                  
                 <?php
 
                   $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -206,6 +207,7 @@
                         $imagen_oferta = $fila[2];
                         $baseimagen = base64_encode($imagen_oferta);
                         $htmlbody .= <<<HEAD
+                        <form method="POST" action="ofertas.php">
                           <div class="col-xs-6 col-md-3">
                             <input type="hidden" name="id_oferta" value="$id_oferta">
                             <input type="submit" name="enviar" class="btn btnBuscar" value="Ver">
@@ -213,6 +215,7 @@
                               <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen" height=120 width=88 />
                             </a>
                           </div>
+                          </form>
 HEAD;
                       }
                   }
@@ -221,7 +224,7 @@ HEAD;
 
                ?>
                <?php echo $htmlbody; ?>
-                </form>
+                
               </div>
             </div>
           </div>
