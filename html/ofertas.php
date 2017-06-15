@@ -155,10 +155,12 @@
                       </div>
                     </div>
 HEAD;
+                    if (@ isset ($_SESSION['email_cliente'])){
+                        echo "<input type=submit name=enviar class=btn btnBuscar value=Ver>";
+                  }
 				    }
 				}
 				$mysqli->close();
-        echo $_POST['id_oferta'];
  ?>
             <?php echo $htmlbody; ?>
 

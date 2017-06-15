@@ -60,9 +60,9 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-user"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="html/login_cliente.html">Particular&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
+                      <li><a href="html/login_cliente.php">Particular&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="html/login_empresa.html">Empresa&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
+                      <li><a href="html/login_empresa.php">Empresa&nbsp;&nbsp;<span class="fa fa-sign-in"></span></a></li>
                     </ul>
                   </li>
                 </ul>
@@ -182,7 +182,7 @@
               <div class="box-empresas">
               
                   <div class="row">
-                      <form method="POST" action="html/ofertas.php">
+                      
                   <?php
 
                     $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -193,7 +193,7 @@
                       $_SESSION['count_all'] = mysqli_num_rows($co_all);
                     }
 
-                    $nom = "SELECT * FROM ofertas";
+                    $nom = "SELECT * FROM ofertas ORDER BY id_oferta DESC LIMIT 4";
                     $htmlbody = '';
 
                     if ($oferta = $mysqli->query($nom))
@@ -205,13 +205,19 @@
                           $imagen_oferta = $fila[2];
                           $baseimagen = base64_encode($imagen_oferta);
                           $htmlbody .= <<<HEAD
+                          <form method="POST" action="html/ofertas.php">
                             <div class="col-xs-6 col-md-3">
                               <input type="hidden" name="id_oferta" value="$id_oferta" />
+<<<<<<< HEAD
                               <input type="submit" name="enviar" class="btn btnOferta" value="Ver">
+=======
+                              <input type="submit" name="enviar" class="btn btnBuscar" value="Ver">
+>>>>>>> 1289718c7b6abed22ee63e549d077a209637ba59
                               <a href="#" class="thumbnail">
-                                <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
+                                <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen" height=120 width=88 />
                               </a>
                             </div>
+                            </form>
 HEAD;
                         }
                     }
@@ -221,7 +227,7 @@ HEAD;
                  ?>
                  <?php echo $htmlbody; ?>
 
-                      </form>
+                      
                 </div>
               </div>
             </div>
