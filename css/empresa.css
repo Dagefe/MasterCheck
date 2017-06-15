@@ -1,11 +1,11 @@
 /** Correcion margen izquierdo navbar **/
 .container {
-  margin-left: 73px !important;
+  /*margin-left: 73px !important;*/
 }
 
 body {
   background-image: url('../imagenes/entradaBar3.jpg');
-  background-size: 1366px;
+  background-size: 1440px;
 }
 
 .navbar-wrapper {
