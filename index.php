@@ -92,15 +92,15 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="imagenes/fondo1.jpg" alt="Bar Santos">
+              <img src="imagenes/fondo11.jpg">
             </div>
 
             <div class="item">
-              <img src="imagenes/fondo2.jpg" alt="CBar Naru">
+              <img src="imagenes/fondo2.jpg">
             </div>
 
             <div class="item">
-              <img src="imagenes/fondo3.jpg" alt="Bar Pata Negra">
+              <img src="imagenes/fondo33.jpg">
             </div>
           </div>
         </div>
@@ -207,7 +207,7 @@
                           $htmlbody .= <<<HEAD
                             <div class="col-xs-6 col-md-3">
                               <input type="hidden" name="id_oferta" value="$id_oferta" />
-                              <input type="submit" name="enviar" class="btn btn-primary" value="Ver">
+                              <input type="submit" name="enviar" class="btn btnOferta" value="Ver">
                               <a href="#" class="thumbnail">
                                 <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
                               </a>

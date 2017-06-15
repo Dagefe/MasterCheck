@@ -37,6 +37,7 @@
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Nose <span class="sr-only">(current)</span></a></li>
                   <li><a href="#">Nose</a></li>
@@ -53,7 +54,7 @@
                     </ul>
                   </li>
                 </ul>
-                <!--
+
                 <form class="navbar-form navbar-left">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
@@ -62,6 +63,7 @@
                 </form>
               -->
                 <ul class="nav navbar-nav navbar-right">
+                  <!--
                   <li><a href="login_cliente.html">Particular</a></li>
                   <li><a href="login_empresa.html">Empresa</a></li>
                   <li class="dropdown">
@@ -74,7 +76,7 @@
                       <li><a href="#">Separated link</a></li>
                     </ul>
                   </li>
-                </ul>
+                </ul> -->
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
           </div><!-- /.nav-inverse -->
@@ -85,49 +87,40 @@
 
 
 
-    <!-- Arbol de navegacion
-
-        <ol class="breadcrumb">
-            <li class="glyphicon glyphicon-home"><a href="../index.html"> Inicio</a></li>
-            <li><a href="login_cliente.html">Cliente</a></li>
-            <li class="active">Alta cliente</li>
-        </ol>
-    -->
 
 
+        <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs12 col-lg-12">
+          <div class="index-busc">
+            <div class="wrapper">
+              <div class="index-busc-cab-forgotten">
+                <h3 class="titulo-busqueda">Recuperacion de contraseña</h3>
+                  <form action="forgotten_empresa.php" method="post">
 
 
-        <div class="container-welcome">
-            <form action="forgotten_empresa.php" method="post">
-		          <div class="row">
-                <div class="col-xs-12 col-lg-8">
+	            			  <div class="col-xs-12 col-lg-10">
+                        <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
+                      </div>
 
-                    <div class="panel panel-primary">
-            			    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Recuperación de contraseña</h3>
-            			    </div>
-            			    <div class="panel-body">
+
+                      <div class="col-xs-12 col-lg-10">
                         <div class="input-group">
-	            			        <div class="col-xs-12 col-lg-10">
-                              <input id="email" type="email" name="email" class="form-control inputForm" placeholder="Email" required />
-                            </div>
-
-                            <div class="col-xs-12 col-lg-10">
-                              <div class="input-group">
-                                <input id="btnSendMail" type="submit" name="enviar" value="Recuperar contraseña" class="btn btn-default">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                  <!--<button id="btnSendMail" input type="submit" name="enviar" class="btn btn-default">
-                                      Restablecer   <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                  </button> No funciona con las propiedades del boton -->
-                              </div>
-                            </div>
+                          <div class="input-group-btn">
+                            <button id="btnSendMail" type="submit" name="enviar" class="btn btn-default">Recuperar contraseña
+                              <span class="fa fa-envelope-o" aria-hidden="true"></span></button>
                           </div>
                         </div>
                       </div>
-                    </div>
-		              </div>
-            </form>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
 
 

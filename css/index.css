@@ -26,8 +26,8 @@
 }
 
 .carousel-inner {
-  max-height: 672px;
-  max-width: 1366px;
+  max-height: 920px;
+  max-width: 1440px;
 
 }
 
@@ -79,7 +79,7 @@ h3.titulo-empresas {
 }
 
 .ofertasDestacadas {
-  margin-top: 170px;
+  margin-top: 270px;
   padding-left: 15px;
 
 }
@@ -119,6 +119,12 @@ h3.titulo-empresas {
 
 #btnBuscar, #btnBusquedaAvanzada, #iconoLupa {
   background-color: darkcyan;
+}
+
+.btnOferta {
+    width: 100%;
+    background-color: darkcyan;
+    color: white;
 }
 
 .etiquetaLupa {
@@ -198,10 +204,10 @@ h3.titulo-empresas {
 
 /** Medias queries **/
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
 
   .carousel-inner {
-    max-height: 672px;
+    max-height: 900px;
     max-width: 1440px;
 
   }
