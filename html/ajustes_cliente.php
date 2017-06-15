@@ -58,7 +58,7 @@ if ($email_cliente = $mysqli->query($ema)){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                    <a class="navbar-brand" href="usuario.php">MASTERCHECK</a>
+                    <a class="navbar-brand" href="usuario.php">MASTERCHEQUE</a>
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -159,7 +159,7 @@ if ($email_cliente = $mysqli->query($ema)){
                   <span class="fa fa-cog"></span>Ajustes de cuenta
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="favoritos.php">Favoritos</a>
+                  <span class="fa fa-star"></span><a href="mis_favoritos.php">Mis favoritos</a>
                 </li>
                 <li>
                   <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>

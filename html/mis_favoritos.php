@@ -110,7 +110,6 @@
           while ($fila_nomof = $ofertae->fetch_row())
            {
             $id_oferta = $fila_nomof[0];
-
             $nom = "SELECT * FROM ofertas WHERE id_oferta = " . $id_oferta;
  
 
@@ -203,14 +202,14 @@ HEAD;
           <div class="box-opciones">
             <ul>
               <li>
-                <span class="fa fa-user"></span><a href="ficha_empresa.php">Perfil de empresa</a>
+                <span class="fa fa-user"></span><a href="ficha_cliente.php">Perfil de usuario</a>
                 <!-- Si estas en esta pagina se muestra sin enlace -->
               </li>
               <li>
-                <span class="fa fa-cog"></span><a href="ajustes_empresa.php">Ajustes de cuenta</a>
+                <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</a>
               </li>
               <li class="selected">
-                <span class="fa fa-star"></span>Mis ofertas
+                <span class="fa fa-star"></span>Mis favoritos
               </li>
               <li>
                 <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
@@ -236,8 +235,8 @@ HEAD;
            printf("Error de conexión: %s\n", mysqli_connect_error());
            exit();
          }
-      $delete_oferta = "DELETE FROM ofertas WHERE id_oferta=" . $_POST['id_ofertas'];
-      if ($oferta = $mysqli->query($delete_oferta))
+      $delete_fav = "DELETE FROM favoritos WHERE id_oferta=" . $_POST['id_ofertas'] . " AND id_cliente=" . $_SESSION['id_cliente'];
+      if ($oferta = $mysqli->query($delete_fav))
         {
           echo '<script>swal({
                   title: "¡Hecho!",
@@ -245,30 +244,9 @@ HEAD;
                   confirmButtonText: "Aceptar",
                   type: "success"
                   }, function() {
-                  window.location = "mis_ofertas.php";
+                  window.location = "mis_favoritos.php";
                 })</script>';
                 mysqli_close($mysqli);
         }
-  }
-  elseif(@$_POST['editar']) {
-    $mysqli = new mysqli(db_server,db_username, db_password, db_database);
-      if (mysqli_connect_errno())
-         { //Posible error al conectar a la base de datos
-           printf("Error de conexión: %s\n", mysqli_connect_error());
-           exit();
-         }
-    $editar_oferta = "UPDATE ofertas SET nombre='" . $_POST['nombre_oferta'] . "', descripcion='" . $_POST['descripcion_oferta'] . "', precio=" . $_POST['precio_oferta'] . ", fecha_inicio='" . $_POST['fecha_ini'] . "', fecha_fin='" . $_POST['fecha_fin'] . "' WHERE id_oferta=" . $_POST['id_ofertas'];
-      if ($oferta = $mysqli->query($editar_oferta))
-        {
-          echo '<script>swal({
-                  title: "¡Hecho!",
-                  text: "Oferta editada correctamente",
-                  confirmButtonText: "Aceptar",
-                  type: "success"
-                  }, function() {
-                  window.location = "mis_ofertas.php";
-                })</script>';
-                mysqli_close($mysqli);
-      }
   }
 ?>

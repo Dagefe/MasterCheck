@@ -174,7 +174,7 @@ session_start();
                   <span class="fa fa-cog"></span><a href="ajustes_cliente.php">Ajustes de cuenta</a>
                 </li>
                 <li>
-                  <span class="fa fa-star"></span><a href="mis_favoritos.php">Favoritos</a>
+                  <span class="fa fa-star"></span><a href="mis_favoritos.php">Mis favoritos</a>
                 </li>
                 <li>
                   <span class="fa fa-sign-out"></span><a href="logout.php">Logout</a>
