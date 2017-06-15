@@ -193,7 +193,7 @@
                       $_SESSION['count_all'] = mysqli_num_rows($co_all);
                     }
 
-                    $nom = "SELECT * FROM ofertas";
+                    $nom = "SELECT * FROM ofertas ORDER BY id_oferta DESC LIMIT 4";
                     $htmlbody = '';
 
                     if ($oferta = $mysqli->query($nom))
