@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,6 +35,7 @@
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
+              <!--
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Nose <span class="sr-only">(current)</span></a></li>
@@ -61,9 +61,10 @@
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
               -->
+              <!--
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login_cliente.html">Particular</a></li>
-                  <li><a href="login_empresa.html">Empresa</a></li>
+                  <li><a href="login_cliente.php">Particular</a></li>
+                  <li><a href="login_empresa.php">Empresa</a></li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">

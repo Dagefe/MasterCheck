@@ -183,7 +183,7 @@
           <div class="index-busc-cab cuadro-ofertas">
             <div class="box-empresas">
                 <div class="row">
-                  <form name="form1" method="POST" action="html/ofertas.php">
+                  <form name="form1" method="POST" action="ofertas.php">
                 <?php
 
                   $mysqli = new mysqli(db_server,db_username, db_password, db_database);
@@ -194,7 +194,7 @@
                     $_SESSION['count_all'] = mysqli_num_rows($co_all);
                   }
 
-                  $nom = "SELECT * FROM ofertas";
+                  $nom = "SELECT * FROM ofertas ORDER BY id_oferta DESC LIMIT 4";
                   $htmlbody = '';
 
                   if ($oferta = $mysqli->query($nom))
@@ -210,7 +210,7 @@
                             <input type="hidden" name="id_oferta" value="$id_oferta">
                             <input type="submit" name="enviar" class="btn btnBuscar" value="Ver">
                             <a href="#" class="thumbnail">
-                              <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
+                              <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen" height=120 width=88 />
                             </a>
                           </div>
 HEAD;

@@ -160,7 +160,7 @@
                           <input class="form-control" name="fecha_fin" type="date" id="formGroup" value="$fecha_fin">
                       </div>
                     </div>
-                    <input type="hidden" name="id_oferta" value="$id_oferta" />
+                    <input type="hidden" name="id_ofertas" value="$id_oferta" />
                     <input type="submit" name="borrar" class="btn btn-danger" value="Borrar oferta">
                     <input type="submit" name="editar" class="btn btn-danger" value="Editar oferta">
                   </div>
@@ -221,7 +221,7 @@ HEAD;
            printf("Error de conexión: %s\n", mysqli_connect_error());
            exit();
          }
-      $delete_oferta = "DELETE FROM ofertas WHERE id_oferta=" . $_POST['id_oferta'];
+      $delete_oferta = "DELETE FROM ofertas WHERE id_oferta=" . $_POST['id_ofertas'];
       if ($oferta = $mysqli->query($delete_oferta))
         {
           echo '<script>swal({
@@ -242,7 +242,7 @@ HEAD;
            printf("Error de conexión: %s\n", mysqli_connect_error());
            exit();
          }
-    $editar_oferta = "UPDATE ofertas SET nombre='" . $_POST['nombre_oferta'] . "', descripcion='" . $_POST['descripcion_oferta'] . "', precio=" . $_POST['precio_oferta'] . ", fecha_inicio='" . $_POST['fecha_ini'] . "', fecha_fin='" . $_POST['fecha_fin'] . "' WHERE id_oferta=" . $_POST['id_oferta'];
+    $editar_oferta = "UPDATE ofertas SET nombre='" . $_POST['nombre_oferta'] . "', descripcion='" . $_POST['descripcion_oferta'] . "', precio=" . $_POST['precio_oferta'] . ", fecha_inicio='" . $_POST['fecha_ini'] . "', fecha_fin='" . $_POST['fecha_fin'] . "' WHERE id_oferta=" . $_POST['id_ofertas'];
       if ($oferta = $mysqli->query($editar_oferta))
         {
           echo '<script>swal({

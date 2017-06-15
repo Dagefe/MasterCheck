@@ -36,8 +36,8 @@
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!--
+              <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Nose <span class="sr-only">(current)</span></a></li>
                   <li><a href="#">Nose</a></li>
@@ -55,7 +55,7 @@
                   </li>
                 </ul>
 
-                <form class="navbar-form navbar-left">
+                <!--form class="navbar-form navbar-left">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                   </div>
@@ -115,8 +115,8 @@
                       <div class="col-xs-12 col-lg-10">
                         <div class="input-group">
                           <div class="input-group-btn">
-                            <button id="btnSendMail" type="submit" name="enviar" class="btn btn-default">Recuperar contraseña
-                              <span class="fa fa-envelope-o" aria-hidden="true"></span></button>
+                            <input id="btnSendMail" type="submit" name="enviar" class="btn btn-default">Recuperar contraseña
+                              <span class="fa fa-envelope-o" aria-hidden="true"></span>
                           </div>
                         </div>
                       </div>

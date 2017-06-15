@@ -207,9 +207,9 @@
                           $htmlbody .= <<<HEAD
                             <div class="col-xs-6 col-md-3">
                               <input type="hidden" name="id_oferta" value="$id_oferta" />
-                              <input type="submit" name="enviar" class="btn btn-primary" value="Ver">
+                              <input type="submit" name="enviar" class="btn btnBuscar" value="Ver">
                               <a href="#" class="thumbnail">
-                                <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen"/>
+                                <img class="ajusteImagen" src="data:image/jpeg;base64,$baseimagen" height=120 width=88 />
                               </a>
                             </div>
 HEAD;
