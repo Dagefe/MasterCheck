@@ -91,7 +91,7 @@
                   <h3>Ofertas de <?php echo $_SESSION['pais_empresa']; ?></h3>
                 </div>
                 <div class="scrollLateral">
-                 <form method="POST" action="mis_ofertas.php">
+                 
                   <!--div class="flex-foto">
                     <div class="img-thumbnail">
                       <img src="../imagenes/naru.jpg">
@@ -117,7 +117,7 @@
              $baseimagen = base64_encode($imagen_oferta);
              $htmlbody .= <<<HEAD
 
-
+             <form method="POST" action="mis_ofertas.php">
              <div class="flex-container">
                 <div class="flex-foto">
                   <div class="img-thumbnail">
@@ -166,6 +166,7 @@
                   </div>
               </div>
             </div>
+            </form>
 HEAD;
            }
          }
@@ -174,7 +175,7 @@ HEAD;
 
 ?>
                   <?php echo $htmlbody?>
-                  </form>
+                  
                 </div>
               </div>
             </div>
